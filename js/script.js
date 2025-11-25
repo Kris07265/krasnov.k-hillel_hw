@@ -1,3 +1,4 @@
+'use strict';
 const price = Number(prompt('Яка початкова ціна товару?'));
 if (isNaN(price)) {
     alert('Помилка вводу!')
