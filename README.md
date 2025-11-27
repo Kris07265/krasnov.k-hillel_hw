@@ -1,1 +1,1 @@
-Homeworks Front-end Pro
+Homework 8 "Масиви та Об’єкти"
