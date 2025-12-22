@@ -39,3 +39,19 @@ Function.prototype.myCall = function(argThis, ...args) {
 }
 console.log(getName.myCall(user1, 'Bad Boy'));
 console.log(getName.myCall(user2, 'Good Girl'));
+
+Function.prototype.myBind = function(argThis,...argsBind) {
+    const originalFunction = this;
+    function binding(...args) {
+        argThis.temp = originalFunction;
+        let result = argThis.temp(...argsBind, ...args);
+        delete argThis.temp;
+        return result;
+    }
+
+    return binding;
+}
+const boundGetName1 = getName.myBind(user1, 'Bad Boy');
+console.log(boundGetName1());
+const boundGetName2 = getName.myBind(user2, 'Good Girl');
+console.log(boundGetName2());
