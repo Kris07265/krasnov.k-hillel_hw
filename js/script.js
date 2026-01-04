@@ -24,7 +24,7 @@ const getName = function (suffix = null) {
 }
 Function.prototype.myApply = function(argThis, args) {
     argThis.temp = this;
-    let result = argThis.temp(...args);
+    let result = args?.length ? argThis.temp(...args) : argThis.temp();
     delete argThis.temp;
     return result;
 }
@@ -42,10 +42,11 @@ console.log(getName.myCall(user2, 'Good Girl'));
 
 Function.prototype.myBind = function(argThis,...argsBind) {
     const originalFunction = this;
+    const uniqueKey = Symbol();
     function binding(...args) {
-        argThis.temp = originalFunction;
-        let result = argThis.temp(...argsBind, ...args);
-        delete argThis.temp;
+        argThis[uniqueKey] = originalFunction;
+        let result = argThis[uniqueKey](...argsBind, ...args);
+        delete argThis[uniqueKey];
         return result;
     }
 
