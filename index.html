@@ -3,8 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <title>hw_26</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-
+<form class="form" data-form>
+    <div class="form__item">
+    <label>
+        Email:
+        <input data-email type="email" name="email" placeholder="email" required>
+    </label>
+        <span class="error-message"></span>
+    </div>
+    <div class="form__item">
+    <label>
+        Password:
+        <input data-password type="password" name="password" placeholder="password" minlength="8" required>
+    </label>
+        <span class="error-message"></span>
+    </div>
+    <div class="form__item">
+    <label>
+        Confirm Password:
+        <input data-passwordConfirm type="password" name="confirm-password" placeholder="confirm password">
+    </label>
+        <span class="error-message"></span>
+    </div>
+    <div class="form__item">
+    <label>
+        Age:
+        <input data-age type="number" name="age" placeholder="age" required min="16" max="120">
+    </label>
+        <span class="error-message"></span>
+    </div>
+    <div class="form__item">
+    <label>
+        City:
+        <select data-city name="city" required>
+            <option value="Kyiv">Kyiv</option>
+            <option value="Odesa">Odesa</option>
+            <option value="Kharkiv">Kharkiv</option>
+            <option value="Lviv">Lviv</option>
+        </select>
+    </label>
+        <span class="error-message"></span>
+    </div>
+    <div class="form__item">
+    <label>
+        I agree to the terms:
+        <input data-agree type="checkbox" name="agree" required>
+    </label>
+        <span class="error-message"></span>
+    </div>
+    <div class="form__item buttons">
+        <input data-submit type="submit" value="submit">
+        <input data-reset type="reset" value="reset">
+    </div>
+</form>
+<script src="js/script.js"></script>
 </body>
 </html>
