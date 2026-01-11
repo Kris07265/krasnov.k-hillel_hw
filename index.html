@@ -10,14 +10,15 @@
     <div class="form__item">
     <label>
         Email:
-        <input data-email type="email" name="email" placeholder="email" required>
+        <input data-email type="email" name="email" placeholder="email">
     </label>
         <span class="error-message"></span>
     </div>
     <div class="form__item">
     <label>
         Password:
-        <input data-password type="password" name="password" placeholder="password" minlength="8" required>
+        <input data-password type="password" name="password" placeholder="password">
+        <span class="password-strength"></span>
     </label>
         <span class="error-message"></span>
     </div>
@@ -31,14 +32,14 @@
     <div class="form__item">
     <label>
         Age:
-        <input data-age type="number" name="age" placeholder="age" required min="16" max="120">
+        <input data-age type="number" name="age" placeholder="age">
     </label>
         <span class="error-message"></span>
     </div>
     <div class="form__item">
     <label>
         City:
-        <select data-city name="city" required>
+        <select data-city name="city">
             <option value="Kyiv">Kyiv</option>
             <option value="Odesa">Odesa</option>
             <option value="Kharkiv">Kharkiv</option>
@@ -50,7 +51,7 @@
     <div class="form__item">
     <label>
         I agree to the terms:
-        <input data-agree type="checkbox" name="agree" required>
+        <input data-agree type="checkbox" name="agree">
     </label>
         <span class="error-message"></span>
     </div>
@@ -59,6 +60,7 @@
         <input data-reset type="reset" value="reset">
     </div>
 </form>
+<pre data-jsonForm></pre>
 <script src="js/script.js"></script>
 </body>
 </html>

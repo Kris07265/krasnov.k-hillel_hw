@@ -63,6 +63,17 @@ events.forEach(eType =>{
         }
         if (e.target.name === 'password') {
             errorMessage.textContent = validPassword(e.target.value);
+            let passwordStrength = null;
+            if (e.target.value.length < 8) {
+                passwordStrength = "weak";
+            }
+            else if (e.target.value.length > 8 && e.target.value.length <= 10) {
+                passwordStrength = "medium";
+            }
+            else if (e.target.value.length > 10) {
+                passwordStrength = "strong";
+            }
+            document.querySelector('.password-strength').textContent = passwordStrength;
         }
         if (e.target.name === 'confirm-password') {
             errorMessage.textContent = validPasswordConfirm(password.value, e.target.value);
@@ -81,11 +92,55 @@ events.forEach(eType =>{
 
 form.addEventListener('submit', event => {
     event.preventDefault();
-    console.log(form);
+    let firstError = null;
     const errorEmail = validEmail(email.value);
+    if (errorEmail) {
+        firstError = firstError || email;
+        email.closest('.form__item').querySelector('.error-message').textContent = errorEmail;
+    }
     const errorPassword = validPassword(password.value);
+    if (errorPassword) {
+        firstError = firstError|| password;
+        password.closest('.form__item').querySelector('.error-message').textContent = errorPassword;
+    }
     const errorPasswordConfirm = validPasswordConfirm(password.value, passwordConfirm.value);
+    if (errorPasswordConfirm) {
+        firstError = firstError || passwordConfirm;
+        passwordConfirm.closest('.form__item').querySelector('.error-message').textContent = errorPasswordConfirm;
+    }
     const errorAge = validAge(age.value);
+    if (errorAge) {
+        firstError = firstError || age;
+        age.closest('.form__item').querySelector('.error-message').textContent = errorAge;
+    }
     const errorCity = validCity(city.value);
-    const errorAgree = validAgree(agree.checked);
+    if (errorCity) {
+        firstError = firstError || city;
+        city.closest('.form__item').querySelector('.error-message').textContent = errorCity;
+    }
+    const errorAgree = validAgree(agree);
+    if (errorAgree) {
+        firstError = firstError || agree;
+        agree.closest('.form__item').querySelector('.error-message').textContent = errorAgree;
+    }
+    if (firstError){
+        firstError.focus();
+    }
+    if (!firstError) {
+        const formData = {
+            email: email.value,
+            password: password.value,
+            age: age.value,
+            city: city.value,
+            agree: agree.checked
+        };
+        document.querySelector('[data-jsonForm]').textContent = JSON.stringify(formData, null, 2);
+    }
+});
+form.addEventListener('reset', ev => {
+    form.reset();
+    document.querySelector('[data-jsonForm]').textContent = '';
+    document.querySelectorAll('.error-message').textContent = '';
+    document.querySelector('.password-strength').textContent = '';
+    localStorage.clear();
 });
