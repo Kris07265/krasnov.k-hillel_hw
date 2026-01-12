@@ -63,17 +63,21 @@ events.forEach(eType =>{
         }
         if (e.target.name === 'password') {
             errorMessage.textContent = validPassword(e.target.value);
-            let passwordStrength = null;
-            if (e.target.value.length < 8) {
-                passwordStrength = "weak";
+            if (e.target.value.length === 0) {
+                e.target.classList.remove('password-weak', 'password-medium', 'password-strong');
             }
-            else if (e.target.value.length > 8 && e.target.value.length <= 10) {
-                passwordStrength = "medium";
+            else if (e.target.value.length < 8) {
+                e.target.classList.remove('password-weak', 'password-medium', 'password-strong');
+                e.target.classList.add('password-weak');
             }
-            else if (e.target.value.length > 10) {
-                passwordStrength = "strong";
+            else if (e.target.value.length >= 8 && e.target.value.length < 10) {
+                e.target.classList.remove('password-weak', 'password-medium', 'password-strong');
+                e.target.classList.add('password-medium');
             }
-            document.querySelector('.password-strength').textContent = passwordStrength;
+            else if (e.target.value.length >= 10) {
+                e.target.classList.remove('password-weak', 'password-medium', 'password-strong');
+                e.target.classList.add('password-strong');
+            }
         }
         if (e.target.name === 'confirm-password') {
             errorMessage.textContent = validPasswordConfirm(password.value, e.target.value);
@@ -88,6 +92,17 @@ events.forEach(eType =>{
             errorMessage.textContent = validAgree(e.target);
         }
     });
+});
+const passwordShow = document.querySelector('.password-show');
+passwordShow.addEventListener('click', event => {
+    if (password.type === "password") {
+        password.type = 'text';
+        passwordShow.textContent = "hide";
+    }
+    else {
+        password.type = 'password';
+        passwordShow.textContent = "show";
+    }
 });
 
 form.addEventListener('submit', event => {

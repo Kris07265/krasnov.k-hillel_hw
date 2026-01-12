@@ -9,3 +9,12 @@
     margin-top: 5px;
     color: red;
 }
+.password-weak{
+    background: red;
+}
+.password-medium{
+    background: yellow;
+}
+.password-strong{
+    background: green;
+}
