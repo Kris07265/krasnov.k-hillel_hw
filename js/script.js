@@ -8,11 +8,28 @@ const city = document.querySelector('[data-city]');
 const agree = document.querySelector('[data-agree]');
 const reset = document.querySelector('[data-reset]');
 const submit = document.querySelector('[data-submit]');
+
+
+window.addEventListener('DOMContentLoaded', () => {
+    const fields = [email, password, passwordConfirm, age, city, agree];
+    fields.forEach(field => {
+        const savedValue = localStorage.getItem(field.name);
+        if (savedValue !== null) {
+            if (field.type === 'checkbox') {
+                field.checked = savedValue === 'true';
+            } else {
+                field.value = savedValue;
+            }
+        }
+    });
+});
+
 const validEmail = (email) => {
     if (email === '') {
         return "Please enter email address";
     }
-    if (!email.includes('@')) {
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
         return "Please enter a valid email address";
     }
 };
@@ -57,6 +74,13 @@ const validAgree = (agree) => {
 const events = ['input', 'focusout'];
 events.forEach(eType =>{
     form.addEventListener(eType, e => {
+        if (e.target.name) {
+            if (e.target.type === 'checkbox') {
+                localStorage.setItem(e.target.name, e.target.checked);
+            } else {
+                localStorage.setItem(e.target.name, e.target.value);
+            }
+        }
         const errorMessage = e.target.closest(".form__item").querySelector('.error-message');
         if (e.target.name === 'email') {
             errorMessage.textContent = validEmail(e.target.value);
@@ -145,6 +169,7 @@ form.addEventListener('submit', event => {
         const formData = {
             email: email.value,
             password: password.value,
+            passwordConfirm: passwordConfirm.value,
             age: age.value,
             city: city.value,
             agree: agree.checked
@@ -155,7 +180,7 @@ form.addEventListener('submit', event => {
 form.addEventListener('reset', ev => {
     form.reset();
     document.querySelector('[data-jsonForm]').textContent = '';
-    document.querySelectorAll('.error-message').textContent = '';
-    document.querySelector('.password-strength').textContent = '';
+    document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
+    password.classList.remove('password-weak', 'password-medium', 'password-strong');
     localStorage.clear();
 });
