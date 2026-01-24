@@ -109,7 +109,12 @@ let {age: year} = user; // 20
 
         const removeContact = (id) => {
             const removeIndex = contacts.findIndex(contact => contact.id === id);
-            contacts.splice(removeIndex, 1);
+            if (removeIndex === -1) {
+                return null;
+            }
+
+            const removed = contacts.splice(removeIndex, 1);
+            return removed[0];
         }
 
 
@@ -163,7 +168,7 @@ let {age: year} = user; // 20
     document.querySelector("[data-contacts-list]").addEventListener('click', e => {
         if (e.target.closest('[data-action="remove"]')){
             const contactToRemove = e.target.closest('li[data-id]');
-            contactIdToRemove = contactToRemove.dataset.id;
+            contactIdToRemove = Number(contactToRemove.dataset.id);
             const contactName = contactToRemove.dataset.name;
             const modalBodyText = document.querySelector('[data-modal-body-text]');
             modalBodyText.textContent = `Are you sure you want to remove contact ${contactName}?`;
@@ -171,7 +176,10 @@ let {age: year} = user; // 20
         }
     });
     removeContactConfirmBtn.addEventListener('click', e => {
-        contactService.removeContact(contactIdToRemove);
+        const removed = contactService.removeContact(contactIdToRemove);
+        if (!removed) {
+            return;
+        }
         listHandler.removeElement(contactIdToRemove);
         removeContactModal.hide();
         contactIdToRemove = null;
