@@ -11,8 +11,8 @@ export class Student {
         this.firstName = firstName;
         this.lastName = lastName;
         this.birthYear = birthYear;
-        this.attendance = new Array(10).fill(undefined);
-        this.marks = new Array(10).fill(undefined);
+        this.attendance = new Array(25).fill(undefined);
+        this.marks = new Array(25).fill(undefined);
     }
 
     getAge(){
@@ -35,7 +35,7 @@ export class Student {
     }
 
     mark(value){
-        if (value >=0 && value <= 10) {
+        if (value >=0 && value <= 100) {
             const emptyIndex = this.marks.indexOf(undefined);
             if (emptyIndex === -1) return false;
             this.marks[emptyIndex] = value;
@@ -65,15 +65,15 @@ export class Student {
         const averageMark = this.getAverageMark();
         const averageAttendance = this.getAverageAttendance();
 
-        if (averageAttendance > 0.9 && averageMark > 9) {
+        if (averageAttendance > 0.9 && averageMark > 90) {
             return "Ух ти, який молодчинка!";
         }
         else
-        if (averageAttendance < 0.9 && averageMark < 9){
+        if (averageAttendance < 0.9 && averageMark < 90){
             return "Редька!"
          }
          else
-         if (averageAttendance < 0.9 || averageMark < 9){
+         if (averageAttendance < 0.9 || averageMark < 90){
              return "Нормально, але можна краще";
          }
     }
