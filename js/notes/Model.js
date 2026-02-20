@@ -1,10 +1,3 @@
-// InterfaceNote {
-//     id: Number,
-//     title: String,
-//     category: "work" | "study" | "personal",
-//     important: Boolean,
-//     createdAt: String // ISO date
-// }
 
 class Model {
     #key = null;
@@ -18,6 +11,10 @@ class Model {
         const failedFields = []
 
         for(const key in data) {
+            if (key === 'title' && (!data[key] || data[key].trim().length < 3)) {
+                failedFields.push({key, message: `Field must contain at least 3 letters`});
+            }
+
             if(!this.#validationModel.hasOwnProperty(key)) {
                 failedFields.push({key, message: `Field doesn't exist on validation model`});
                 continue
