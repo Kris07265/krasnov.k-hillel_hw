@@ -49,6 +49,17 @@ class Model {
         localStorage.setItem(this.#key, jsonToSave);
     }
 
+    update(id, data) {
+        this.#validateEntity(data)
+        if(!this.#isElementExists(id)) throw new Error(`Cannot update entity with id ${id}`);
+        const dataFromStorage = this.readAll();
+        const itemToUpdateIndex = dataFromStorage.findIndex(item => item.id === id);
+        dataFromStorage[itemToUpdateIndex] = { id, ...data }
+        this.#updateStorage(dataFromStorage);
+
+        return dataFromStorage[itemToUpdateIndex];
+    }
+
     create(data) {
         this.#validateEntity(data);
         const dataFromStorage = this.readAll();
@@ -66,6 +77,12 @@ class Model {
     readAll() {
         const data = JSON.parse(localStorage.getItem(this.#key));
         return !data ? [] : data;
+    }
+
+    read(id) {
+        if(!this.#isElementExists(id)) throw new Error(`Cannot read entity with id ${id}`);
+        const dataFromStorage = this.readAll();
+        return dataFromStorage.find(item => item.id === id);
     }
 
     toggleImportant(id) {

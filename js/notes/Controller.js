@@ -15,13 +15,16 @@ class Controller {
                 if (e.target.closest('[data-clearAllBtn]')) this.#clearAllNotes()
             });
             this.#view.notesContainer.addEventListener('click', this.#removeNoteHandler);
-            this.#view.notesContainer.addEventListener('click', this.#toggleImportantHandler)
+            this.#view.notesContainer.addEventListener('click', this.#toggleImportantHandler);
+            this.#view.notesContainer.addEventListener('click', this.#editTitleHandler);
+            this.#view.editTitleForm.addEventListener('submit', this.#editSubmitHandler);
         })
     }
 
     #onLoadHandler = () => {
         const savedData = this.#model.readAll();
         this.#view.onLoadRender(savedData);
+        this.#view.notesCounter(savedData);
     }
 
     #createNoteHandler = (data) => {
@@ -31,9 +34,11 @@ class Controller {
         try {
             const savedData = this.#model.create(data);
             this.#view.renderNote(savedData);
+            this.#view.clearError();
+            this.#view.notesCounter(this.#model.readAll());
         }
         catch(e) {
-            alert(e.message);
+            this.#view.showError(e.message);
         }
     }
 
@@ -56,6 +61,7 @@ class Controller {
         if(!this.#model.readAll().length) {
             this.#view.addNoNotes();
         }
+        this.#view.notesCounter(this.#model.readAll());
     }
 
     #toggleImportantHandler = ({target}) => {
@@ -68,16 +74,44 @@ class Controller {
 
         const updatedNote = this.#model.toggleImportant(id);
         this.#view.updateNoteImportant(updatedNote.id, updatedNote.important);
+        this.#view.notesCounter(this.#model.readAll());
     }
 
     #clearAllNotes = () => {
         if(!this.#model.readAll().length) {
+            this.#view.notesErrorToast.show();
             return
         }
 
-        this.#model.clearAll()
-        this.#view.clearAll()
-        this.#view.addNoNotes()
+        this.#model.clearAll();
+        this.#view.clearAll();
+        this.#view.addNoNotes();
+        this.#view.notesCounter(this.#model.readAll());
+    }
+
+    #editTitleHandler = ({target}) => {
+        const editBtn = target.closest('[data-editTitleBtn]');
+        if (!editBtn) return;
+        const wrapper = editBtn.closest('[data-id]');
+        const id = +wrapper.dataset.id;
+        const note = this.#model.read(id);
+        this.#view.openEditModal(note);
+    }
+
+    #editSubmitHandler = (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const id = +form.dataset.id;
+        const title = form.title.value;
+        const oldNote = this.#model.read(id);
+        const updatedNote = this.#model.update(id, {
+            title,
+            category: oldNote.category,
+            important: oldNote.important,
+            createdAt: oldNote.createdAt
+        });
+        this.#view.onLoadRender(this.#model.readAll());
+        this.#view.editTitleModal.hide();
     }
 }
 export default Controller;

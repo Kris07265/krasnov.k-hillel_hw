@@ -1,12 +1,19 @@
 class View {
     notesContainer = document.querySelector('[data-notesContainer]');
     notesForm = document.querySelector('[data-notesForm]');
-    errorMassageTitle = document.querySelector('[data-error-for="title"]');
+    errorMassage = document.querySelector('[data-errorMassage]');
+    notesErrorToast = new bootstrap.Toast('[data-errorToast]');
+    editTitleModal = new bootstrap.Modal('#editTitleModal', {backdrop: 'static', keyboard: false});
+    editTitleForm = null;
+    totalNotes = document.querySelector('[data-totalNotes]');
+    importantNotes = document.querySelector('[data-importantNotes]');
 
-    constructor() {}
+    constructor() {
+        this.editTitleForm = this.editTitleModal._element.querySelector('#editTitleForm');
+    }
 
     addNoNotes(){
-        this.notesContainer.innerHTML = `<h2 class="text-center p-3 mb-5 rounded bg-primary text-white">No notes yet</h2>`
+        this.notesContainer.innerHTML = '<h2 class="text-center p-3 rounded bg-info text-white">No notes yet</h2>';
     }
 
     removeNoNotes(){
@@ -35,7 +42,10 @@ class View {
               <span class="badge text-bg-primary">#${id}</span>
               <h6 class="badge text-bg-info">${category}</h6>
           </div>
-          <div class="noteCategory badge text-bg-light">${title}</div>
+          <div class="noteTitle">
+           <span class="badge text-bg-light p-2 mt-1">${title}</span>
+           <button class="btn btn-sm bg-light" data-editTitleBtn><i class="bi bi-pencil-fill"></i></button>
+          </div>
           <div class="noteCreatedAt">${createdAt}</div>
           <hr>
           <button class="btn btn-sm btn-danger" data-remove-btn>remove</button>
@@ -65,9 +75,31 @@ class View {
         }
     }
 
+    showError(message){
+        this.errorMassage.textContent = message;
+    }
+
+    clearError() {
+        this.errorMassage.textContent = '';
+    }
+
     clearAll() {
         this.notesContainer.innerHTML = null;
         this.addNoNotes();
+    }
+
+    openEditModal(note){
+        this.editTitleForm.dataset.id = note.id;
+        const input = this.editTitleForm.querySelector('#editTitle');
+        input.value = note.title;
+        this.editTitleModal.show();
+    }
+
+    notesCounter(data) {
+        const totalNotesCount = data.length;
+        const importantNotesCount = data.filter(note => note.important).length;
+        this.totalNotes.textContent = `Total Notes: ${totalNotesCount}`;
+        this.importantNotes.textContent = `Important Notes: ${importantNotesCount}`;
     }
 }
 export default View;
