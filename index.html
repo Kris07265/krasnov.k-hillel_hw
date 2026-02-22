@@ -10,6 +10,23 @@
 <h1 class="mt-5 mb-5 text-center">Notes Board</h1>
 <div class="container">
     <div class="row">
+        <div class="notesFilter text-end mb-3" data-notesFilter>
+            <h6 class="mb-3">Notes filter</h6>
+            <button class="btn btn-sm btn-outline-primary" data-notesFilterAll>All</button>
+            <button class="btn btn-sm btn-outline-warning" data-notesFilterImportant>Important</button>
+            <label for="notesFilterSelectCategory">Category</label>
+            <select id="notesFilterSelectCategory" class="form-select-sm" data-notesFilterSelectCategory>
+                <option selected value="all">All categories</option>
+                <option value="work">work</option>
+                <option value="study">study</option>
+                <option value="personal">personal</option>
+            </select>
+            <label for="notesSortSelect">Sort</label>
+            <select id="notesSortSelect" class="form-select-sm" data-notesSortSelect>
+                <option value="newest">Newest first</option>
+                <option value="oldest">Oldest first</option>
+            </select>
+        </div>
         <div class="col-4">
             <form data-notesForm>
                 <div class="mb-3">

@@ -15,18 +15,8 @@ class Model {
                 failedFields.push({key, message: `Field must contain at least 3 letters`});
             }
 
-            if(!this.#validationModel.hasOwnProperty(key)) {
-                failedFields.push({key, message: `Field doesn't exist on validation model`});
-                continue
-            }
-
             if(Array.isArray(this.#validationModel[key]) && !this.#validationModel[key].includes(data[key])) {
                 failedFields.push({key, message: `Field should be one of ${this.#validationModel[key]}`});
-                continue
-            }
-
-            if(!Array.isArray(this.#validationModel[key]) && typeof data[key]  !== this.#validationModel[key]) {
-                failedFields.push({key, message: `Field should be in type of ${this.#validationModel[key]}`});
             }
 
         }
@@ -67,7 +57,7 @@ class Model {
             id: dataFromStorage.length ? dataFromStorage.at(-1).id + 1 : 1,
             ...data,
             important: false,
-            createdAt: new Date().toISOString(),
+            createdAt: new Date(),
         }
         dataFromStorage.push(dataToSave);
         this.#updateStorage(dataFromStorage);

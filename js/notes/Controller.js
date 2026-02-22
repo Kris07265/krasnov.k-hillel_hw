@@ -18,7 +18,45 @@ class Controller {
             this.#view.notesContainer.addEventListener('click', this.#toggleImportantHandler);
             this.#view.notesContainer.addEventListener('click', this.#editTitleHandler);
             this.#view.editTitleForm.addEventListener('submit', this.#editSubmitHandler);
+            this.#view.notesFilter.addEventListener('click', this.#notesFilterHandler);
+            this.#view.notesFilter.addEventListener('change', this.#notesFilterHandler);
         })
+    }
+
+    #notesFilterHandler = (event) => {
+        const allNotes = this.#model.readAll();
+        const filteredImportantNotes = allNotes.filter(note => note.important);
+        if (event.type === 'click') {
+            if (event.target.closest('[data-notesFilterAll]')) this.#view.onLoadRender(allNotes);
+            if (event.target.closest('[data-notesFilterImportant]')) this.#view.onLoadRender(filteredImportantNotes);
+        }
+        if (event.type === 'change') {
+            if (event.target.closest('[data-notesFilterSelectCategory]')){
+                const selectedCategory = event.target.value;
+                const filteredCategoryNotes = allNotes.filter(note => note.category === selectedCategory);
+                if (selectedCategory === 'all') {
+                    this.#view.onLoadRender(allNotes);
+                } else {
+                    this.#view.onLoadRender(filteredCategoryNotes);
+                  }
+            }
+
+            if (event.target.closest('[data-notesSortSelect]')){
+                const selectedSort = event.target.value;
+                const sortedNewestFirst = [...allNotes].sort((a, b) => {
+                    const dateA = new Date(a.createdAt);
+                    const dateB = new Date(b.createdAt);
+                    return dateA - dateB;
+                });
+                const sortedOldestFirst = [...allNotes].sort((a, b) => {
+                    const dateA = new Date(a.createdAt);
+                    const dateB = new Date(b.createdAt);
+                    return dateB - dateA;
+                });
+                if (selectedSort === 'newest') this.#view.onLoadRender(sortedNewestFirst);
+                if (selectedSort === 'oldest') this.#view.onLoadRender(sortedOldestFirst);
+            }
+        }
     }
 
     #onLoadHandler = () => {

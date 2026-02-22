@@ -7,6 +7,7 @@ class View {
     editTitleForm = null;
     totalNotes = document.querySelector('[data-totalNotes]');
     importantNotes = document.querySelector('[data-importantNotes]');
+    notesFilter = document.querySelector('[data-notesFilter]');
 
     constructor() {
         this.editTitleForm = this.editTitleModal._element.querySelector('#editTitleForm');
@@ -35,8 +36,10 @@ class View {
 
     createNote({id, title, category, important, createdAt}){
         const wrapper = document.createElement('div');
-        wrapper.classList.add('col-4', 'noteWrapper', 'border', 'border-success', 'm-1', 'p-1');
+        wrapper.classList.add('col-4', 'noteWrapper', 'border', 'border-success', 'border-2', 'm-1', 'p-1');
         wrapper.dataset.id = id;
+        const d = createdAt instanceof Date ? createdAt : new Date(createdAt);
+        const createdAtStr = d.toDateString() + ' ' + d.toTimeString().split(' ')[0];
         wrapper.innerHTML = `
           <div class="noteHeading d-flex justify-content-between">
               <span class="badge text-bg-primary">#${id}</span>
@@ -46,12 +49,25 @@ class View {
            <span class="badge text-bg-light p-2 mt-1">${title}</span>
            <button class="btn btn-sm bg-light" data-editTitleBtn><i class="bi bi-pencil-fill"></i></button>
           </div>
-          <div class="noteCreatedAt">${createdAt}</div>
+          <div class="noteCreatedAt">${createdAtStr}</div>
           <hr>
           <button class="btn btn-sm btn-danger" data-remove-btn>remove</button>
           <button class="btn btn-sm btn-primary" data-mark-btn>Mark Important</button>`
 
+        this.updateVisualImportant(wrapper, important);
+
         return wrapper;
+    }
+
+    updateVisualImportant(wrapper, important) {
+        const markImportantBtn = wrapper.querySelector('[data-mark-btn]');
+        if (important) {
+            wrapper.classList.add('bg-warning');
+            markImportantBtn.textContent = 'Unmark Important';
+        } else {
+            wrapper.classList.remove('bg-warning');
+            markImportantBtn.textContent = 'Mark Important';
+        }
     }
 
     renderNote(note){
@@ -65,14 +81,7 @@ class View {
 
     updateNoteImportant(id, important){
         const wrapper = this.notesContainer.querySelector(`[data-id='${id}']`);
-        const markImportantBtn = wrapper.querySelector('[data-mark-btn]');
-        if (important) {
-            wrapper.classList.add('bg-warning');
-            markImportantBtn.textContent = 'Unmark Important';
-        } else {
-            wrapper.classList.remove('bg-warning');
-            markImportantBtn.textContent = 'Mark Important';
-        }
+        this.updateVisualImportant(wrapper, important);
     }
 
     showError(message){
