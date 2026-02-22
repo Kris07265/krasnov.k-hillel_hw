@@ -36,7 +36,7 @@ class View {
 
     createNote({id, title, category, important, createdAt}){
         const wrapper = document.createElement('div');
-        wrapper.classList.add('col-4', 'noteWrapper', 'border', 'border-success', 'border-2', 'm-1', 'p-1');
+        wrapper.classList.add('noteWrapper', 'col-4', 'shadow', 'rounded', 'border', 'border-light-subtle', 'border-3', 'p-4');
         wrapper.dataset.id = id;
         const d = createdAt instanceof Date ? createdAt : new Date(createdAt);
         const createdAtStr = d.toDateString() + ' ' + d.toTimeString().split(' ')[0];

@@ -142,7 +142,7 @@ class Controller {
         const id = +form.dataset.id;
         const title = form.title.value;
         const oldNote = this.#model.read(id);
-        const updatedNote = this.#model.update(id, {
+        this.#model.update(id, {
             title,
             category: oldNote.category,
             important: oldNote.important,
