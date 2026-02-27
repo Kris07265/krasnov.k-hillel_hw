@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch('https://jsonplaceholder.typicode.com/users')
         .then(res => {
             if (!res.ok) {
-                throw new Error('Failed to fetch users.');
+                throw new Error("HTTP " + res.status);
             }
             return res.json();
         })
@@ -38,7 +38,7 @@ userSelect.addEventListener('change', () => {
     const userId = userSelect.value;
     fetch(`https://jsonplaceholder.typicode.com/albums?userId=${userId}`)
         .then(res => {
-            if (!res.ok) throw new Error('Failed to fetch albums.');
+            if (!res.ok) throw new Error("HTTP " + res.status);
             return res.json();
         })
     .then(albums => {
@@ -68,14 +68,18 @@ loadBtn.addEventListener('click', () => {
     const albumId = albumSelect.value;
     fetch(`https://jsonplaceholder.typicode.com/photos?albumId=${albumId}`)
     .then(res => {
-        if (!res.ok) throw new Error('Failed to fetch photos.');
+        if (!res.ok) throw new Error("HTTP " + res.status);
         return res.json();
     })
     .then(data => {
         allPhotos = data;
         offset = 0;
         renderPhotos();
-        loadMoreBtn.style.display = offset < allPhotos.length ? 'block' : 'none';
+        if (offset >= allPhotos.length) {
+            loadMoreBtn.classList.add('d-none');
+        } else {
+            loadMoreBtn.classList.remove('d-none');
+        }
     })
         .catch(err => statusContainer.textContent = `Error: ${err.message}`)
         .finally(() => statusContainer.textContent = '');
@@ -97,5 +101,9 @@ function renderPhotos() {
 
 loadMoreBtn.addEventListener('click', () => {
     renderPhotos();
-    loadMoreBtn.style.display = offset >= allPhotos.length ? 'none' : 'block';
+    if (offset >= allPhotos.length) {
+        loadMoreBtn.classList.add('d-none');
+    } else {
+        loadMoreBtn.classList.remove('d-none');
+    }
 });
