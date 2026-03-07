@@ -8,7 +8,7 @@ class Controller {
         this.#view = view;
     }
 
-    init(){}
+    async init() {}
 }
 
 export default Controller;

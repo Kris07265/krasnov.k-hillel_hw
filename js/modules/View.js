@@ -1,9 +1,75 @@
 class View {
     constructor() {
-        this.addUserModal = new bootstrap.Modal('#addUserModal', {backdrop: 'static', keyboard: false});
-        this.editUserModal = new bootstrap.Modal('#editUserModal', {backdrop: 'static', keyboard: false});
+        this.userModal = new bootstrap.Modal('#addUserModal', {backdrop: 'static', keyboard: false});
         this.deleteUserModal = new bootstrap.Modal('#deleteUserModal', {backdrop: 'static', keyboard: false});
         this.errorToast = new bootstrap.Toast('#errorToast');
+        this.addUserBtn = document.getElementById('addUserBtn');
+        this.usersTableBody = document.getElementById('usersTableBody');
+        this.userForm = document.getElementById('userForm');
+        this.inputName = document.getElementById('userName');
+        this.inputEmail = document.getElementById('userEmail');
+        this.inputPhone = document.getElementById('userPhone');
+        this.inputCompany = document.getElementById('userCompany');
+        this.loadingSpinner = document.getElementById('loadingSpinner');
+    }
+
+    renderTable = (users) => {
+        this.usersTableBody.innerHTML = '';
+        users.forEach((user) => {
+            const singleUser = this.createUser(user);
+            this.usersTableBody.append(singleUser);
+        })
+    }
+
+    createUser = (user) => {
+        const userRow = document.createElement('tr');
+        userRow.innerHTML =`<td>${user.id}</td>
+                            <td>${user.name}</td>
+                            <td>${user.email}</td>
+                            <td>${user.phone ? user.phone : ""}</td>
+                            <td>${user.company ? user.company.name : ""}</td>
+                            <td class="d-flex justify-content-between"><button class="btn btn-sm btn-primary" data-edit-btn data-id="${user.id}"><i class="bi bi-pencil-fill"></i></button><button class="btn btn-sm btn-danger" data-delete-btn data-id="${user.id}"><i class="bi bi-trash"></i></button></td>`
+
+        return userRow;
+    }
+
+    openCreateModal = () => {
+        const inputs = this.userForm.querySelectorAll('input');
+        inputs.forEach((input) => {
+            input.value = '';
+        })
+        this.userModal.show();
+    }
+
+    openEditModal = (user) => {
+        this.inputName.value = user.name
+        this.inputEmail.value = user.email
+        this.inputPhone.value = user.phone ? user.phone : ""
+        this.inputCompany.value = user.company ? user.company.name : ""
+        this.userModal.show()
+    }
+
+    getFormData = () => ({
+        name: this.inputName.value,
+        email: this.inputEmail.value,
+        phone: this.inputPhone.value || '',
+        company: { name: this.inputCompany.value || '' },
+    })
+
+    setLoading = (isLoading) => {
+        if (isLoading) {
+            this.addUserBtn.disabled = true;
+            this.loadingSpinner.classList.remove('d-none');
+        } else {
+            this.addUserBtn.disabled = false;
+            this.loadingSpinner.classList.add('d-none');
+        }
+    }
+
+    showError = (message) => {
+        const toastBody = this.errorToast.querySelector('.toast-body');
+        toastBody.textContent = message;
+        this.errorToast.show();
     }
 }
 
