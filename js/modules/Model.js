@@ -14,7 +14,7 @@ class Model {
                 .catch(err => {
                     throw err;
                 })
-                .finally(() => console.log("loading finished"))
+                .finally(() => "loading finished")
         )
     }
 
