@@ -1,6 +1,11 @@
 class Model {
+    #users = null;
     constructor() {
-        this.users = [];
+        this.#users = [];
+    }
+
+    getUsers() {
+        return [...this.#users];
     }
 
     getAll(){
@@ -8,7 +13,7 @@ class Model {
             fetch('https://jsonplaceholder.typicode.com/users')
             .then(res => res.json())
                 .then(users => {
-                    this.users = users
+                    this.#users = users
                     return users;
                 })
                 .catch(err => {
@@ -27,8 +32,12 @@ class Model {
                 },
                 body: JSON.stringify(userData)
             });
+            const user = await res.json();
+            const lastId = this.#users.length ? this.#users[this.#users.length - 1].id : 0;
+            user.id = lastId + 1;
+            this.#users.push(user);
 
-            return await res.json();
+            return user;
         } catch (error) {
             throw error;
         }

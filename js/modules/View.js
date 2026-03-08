@@ -1,6 +1,6 @@
 class View {
     constructor() {
-        this.userModal = new bootstrap.Modal('#addUserModal', {backdrop: 'static', keyboard: false});
+        this.userModal = new bootstrap.Modal('#userModal', {backdrop: 'static', keyboard: false});
         this.deleteUserModal = new bootstrap.Modal('#deleteUserModal', {backdrop: 'static', keyboard: false});
         this.errorToast = new bootstrap.Toast('#errorToast');
         this.addUserBtn = document.getElementById('addUserBtn');
@@ -49,12 +49,48 @@ class View {
         this.userModal.show()
     }
 
+    closeUserModal = () => {
+        this.userForm.reset();
+        this.userModal.hide();
+    }
+
     getFormData = () => ({
         name: this.inputName.value,
         email: this.inputEmail.value,
         phone: this.inputPhone.value || '',
         company: { name: this.inputCompany.value || '' },
     })
+
+    validateForm = () => {
+        let isValid = true;
+        const data = this.getFormData();
+
+        const nameError = this.userForm.querySelector('[data-error-for="userName"]');
+        if (!data.name) {
+            this.inputName.classList.add('is-invalid');
+            nameError.textContent = 'Name must not be empty';
+            isValid = false;
+        } else {
+            this.inputName.classList.remove('is-invalid');
+            nameError.textContent = '';
+        }
+
+        const emailError = this.userForm.querySelector('[data-error-for="userEmail"]');
+        if (!data.email) {
+            this.inputEmail.classList.add('is-invalid');
+            emailError.textContent = 'Email must not be empty';
+            isValid = false;
+        } else if (!data.email.includes('@')) {
+            this.inputEmail.classList.add('is-invalid');
+            emailError.textContent = 'Email must contain @';
+            isValid = false;
+        } else {
+            this.inputEmail.classList.remove('is-invalid');
+            emailError.textContent = '';
+        }
+
+        return isValid;
+    }
 
     setLoading = (isLoading) => {
         if (isLoading) {
