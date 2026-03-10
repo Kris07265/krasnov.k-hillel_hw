@@ -1,31 +1,15 @@
-import {useState} from 'react';
-import Container from 'react-bootstrap/Container';
-import ListGroup from 'react-bootstrap/ListGroup';
-import {ListGroupItem} from "react-bootstrap";
+import { Container, ListGroup, ListGroupItem } from "react-bootstrap";
 
-function TodoList() {
-    const [todos, setTodos] = useState([
-        { text: "Buy bread", done: false, id: 1},
-        { text: "Wash the car", done: true, id: 2 },
-    ]);
-
-    const doneHandler = (id) => {
-        const newTodos = todos.map(todo => {
-            if (todo.id === id) {
-                return { ...todo, done: !todo.done };
-            }
-            return todo;
-        });
-        setTodos(newTodos);
-    };
+function TodoList(props) {
     return (
         <Container className="mt-5">
+            <h1 className="mb-3 text-center">To Do List</h1>
         <ListGroup>
-            {todos.map((todo) => {
+            {props.todos.map((todo) => {
                 return <ListGroupItem
                     key={todo.id}
-                    onClick={() => doneHandler(todo.id)}
-                    className={todo.done ? "bg-success text-white" : ""}
+                    onClick={() => props.doneHandler(todo.id)}
+                    action variant={todo.done ? "success" : "light"}
                 >{todo.text}</ListGroupItem>
             })}
         </ListGroup>
