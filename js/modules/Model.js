@@ -8,6 +8,10 @@ class Model {
         return [...this.#users];
     }
 
+    getUser(id) {
+        return this.#users.find(user => user.id === id);
+    }
+
     getAll(){
         return (
             fetch('https://jsonplaceholder.typicode.com/users')
@@ -52,7 +56,12 @@ class Model {
                 },
                 body: JSON.stringify(userData)
             });
-            return await res.json();
+            const updatedUser = await res.json();
+
+            const index = this.#users.findIndex(user => user.id === id);
+            this.#users[index] = { ...updatedUser, id };
+
+            return updatedUser;
         }
         catch (error) {
             throw error;
@@ -64,6 +73,10 @@ class Model {
             const res = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`, {
                 method: 'DELETE'
             });
+            const index = this.#users.findIndex(user => user.id === id);
+            if (index !== -1) {
+                this.#users.splice(index, 1);
+            }
             return true;
         }
         catch (error) {

@@ -1,8 +1,11 @@
 class View {
     constructor() {
         this.userModal = new bootstrap.Modal('#userModal', {backdrop: 'static', keyboard: false});
-        this.deleteUserModal = new bootstrap.Modal('#deleteUserModal', {backdrop: 'static', keyboard: false});
-        this.errorToast = new bootstrap.Toast('#errorToast');
+        this.deleteModalEl = document.getElementById('deleteUserModal');
+        this.deleteUserModal = new bootstrap.Modal(this.deleteModalEl, {backdrop: 'static', keyboard: false});
+        this.deleteUserBtn = document.getElementById('deleteUserBtn');
+        this.errorToastEl = document.getElementById('errorToast'); // сам div
+        this.errorToast = new bootstrap.Toast(this.errorToastEl);
         this.addUserBtn = document.getElementById('addUserBtn');
         this.usersTableBody = document.getElementById('usersTableBody');
         this.userForm = document.getElementById('userForm');
@@ -54,6 +57,12 @@ class View {
         this.userModal.hide();
     }
 
+    openDeleteModal = (user) => {
+        const deleteUserModalText = this.deleteModalEl.querySelector('#deleteUserModalText');
+        deleteUserModalText.textContent = `Are you sure you want to delete user ${user.name}?`
+        this.deleteUserModal.show();
+    }
+
     getFormData = () => ({
         name: this.inputName.value,
         email: this.inputEmail.value,
@@ -103,7 +112,7 @@ class View {
     }
 
     showError = (message) => {
-        const toastBody = this.errorToast.querySelector('.toast-body');
+        const toastBody = this.errorToastEl.querySelector('#errorToastText');
         toastBody.textContent = message;
         this.errorToast.show();
     }
