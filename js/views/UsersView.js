@@ -14,6 +14,18 @@ class UsersView {
         this.inputPhone = document.getElementById('userPhone');
         this.inputCompany = document.getElementById('userCompany');
         this.loadingSpinner = document.getElementById('loadingSpinner');
+        this.searchInput = document.getElementById('searchInput');
+        this.sortName = document.getElementById('sortName');
+        this.sortIcon = document.getElementById('sortIcon');
+    }
+
+    toggleIcon = (sortAsc) => {
+        this.sortIcon.classList.remove("bi-sort-alpha-down", "bi-sort-alpha-up");
+        if (sortAsc) {
+            this.sortIcon.classList.add("bi", "bi-sort-alpha-down");
+        } else {
+            this.sortIcon.classList.add("bi", "bi-sort-alpha-up");
+        }
     }
 
     renderTable = (users) => {

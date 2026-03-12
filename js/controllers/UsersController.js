@@ -4,6 +4,7 @@ class UsersController {
     #view = null;
     #editingUserId = null;
     #deletingUserId = null;
+    #sortNameAscending = true;
 
     constructor(model, view) {
         this.#model = model;
@@ -17,6 +18,42 @@ class UsersController {
         this.#view.usersTableBody.addEventListener('click', this.#handleEditClick);
         this.#view.usersTableBody.addEventListener('click', this.#handleDeleteClick);
         this.#view.deleteUserBtn.addEventListener('click', this.#handleDeleteConfirm);
+        this.#view.searchInput.addEventListener('input', this.#handleSearch);
+        this.#view.sortName.addEventListener('click', this.#handleSortByName);
+    }
+
+    #handleSortByName = () => {
+
+        const users = this.#model.getUsers();
+
+        users.sort((a, b) => {
+
+            if (this.#sortNameAscending) {
+                return a.name.localeCompare(b.name);
+            } else {
+                return b.name.localeCompare(a.name);
+            }
+
+        });
+
+        this.#view.toggleIcon(this.#sortNameAscending);
+
+        this.#sortNameAscending = !this.#sortNameAscending;
+
+        this.#view.renderTable(users);
+    }
+
+    #handleSearch = () => {
+        const value = this.#view.searchInput.value.toLowerCase();
+
+        const users = this.#model.getUsers();
+
+        const filteredUsers = users.filter(user =>
+            user.name.toLowerCase().includes(value) ||
+            user.email.toLowerCase().includes(value)
+        );
+
+        this.#view.renderTable(filteredUsers);
     }
 
     #handleOnLoad = async () => {
