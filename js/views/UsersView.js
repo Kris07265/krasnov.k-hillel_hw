@@ -1,4 +1,4 @@
-class View {
+class UsersView {
     constructor() {
         this.userModal = new bootstrap.Modal('#userModal', {backdrop: 'static', keyboard: false});
         this.deleteModalEl = document.getElementById('deleteUserModal');
@@ -118,4 +118,4 @@ class View {
     }
 }
 
-export default View;
+export default UsersView;

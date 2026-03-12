@@ -17,7 +17,7 @@ API: https://jsonplaceholder.typicode.com/users
 Promises (мінімум 1 місце з .then/.catch/.finally)
 async/await
 try/catch у всіх async-операціях
-класи для Model, View, Controller (MVC)
+класи для UsersModel, UsersView, UsersController (MVC)
 Модальні вікна Bootstrap для create/edit/delete confirm
 Функціонал
 1) Відображення списку
@@ -58,7 +58,7 @@ try/catch у всіх async-операціях
    Помилки показувати як Bootstrap alert (на сторінці або в модалці)
    Модалки після успіху закривати і чистити форму/стан
    Архітектура (MVC) — обов’язково класами
-   Model (UsersModel)
+   UsersModel (UsersModel)
    Відповідає за:
 
 HTTP-запити (fetch)
@@ -73,7 +73,7 @@ delete(id)
 Хоча більшість зробите через async/await — мінімум 1 метод зробіть у стилі:
 
 return fetch(...).then(...).catch(...).finally(...)
-View (UsersView)
+UsersView (UsersView)
 Відповідає за:
 
 Рендер таблиці
@@ -87,7 +87,7 @@ openCreateModal() / openEditModal(user) / openDeleteModal(user)
 getFormData()
 setLoading(isLoading)
 showError(message)
-Controller (UsersController)
+UsersController (UsersController)
 Відповідає за:
 
 Ініціалізацію
@@ -131,4 +131,4 @@ JSONPlaceholder — це фейковий REST API. Він повертає “�
 Тому після перезавантаження сторінки ви знову побачите початковий список з GET /users.
 
 Рекомендовано для ДЗ:
-після create/update/delete оновлювати локальний масив users у Model і перерендерювати таблицю у View.
+після create/update/delete оновлювати локальний масив users у UsersModel і перерендерювати таблицю у UsersView.

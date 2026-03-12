@@ -1,5 +1,5 @@
 
-class Controller {
+class UsersController {
     #model = null;
     #view = null;
     #editingUserId = null;
@@ -96,4 +96,4 @@ class Controller {
     }
 }
 
-export default Controller;
+export default UsersController;

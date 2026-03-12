@@ -1,4 +1,6 @@
-class Model {
+import { BASE_URL, ENDPOINTS } from "../config/api.js";
+
+class UsersModel {
     #users = null;
     constructor() {
         this.#users = [];
@@ -14,7 +16,7 @@ class Model {
 
     getAll(){
         return (
-            fetch('https://jsonplaceholder.typicode.com/users')
+            fetch(`${BASE_URL}${ENDPOINTS.users}`)
             .then(res => res.json())
                 .then(users => {
                     this.#users = users
@@ -29,7 +31,7 @@ class Model {
 
     async create(userData) {
         try {
-            const res = await fetch('https://jsonplaceholder.typicode.com/users', {
+            const res = await fetch(`${BASE_URL}${ENDPOINTS.users}`, {
                 method: 'POST',
                 headers: {
                     "Content-Type": "application/json"
@@ -49,7 +51,7 @@ class Model {
 
     async update(id, userData) {
         try {
-            const res = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`, {
+            const res = await fetch(`${BASE_URL}${ENDPOINTS.users}/${id}`, {
                 method: 'PUT',
                 headers: {
                     "Content-Type": "application/json"
@@ -70,7 +72,7 @@ class Model {
 
     async delete(id) {
         try {
-            const res = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`, {
+            const res = await fetch(`${BASE_URL}${ENDPOINTS.users}/${id}`, {
                 method: 'DELETE'
             });
             const index = this.#users.findIndex(user => user.id === id);
@@ -85,4 +87,4 @@ class Model {
     }
 }
 
-export default Model;
+export default UsersModel;
