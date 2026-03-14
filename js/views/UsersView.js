@@ -17,9 +17,23 @@ class UsersView {
         this.searchInput = document.getElementById('searchInput');
         this.sortName = document.getElementById('sortName');
         this.sortIcon = document.getElementById('sortIcon');
+        this.paginationContainer = document.getElementById('pagination');
     }
 
-    toggleIcon = (sortAsc) => {
+    renderPagination = (totalPages, currentPage) => {
+        this.paginationContainer.innerHTML = '';
+
+        for (let i = 1; i <= totalPages; i++) {
+            const paginationItem = document.createElement('li');
+            paginationItem.classList.add('page-item');
+            if (i === currentPage) paginationItem.classList.add('active');
+            paginationItem.innerHTML = `<a class="page-link" href="#">${i}</a>`
+            paginationItem.dataset.page = `${i}`;
+            this.paginationContainer.appendChild(paginationItem);
+        }
+    }
+
+    toggleSortIcon = (sortAsc) => {
         this.sortIcon.classList.remove("bi-sort-alpha-down", "bi-sort-alpha-up");
         if (sortAsc) {
             this.sortIcon.classList.add("bi", "bi-sort-alpha-down");

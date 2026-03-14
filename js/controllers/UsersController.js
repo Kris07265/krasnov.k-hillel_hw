@@ -5,6 +5,8 @@ class UsersController {
     #editingUserId = null;
     #deletingUserId = null;
     #sortNameAscending = true;
+    #currentPage = 1;
+    #usersPerPage = 5;
 
     constructor(model, view) {
         this.#model = model;
@@ -20,47 +22,38 @@ class UsersController {
         this.#view.deleteUserBtn.addEventListener('click', this.#handleDeleteConfirm);
         this.#view.searchInput.addEventListener('input', this.#handleSearch);
         this.#view.sortName.addEventListener('click', this.#handleSortByName);
+        this.#view.paginationContainer.addEventListener('click', (e) =>this.#handlePageChange(e));
     }
 
-    #handleSortByName = () => {
-
-        const users = this.#model.getUsers();
-
-        users.sort((a, b) => {
-
-            if (this.#sortNameAscending) {
-                return a.name.localeCompare(b.name);
-            } else {
-                return b.name.localeCompare(a.name);
-            }
-
-        });
-
-        this.#view.toggleIcon(this.#sortNameAscending);
-
-        this.#sortNameAscending = !this.#sortNameAscending;
-
-        this.#view.renderTable(users);
+    #getUsersForPage = (users = null) => {
+        const allUsers = users ? users : this.#model.getUsers();
+        const start = (this.#currentPage - 1) * this.#usersPerPage;
+        const end = start + this.#usersPerPage;
+        return allUsers.slice(start, end);
     }
 
-    #handleSearch = () => {
-        const value = this.#view.searchInput.value.toLowerCase();
+    #getTotalPages = (users = null) => {
+        const allUsers = users ? users : this.#model.getUsers();
+        return Math.ceil(allUsers.length / this.#usersPerPage);
+    }
 
-        const users = this.#model.getUsers();
-
-        const filteredUsers = users.filter(user =>
-            user.name.toLowerCase().includes(value) ||
-            user.email.toLowerCase().includes(value)
-        );
-
-        this.#view.renderTable(filteredUsers);
+    #handlePageChange = (e) => {
+        e.preventDefault();
+        const paginationEl = e.target.closest('li');
+        if (!paginationEl) return;
+        this.#currentPage = +paginationEl.dataset.page;
+        const pageUsers = this.#getUsersForPage();
+        this.#view.renderTable(pageUsers);
+        this.#view.renderPagination(this.#getTotalPages(), this.#currentPage);
     }
 
     #handleOnLoad = async () => {
         try {
             this.#view.setLoading(true);
-            const data = await this.#model.getAll();
-            this.#view.renderTable(data);
+            await this.#model.getAll();
+            const pageUsers = this.#getUsersForPage();
+            this.#view.renderTable(pageUsers);
+            this.#view.renderPagination(this.#getTotalPages(), this.#currentPage);
         }
         catch (error) {
             this.#view.showError(error.message);
@@ -94,9 +87,11 @@ class UsersController {
                 await this.#model.update(this.#editingUserId, data);
             } else {
                 await this.#model.create(data);
+                this.#currentPage = this.#getTotalPages();
             }
-            const users = this.#model.getUsers();
-            this.#view.renderTable(users);
+            const pageUsers = this.#getUsersForPage();
+            this.#view.renderTable(pageUsers);
+            this.#view.renderPagination(this.#getTotalPages(), this.#currentPage);
             this.#view.closeUserModal();
         }
         catch (error) {
@@ -120,8 +115,12 @@ class UsersController {
         try {
             this.#view.setLoading(true);
             await this.#model.delete(this.#deletingUserId);
-            const users = this.#model.getUsers();
-            this.#view.renderTable(users);
+            if (this.#currentPage > this.#getTotalPages()) {
+                this.#currentPage = this.#getTotalPages();
+            }
+            const pageUsers = this.#getUsersForPage();
+            this.#view.renderTable(pageUsers);
+            this.#view.renderPagination(this.#getTotalPages(), this.#currentPage);
             this.#view.deleteUserModal.hide();
         }
         catch (error) {
@@ -130,6 +129,35 @@ class UsersController {
         finally {
             this.#view.setLoading(false);
         }
+    }
+
+    #handleSortByName = () => {
+        const users = this.#model.getUsers();
+        const sortedUsers = users.sort((a, b) => {
+            if (this.#sortNameAscending) {
+                return a.name.localeCompare(b.name);
+            } else {
+                return b.name.localeCompare(a.name);
+            }
+        });
+        this.#view.toggleSortIcon(this.#sortNameAscending);
+        this.#sortNameAscending = !this.#sortNameAscending;
+        const pageUsers = this.#getUsersForPage(sortedUsers);
+        this.#view.renderTable(pageUsers);
+        this.#view.renderPagination(this.#getTotalPages(sortedUsers), this.#currentPage);
+    }
+
+    #handleSearch = () => {
+        const value = this.#view.searchInput.value.toLowerCase();
+        const users = this.#model.getUsers();
+        const filteredUsers = users.filter(user =>
+            user.name.toLowerCase().includes(value) ||
+            user.email.toLowerCase().includes(value)
+        );
+        this.#currentPage = 1;
+        const pageUsers = this.#getUsersForPage(filteredUsers);
+        this.#view.renderTable(pageUsers);
+        this.#view.renderPagination(this.#getTotalPages(filteredUsers), this.#currentPage);
     }
 }
 
