@@ -1,16 +1,151 @@
-# React + Vite
+Homework 45 "Адмінка для створення товарів інтернет-магазину"
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Реалізувати SPA-сторінку адмін-панелі для створення нового товару в інтернет-магазині.
 
-Currently, two official plugins are available:
+Додаток має бути без Redux і без React Router.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Обов’язково використати:
 
-## React Compiler
+- React hooks
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Formik
 
-## Expanding the ESLint configuration
+- React Bootstrap
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- PropTypes
+
+- SCSS
+
+Що має бути на сторінці:
+
+Форма створення товару з такими полями:
+
+- Назва товару
+
+- Опис товару
+
+- Ціна
+
+- Ціна зі знижкою
+
+- Категорія
+
+- Бренд
+
+- SKU / артикул
+
+- Кількість на складі
+
+- URL головного зображення
+
+- Додаткові зображення
+
+- Активний / неактивний товар
+
+- Чекбокс “Товар у наявності”
+
+- Чекбокс “Показувати на головній”
+
+Функціональні вимоги:
+
+1. Форма повинна бути побудована через Formik.
+
+2. Всі поля мають бути контрольованими.
+
+3. Має бути валідація форми.
+
+4. Після сабміту дані товару повинні відображатися нижче у вигляді карточки-прев’ю.
+
+5. Якщо товарів створено декілька — вони мають відображатись списком.
+
+6. Повинна бути кнопка очищення форми.
+
+7. Повинна бути можливість видалити товар зі списку.
+
+8. Повинна бути можливість змінити статус товару “Активний / Неактивний”.
+
+9. Верстка має бути зроблена через React Bootstrap.
+
+10. Стилі мають бути винесені в SCSS-файли.
+
+Мінімальна валідація:
+
+- Назва товару — обов’язкова, мінімум 3 символи
+
+- Опис — обов’язковий, мінімум 10 символів
+
+- Ціна — обов’язкова, число більше 0
+
+- Ціна зі знижкою — не може бути більшою за звичайну ціну
+
+- Категорія — обов’язкова
+
+- Бренд — обов’язковий
+
+- SKU — обов’язковий
+
+- Кількість на складі — число, не менше 0
+
+- URL зображення — має бути валідним посиланням
+
+Структура компонентів, яку бажано зробити:
+
+- App
+
+- ProductForm
+
+- ProductList
+
+- ProductCard
+
+- FormField або окремі дрібні компоненти для полів
+
+У компонентах, де є props, обов’язково використати PropTypes.
+
+Що перевіряється в цьому ДЗ:
+
+- Вміння працювати з hooks
+
+- Вміння будувати форми через Formik
+
+- Розбиття на компоненти
+
+- Передача даних через props
+
+- Робота з PropTypes
+
+- Робота зі списками та локальним state
+
+- Валідація і UX форми
+
+- Охайна верстка через React Bootstrap
+
+- Організація стилів через SCSS
+
+Буде плюсом:
+
+- Прев’ю зображення товару
+
+- Сортування створених товарів
+
+- Фільтр “тільки активні”
+
+- Збереження списку товарів у localStorage
+
+- Кнопка редагування товару
+
+- Винесення конфігурації полів у масив
+
+Технічні обмеження:
+
+- Не використовувати Redux
+
+- Не використовувати React Router
+
+- Не використовувати готові state-менеджери
+
+- Вся логіка має бути реалізована на React hooks
+
+Результат роботи:
+
+Після виконання ДЗ має бути готова сторінка адмінки, де можна створювати товари, переглядати їх у списку, змінювати стан і видаляти.
