@@ -17,6 +17,28 @@ function FormField({name, label, type="text", value, onChange, onBlur, error, to
         );
     }
 
+    if (type === 'textarea') {
+        return (
+            <Form.Group className="mb-3" key={name}>
+                <Form.Label htmlFor={name} column="sm">{label}</Form.Label>
+                <Form.Control
+                    as="textarea"
+                    rows={4}
+                    id={name}
+                    name={name}
+                    value={value}
+                    onChange={onChange}
+                    onBlur={onBlur}
+                />
+                {touched && error && (
+                    <Form.Text className="text-danger">
+                        {error}
+                    </Form.Text>
+                )}
+            </Form.Group>
+        );
+    }
+
     return (
         <Form.Group className="mb-3" key={name}>
             <Form.Label htmlFor={name} column="sm">{label}</Form.Label>
@@ -44,7 +66,8 @@ FormField.propTypes = {
     type: PropTypes.string,
     value: PropTypes.oneOfType([
         PropTypes.string,
-        PropTypes.number
+        PropTypes.number,
+        PropTypes.bool
     ]).isRequired,
     onChange: PropTypes.func.isRequired,
     onBlur: PropTypes.func.isRequired,

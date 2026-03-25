@@ -86,6 +86,7 @@ function ProductForm({onSubmit}) {
                 <FormField
                     name="description"
                     label="Description"
+                    type="textarea"
                     value={formik.values.description}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
@@ -209,8 +210,8 @@ function ProductForm({onSubmit}) {
                     error={formik.errors.featured}
                 />
                 <div className="d-flex justify-content-between">
-                <Button disabled={!formik.isValid} type='submit'>Submit</Button>
-                <Button type="reset" variant="secondary">Clear</Button>
+                <Button type='submit'>Add Product</Button>
+                <Button type="reset" variant="secondary" onClick={formik.resetForm}>Clear</Button>
                 </div>
             </Form>
         </div>
