@@ -1,9 +1,10 @@
 import ProductCard from "./ProductCard.jsx";
 import PropTypes from "prop-types";
+import '../scss/ProductList.scss'
 
 function ProductList({products, onDelete, onToggle}) {
     return (
-        <div>
+        <div className="cards__container">
             {products.map(product => (
             <ProductCard
                 key={product.id}

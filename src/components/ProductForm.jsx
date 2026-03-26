@@ -3,6 +3,7 @@ import * as Yup from 'yup';
 import {Form, Button} from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import FormField from './FormField.jsx';
+import '../scss/ProductForm.scss'
 
 function ProductForm({onSubmit}) {
 
@@ -20,7 +21,7 @@ function ProductForm({onSubmit}) {
             images: '',
             active: true,
             inStock: true,
-            featured: false,
+            showOnMain: false,
         },
         validationSchema: Yup.object({
             name: Yup.string()
@@ -71,7 +72,6 @@ function ProductForm({onSubmit}) {
     return (
         <div>
             <h3>Product Form</h3>
-            <hr/>
             <Form onSubmit={formik.handleSubmit}>
                 <FormField
                     name="name"
@@ -166,10 +166,17 @@ function ProductForm({onSubmit}) {
                     touched={formik.touched.image}
                     error={formik.errors.image}
                 />
+                {formik.values.image && (
+                    <img
+                        className="form__img"
+                        src={formik.values.image}
+                        alt="preview"
+                    />
+                )}
 
                 <FormField
                     name="images"
-                    label="Additional Images (comma separated)"
+                    label="Additional Images"
                     value={formik.values.images}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
@@ -203,11 +210,11 @@ function ProductForm({onSubmit}) {
                     name="featured"
                     label="Show on Homepage"
                     type="checkbox"
-                    value={formik.values.featured}
+                    value={formik.values.showOnMain}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
-                    touched={formik.touched.featured}
-                    error={formik.errors.featured}
+                    touched={formik.touched.showOnMain}
+                    error={formik.errors.showOnMain}
                 />
                 <div className="d-flex justify-content-between">
                 <Button type='submit'>Add Product</Button>
