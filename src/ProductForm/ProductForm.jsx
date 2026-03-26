@@ -25,6 +25,7 @@ function ProductForm({onSubmit, initialData}) {
             </h3>
             <Form onSubmit={formik.handleSubmit}>
                 {formFieldsConfig.map((field) => (
+                    <div key={field.name}>
                     <FormField
                         key={field.name}
                         name={field.name}
@@ -36,15 +37,17 @@ function ProductForm({onSubmit, initialData}) {
                         touched={formik.touched[field.name]}
                         error={formik.errors[field.name]}
                     />
+                        {field.name === 'image' && formik.values.image && (
+                            <div className="mb-3">
+                                <img
+                                    src={formik.values.image}
+                                    alt="Product Preview"
+                                    className="form__img-inline"
+                                />
+                            </div>
+                        )}
+                    </div>
                 ))}
-
-                {formik.values.image && (
-                    <img
-                        className="form__img"
-                        src={formik.values.image}
-                        alt="preview"
-                    />
-                )}
                 <div className="d-flex justify-content-between">
                 <Button type='submit' variant="success">
                     {initialData ? "Save Changes" : "Add Product"}
