@@ -1,8 +1,8 @@
 import {Button, Card} from "react-bootstrap";
 import PropTypes from "prop-types";
-import '../scss/ProductCard.scss'
+import './ProductCard.scss'
 
-function ProductCard({product, onDelete, onToggle}) {
+function ProductCard({product, onDelete, onToggle, onEdit}) {
     return (
         <Card  className={`card ${product.active ? 'card--active' : 'card--inactive'}`}>
             {product.image && (
@@ -18,16 +18,25 @@ function ProductCard({product, onDelete, onToggle}) {
                 <Card.Text className="card__text">SKU: {product.sku}</Card.Text>
                 <Card.Text className="card__text">Stock Quantity: {product.stock}</Card.Text>
                 <Card.Text className="card__text">In Stock: {product.inStock ? 'Yes' : 'No'}</Card.Text>
-                <Card.Text className="card__text">Show on Home Page: {product.featured ? 'Yes' : 'No'}</Card.Text>
+                <Card.Text className="card__text">Show on Home Page: {product.showOnMain ? 'Yes' : 'No'}</Card.Text>
                 <div className="card__btns">
                     <Button
                         className="card__btn-delete"
                         variant="danger"
+                        size="sm"
                         onClick={() => onDelete(product.id)}>Delete
+                    </Button>
+                    <Button
+                        variant="info"
+                        size="sm"
+                        onClick={() => onEdit(product)}
+                    >
+                        Edit
                     </Button>
                     <Button
                         className="card__btn-toggleActive"
                         variant={product.active ? 'warning' : 'success'}
+                        size="sm"
                         onClick={() => onToggle(product.id)}
                     >
                         {product.active ? 'Deactivate' : 'Activate'}
@@ -42,5 +51,6 @@ ProductCard.propTypes = {
     product: PropTypes.object.isRequired,
     onDelete: PropTypes.func.isRequired,
     onToggle: PropTypes.func.isRequired,
+    onEdit: PropTypes.func.isRequired,
 };
 export default ProductCard;

@@ -1,8 +1,8 @@
-import ProductCard from "./ProductCard.jsx";
+import ProductCard from "../ProductCard/ProductCard.jsx";
 import PropTypes from "prop-types";
-import '../scss/ProductList.scss'
+import './ProductList.scss'
 
-function ProductList({products, onDelete, onToggle}) {
+function ProductList({products, onDelete, onToggle, onEdit}) {
     return (
         <div className="cards__container">
             {products.map(product => (
@@ -11,6 +11,7 @@ function ProductList({products, onDelete, onToggle}) {
                 product={product}
                 onDelete={onDelete}
                 onToggle={onToggle}
+                onEdit={onEdit}
             />
         ))}
         </div>
@@ -21,6 +22,7 @@ ProductList.propTypes = {
     products: PropTypes.array.isRequired,
     onDelete: PropTypes.func.isRequired,
     onToggle: PropTypes.func.isRequired,
+    onEdit: PropTypes.func.isRequired,
 };
 
 export default ProductList;

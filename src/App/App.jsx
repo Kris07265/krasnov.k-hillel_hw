@@ -1,9 +1,10 @@
 import {Col, Container, Row} from "react-bootstrap";
-import ProductForm from "./components/ProductForm.jsx";
+import ProductForm from "../ProductForm/ProductForm.jsx";
 import {useEffect, useState} from "react";
-import ProductList from "./components/ProductList.jsx";
-import './scss/app.scss';
-import ProductFilter from "./components/ProductFilter.jsx";
+import ProductList from "../ProductList/ProductList.jsx";
+import './app.scss';
+import ProductFilter from "../ProductFilter/ProductFilter.jsx";
+import ProductEditModal from "../ProductEditModal/ProductEditModal.jsx";
 
 
 function App() {
@@ -12,12 +13,19 @@ function App() {
         return savedProducts ? JSON.parse(savedProducts) : [];
     });
 
+    const [editingProduct, setEditingProduct] = useState(null);
+
     useEffect(() => {
         localStorage.setItem('products', JSON.stringify(products));
     }, [products]);
 
-    const addProduct = (product) => {
-        setProducts(prev => [...prev, product]);
+    const handleSaveProduct = (productData) => {
+        if (editingProduct) {
+            setProducts(prev => prev.map(p => p.id === productData.id ? productData : p));
+            setEditingProduct(null);
+        } else {
+            setProducts(prev => [...prev, { ...productData, id: crypto.randomUUID() }]);
+        }
     };
 
     const deleteProduct = (id) => {
@@ -42,7 +50,7 @@ function App() {
         setFilterType(type);
     };
 
-    const processedProducts = [...products]
+    const sortedAndFilteredProducts = [...products]
         .filter(p => filterType === "all" ? true : p.active)
         .sort((a, b) => {
             return sortType === "asc"
@@ -54,7 +62,7 @@ function App() {
             <Container>
                 <Row>
                     <Col xs={4}>
-                        <ProductForm onSubmit={addProduct} />
+                        <ProductForm onSubmit={handleSaveProduct} />
                     </Col>
                     <Col xs={8}>
                         <ProductFilter
@@ -63,13 +71,22 @@ function App() {
                             toggleFilter={toggleFilter}
                         />
                         <ProductList
-                            products={processedProducts}
+                            products={sortedAndFilteredProducts}
                             onDelete={deleteProduct}
                             onToggle={toggleActive}
+                            onEdit={setEditingProduct}
                         />
                     </Col>
                 </Row>
             </Container>
+
+            {editingProduct && (
+                <ProductEditModal
+                    product={editingProduct}
+                    onClose={() => setEditingProduct(null)}
+                    onSave={handleSaveProduct}
+                />
+            )}
         </div>
     )
 }
