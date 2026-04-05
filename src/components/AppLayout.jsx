@@ -1,7 +1,7 @@
-import AppNavbar from "../components/AppNavbar.jsx";
+import AppNavbar from "./AppNavbar.jsx";
 import {Container} from "react-bootstrap";
 
-const MainLayout = ({children}) => {
+const AppLayout = ({children}) => {
     return (
         <>
         <AppNavbar/>
@@ -12,4 +12,4 @@ const MainLayout = ({children}) => {
     )
 }
 
-export default MainLayout;
+export default AppLayout;

@@ -1,5 +1,5 @@
 import {BrowserRouter as Router, Navigate, Route, Routes} from "react-router-dom";
-import MainLayout from "../MainLayout/MainLayout.jsx";
+import AppLayout from "../components/AppLayout.jsx";
 import UsersListPage from "../pages/UsersListPage.jsx";
 import UserDetailsPage from "../pages/UserDetailsPage.jsx";
 import CreateUserPage from "../pages/CreateUserPage.jsx";
@@ -9,7 +9,7 @@ import NotFoundPage from "../pages/NotFoundPage.jsx";
 const AppRoutes = () => {
     return (
         <Router>
-            <MainLayout>
+            <AppLayout>
             <Routes>
                 <Route path="/" element={<Navigate to="/users" replace />} />
                 <Route path="/users" element={<UsersListPage/>} />
@@ -18,7 +18,7 @@ const AppRoutes = () => {
                 <Route path="/users/:id/edit" element={<EditUserPage/>} />
                 <Route path="*" element={<NotFoundPage/>} />
             </Routes>
-            </MainLayout>
+            </AppLayout>
         </Router>
     )
 }
