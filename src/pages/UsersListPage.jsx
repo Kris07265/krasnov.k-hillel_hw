@@ -1,7 +1,8 @@
 import {useEffect, useState} from "react";
 import {deleteUser, getUsers} from "../api/usersApi.js";
-import {Alert, Container, Spinner} from "react-bootstrap";
+import {Alert, Container} from "react-bootstrap";
 import UsersTable from "../components/UsersTable.jsx";
+import Loader from "../components/Loader.jsx";
 
 const UsersListPage = () => {
     const [users, setUsers] = useState([]);
@@ -15,8 +16,8 @@ const UsersListPage = () => {
                 const data = await getUsers();
                 setUsers(data);
                 setError(null);
-            } catch (err) {
-                setError(err);
+            } catch (error) {
+                setError(error);
             } finally {
                 setLoading(false);
             }
@@ -29,24 +30,20 @@ const UsersListPage = () => {
                 setLoading(true);
                 await deleteUser(id);
                 setUsers(users.filter(user => user.id !== id));
-            } catch (err) {
-                setError(err)
+            } catch (error) {
+                setError(error)
             } finally {
                 setLoading(false);
             }
     };
 
     if (loading) {
-        return (
-            <div className="d-flex justify-content-center mt-5">
-                <Spinner animation="border" variant="primary" />
-            </div>
-        );
+        return <Loader/>;
     }
     return (
         <Container>
             <h1>Users Manager</h1>
-            {error && <Alert variant="danger">{error}</Alert>}
+            {error && <ErrorMessage error = {error}/>}
             <UsersTable users={users} onDelete={handleDelete} />
         </Container>
     )
