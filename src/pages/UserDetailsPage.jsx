@@ -2,8 +2,9 @@ import {useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {getUserById} from "../api/usersApi.js";
 import Loader from "../components/Loader.jsx";
-import {Alert, Button, Card, Container, ListGroup} from "react-bootstrap";
+import {Button, Card, Container, ListGroup} from "react-bootstrap";
 import {Link} from "react-router-dom";
+import ErrorMessage from "../components/ErrorMessage.jsx";
 
 const UserDetailsPage = () => {
     const {id} = useParams()
@@ -37,7 +38,7 @@ const UserDetailsPage = () => {
                     ← Back to List
                 </Button>
             </div>
-        {error && <ErrorMessage error = {error}/>}
+        {error ? <ErrorMessage error = {error} onClose={() => setError(null)}/> : null}
         <Card style={{ width: '18rem' }}>
             <Card.Header as="h5">{user.name}</Card.Header>
             <ListGroup variant="flush">

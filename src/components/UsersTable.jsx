@@ -39,7 +39,7 @@ const UsersTable = ({ users, onDelete }) => {
                             </Button>
                             <Button
                                 variant="outline-danger"
-                                onClick={() => onDelete(user.id)}
+                                onClick={() => onDelete(user)}
                             >
                                 Delete
                             </Button>

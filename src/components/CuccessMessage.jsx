@@ -1,7 +1,7 @@
 import {Toast, ToastContainer} from "react-bootstrap";
 
-const ErrorMessage = ({error, onClose}) => {
-    if (!error) return null;
+const SuccessMessage = ({success, onClose}) => {
+    if (!success) return null;
     return (
         <ToastContainer
             position="bottom-end"
@@ -9,22 +9,22 @@ const ErrorMessage = ({error, onClose}) => {
             style={{position: 'fixed' }}
         >
             <Toast
-                show={!!error}
+                show={!!success}
                 onClose={onClose}
-                bg="danger"
+                bg="success"
                 autohide
                 delay={5000}
             >
                 <Toast.Header closeButton={true}>
-                    <strong className="me-auto">System Error</strong>
+                    <strong className="me-auto">Success</strong>
                     <small>Now</small>
                 </Toast.Header>
                 <Toast.Body className="text-white">
-                    {error.message}
+                    {success}
                 </Toast.Body>
             </Toast>
         </ToastContainer>
     );
 }
 
-export default ErrorMessage
+export default SuccessMessage;

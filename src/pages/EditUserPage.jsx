@@ -4,12 +4,15 @@ import {useEffect, useState} from "react";
 import Loader from "../components/Loader.jsx";
 import {Container} from "react-bootstrap";
 import UserForm from "../components/UserForm.jsx";
+import ErrorMessage from "../components/ErrorMessage.jsx";
+import SuccessMessage from "../components/CuccessMessage.jsx";
 
 const EditUserPage = () => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
     const navigate = useNavigate();
+    const [isUpdated, setIsUpdated] = useState(null);
     const {id} = useParams();
 
     useEffect(() => {
@@ -46,8 +49,11 @@ const EditUserPage = () => {
         try {
             setLoading(true);
             await updateUser(id, values);
-            navigate('/users');
             setError(null);
+            setIsUpdated("User successfully updated!");
+            setTimeout(() => {
+                navigate('/users');
+            }, 2000);
         } catch (error) {
             setError(error);
         } finally {
@@ -60,13 +66,14 @@ const EditUserPage = () => {
     return (
         <Container>
             <h1 className="my-4">Edit User {user?.name || ''}</h1>
-            {error && <ErrorMessage error = {error}/>}
-            {user && (
+            {error ? <ErrorMessage error = {error} onClose={() => setError(null)}/> : null}
+            {isUpdated ? <SuccessMessage success={isUpdated} onClose={() => setIsUpdated(null)}/> : null}
+            {user ? (
                 <UserForm
                     initialData={formatData(user)}
                     onSubmit={handleUpdate}
                 />
-            )}
+            ) : null}
         </Container>
     );
 }
