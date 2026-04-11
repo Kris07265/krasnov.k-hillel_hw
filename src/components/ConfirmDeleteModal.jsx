@@ -1,4 +1,5 @@
 import {Modal, Button} from "react-bootstrap";
+import PropTypes from "prop-types";
 
 const ConfirmDeleteModal = ({show, handleClose, handleDelete, userName}) => {
     return (
@@ -18,5 +19,12 @@ const ConfirmDeleteModal = ({show, handleClose, handleDelete, userName}) => {
         </Modal>
     );
 }
+
+ConfirmDeleteModal.propTypes = {
+    show: PropTypes.bool.isRequired,
+    handleClose: PropTypes.func.isRequired,
+    handleDelete: PropTypes.func.isRequired,
+    userName: PropTypes.string,
+};
 
 export default ConfirmDeleteModal;

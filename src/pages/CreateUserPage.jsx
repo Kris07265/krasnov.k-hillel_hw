@@ -1,31 +1,28 @@
 import {Link, useNavigate} from "react-router-dom";
-import {createUser} from "../api/usersApi.js";
-import {useState} from "react";
 import {Button, Container} from "react-bootstrap";
 import UserForm from "../components/UserForm.jsx";
 import Loader from "../components/Loader.jsx";
 import ErrorMessage from "../components/ErrorMessage.jsx";
 import SuccessMessage from "../components/SuccessMessage.jsx";
+import useUsers from "../hooks/useUsers.js";
 
 const CreateUserPage = () => {
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(null);
     const navigate = useNavigate();
-    const [isCreated, setIsCreated] = useState(null);
+    const {
+        saveUser,
+        loading,
+        error,
+        setError,
+        isCreated,
+        setIsCreated,
+    } = useUsers();
 
     const handleCreate = async (values) => {
-        try {
-            setLoading(true);
-            await createUser(values);
-            setError(null);
-            setIsCreated("User successfully created!");
+        const savedUser = await saveUser(values);
+        if (savedUser) {
             setTimeout(() => {
                 navigate('/users');
             }, 2000);
-        } catch (error) {
-            setError(error);
-        } finally {
-            setLoading(false);
         }
     }
 

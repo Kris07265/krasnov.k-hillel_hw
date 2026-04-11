@@ -1,35 +1,29 @@
 import {Link, useNavigate, useParams} from "react-router-dom";
-import {getUserById, updateUser} from "../api/usersApi.js";
-import {useEffect, useState} from "react";
+import {useEffect} from "react";
 import Loader from "../components/Loader.jsx";
 import {Button, Container} from "react-bootstrap";
 import UserForm from "../components/UserForm.jsx";
 import ErrorMessage from "../components/ErrorMessage.jsx";
 import SuccessMessage from "../components/SuccessMessage.jsx";
+import useUsers from "../hooks/useUsers.js";
 
 const EditUserPage = () => {
-    const [user, setUser] = useState(null);
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(null);
     const navigate = useNavigate();
-    const [isUpdated, setIsUpdated] = useState(null);
     const {id} = useParams();
+    const {
+        user,
+        fetchUser,
+        saveUser,
+        loading,
+        error,
+        setError,
+        isUpdated,
+        setIsUpdated
+    } = useUsers();
 
     useEffect(() => {
-        const fetchUser = async () => {
-            try {
-                setLoading(true);
-                const user = await getUserById(id);
-                setUser(user);
-                setError(null);
-            } catch (error) {
-                setError(error);
-            } finally {
-                setLoading(false);
-            }
-        }
-        fetchUser();
-    }, [id])
+        fetchUser(id);
+    }, [id, fetchUser]);
 
     const formatData = (userData) => {
         if (!userData) return null;
@@ -46,18 +40,11 @@ const EditUserPage = () => {
     };
 
     const handleUpdate = async (values) => {
-        try {
-            setLoading(true);
-            await updateUser(id, values);
-            setError(null);
-            setIsUpdated("User successfully updated!");
+        const success = await saveUser(values, id);
+        if (success) {
             setTimeout(() => {
                 navigate('/users');
             }, 2000);
-        } catch (error) {
-            setError(error);
-        } finally {
-            setLoading(false);
         }
     }
 

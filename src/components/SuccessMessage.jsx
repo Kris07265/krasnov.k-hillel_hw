@@ -1,4 +1,5 @@
 import {Toast, ToastContainer} from "react-bootstrap";
+import PropTypes from "prop-types";
 
 const SuccessMessage = ({success, onClose}) => {
     if (!success) return null;
@@ -26,5 +27,10 @@ const SuccessMessage = ({success, onClose}) => {
         </ToastContainer>
     );
 }
+
+SuccessMessage.propTypes = {
+    success: PropTypes.string,
+    onClose: PropTypes.func.isRequired,
+};
 
 export default SuccessMessage;

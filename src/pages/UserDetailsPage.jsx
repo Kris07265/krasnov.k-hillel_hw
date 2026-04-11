@@ -1,32 +1,24 @@
 import {useParams} from "react-router-dom";
-import {useEffect, useState} from "react";
-import {getUserById} from "../api/usersApi.js";
+import {useEffect} from "react";
 import Loader from "../components/Loader.jsx";
 import {Button, Card, Col, Container, ListGroup, Row} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import ErrorMessage from "../components/ErrorMessage.jsx";
+import useUsers from "../hooks/useUsers.js";
 
 const UserDetailsPage = () => {
     const {id} = useParams()
-    const [user, setUser] = useState({});
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+    const {
+        user,
+        fetchUser,
+        loading,
+        error,
+        setError,
+    } = useUsers();
 
     useEffect(() => {
-        const fetchUser = async () => {
-            try {
-                setLoading(true);
-                const user = await getUserById(id);
-                setUser(user);
-                setError(null);
-            } catch (error) {
-                setError(error);
-            } finally {
-                setLoading(false);
-            }
-        }
-        fetchUser();
-    }, [id])
+        fetchUser(id);
+    }, [id, fetchUser]);
 
     if (loading) {
         return <Loader/>
@@ -43,28 +35,28 @@ const UserDetailsPage = () => {
                     {error ? <ErrorMessage error = {error} onClose={() => setError(null)}/> : null}
                     <Card className="shadow-sm">
                         <Card.Header as="h5" className="text-center">
-                            User Profile: {user.name}
+                            User Profile: {user?.name}
                         </Card.Header>
                         <ListGroup variant="flush">
                             <ListGroup.Item>
-                                <strong>Username:</strong> {user.username}
+                                <strong>Username:</strong> {user?.username}
                             </ListGroup.Item>
                             <ListGroup.Item>
-                                <strong>Email:</strong> {user.email}
+                                <strong>Email:</strong> {user?.email}
                             </ListGroup.Item>
                             <ListGroup.Item>
-                                <strong>Phone:</strong> {user.phone}
+                                <strong>Phone:</strong> {user?.phone}
                             </ListGroup.Item>
                             <ListGroup.Item>
-                                <strong>Website:</strong> {user.website}
+                                <strong>Website:</strong> {user?.website}
                             </ListGroup.Item>
                             <ListGroup.Item className="bg-light">
-                                <strong>Company:</strong> {user.company?.name}
+                                <strong>Company:</strong> {user?.company?.name}
                             </ListGroup.Item>
                             <ListGroup.Item>
                                 <strong>Address:</strong>
                                 <div className="text-muted small">
-                                    {user.address?.street}, {user.address?.city}
+                                    {user?.address?.street}, {user?.address?.city}
                                 </div>
                             </ListGroup.Item>
                         </ListGroup>

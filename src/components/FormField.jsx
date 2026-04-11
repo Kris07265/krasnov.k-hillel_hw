@@ -1,4 +1,5 @@
 import {Form} from 'react-bootstrap';
+import PropTypes from "prop-types";
 
 function FormField({name, label, type="text", value, onChange, onBlur, error, touched}) {
 
@@ -23,5 +24,16 @@ function FormField({name, label, type="text", value, onChange, onBlur, error, to
         </Form.Group>
     )
 }
+
+FormField.propTypes = {
+    name: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    type: PropTypes.string,
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    onChange: PropTypes.func.isRequired,
+    onBlur: PropTypes.func.isRequired,
+    error: PropTypes.string,
+    touched: PropTypes.bool,
+};
 
 export default FormField;

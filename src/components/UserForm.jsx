@@ -3,6 +3,7 @@ import {userSchema} from "../validation/userSchema.js";
 import {useEffect} from "react";
 import {Button, Form} from "react-bootstrap";
 import FormField from "./FormField.jsx";
+import PropTypes from "prop-types";
 
 const UserForm = ({onSubmit, initialData = null}) => {
     const formik = useFormik({
@@ -121,5 +122,19 @@ const UserForm = ({onSubmit, initialData = null}) => {
         </Form>
     )
 }
+
+UserForm.propTypes = {
+    onSubmit: PropTypes.func.isRequired,
+    initialData: PropTypes.shape({
+        name: PropTypes.string,
+        username: PropTypes.string,
+        email: PropTypes.string,
+        phone: PropTypes.string,
+        website: PropTypes.string,
+        companyName: PropTypes.string,
+        city: PropTypes.string,
+        street: PropTypes.string,
+    }),
+};
 
 export default UserForm

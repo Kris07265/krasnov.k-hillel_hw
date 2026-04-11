@@ -58,7 +58,7 @@ const UsersTable = ({ users, onDelete }) => {
 UsersTable.propTypes = {
     users: PropTypes.arrayOf(
         PropTypes.shape({
-            id: PropTypes.number.isRequired,
+            id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
             name: PropTypes.string.isRequired,
             email: PropTypes.string.isRequired,
             phone: PropTypes.string.isRequired,

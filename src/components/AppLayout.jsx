@@ -1,5 +1,6 @@
 import AppNavbar from "./AppNavbar.jsx";
 import {Container} from "react-bootstrap";
+import PropTypes from "prop-types";
 
 const AppLayout = ({children}) => {
     return (
@@ -11,5 +12,9 @@ const AppLayout = ({children}) => {
         </>
     )
 }
+
+AppLayout.propTypes = {
+    children: PropTypes.node.isRequired,
+};
 
 export default AppLayout;

@@ -1,4 +1,5 @@
 import {Navigate, useLocation} from "react-router-dom";
+import PropTypes from "prop-types";
 
 const ProtectedRoute = ({children}) => {
     const token = localStorage.getItem("token");
@@ -10,5 +11,8 @@ const ProtectedRoute = ({children}) => {
 
     return children;
 }
+ProtectedRoute.propTypes = {
+    children: PropTypes.node.isRequired,
+};
 
 export default ProtectedRoute

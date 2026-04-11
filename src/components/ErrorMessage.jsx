@@ -1,4 +1,5 @@
 import {Toast, ToastContainer} from "react-bootstrap";
+import PropTypes from "prop-types";
 
 const ErrorMessage = ({error, onClose}) => {
     if (!error) return null;
@@ -26,5 +27,12 @@ const ErrorMessage = ({error, onClose}) => {
         </ToastContainer>
     );
 }
+
+ErrorMessage.propTypes = {
+    error: PropTypes.shape({
+        message: PropTypes.string,
+    }),
+    onClose: PropTypes.func.isRequired,
+};
 
 export default ErrorMessage
