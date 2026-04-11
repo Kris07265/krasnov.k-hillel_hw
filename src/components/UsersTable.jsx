@@ -4,44 +4,47 @@ import PropTypes from 'prop-types';
 
 const UsersTable = ({ users, onDelete }) => {
     return (
-        <Table striped bordered hover responsive>
+        <Table striped bordered hover responsive="md">
             <thead>
             <tr>
                 <th>Name</th>
-                <th>Email</th>
-                <th>Phone</th>
-                <th>Website</th>
-                <th>Actions</th>
+                <th className="d-none d-sm-table-cell">Email</th>
+                <th className="d-none d-md-table-cell">Phone</th>
+                <th className="d-none d-lg-table-cell">Website</th>
+                <th className="text-center">Actions</th>
             </tr>
             </thead>
             <tbody>
             {users.map((user) => (
                 <tr key={user.id}>
                     <td>{user.name}</td>
-                    <td>{user.email}</td>
-                    <td>{user.phone}</td>
-                    <td>{user.website}</td>
-                    <td>
+                    <td className="d-none d-sm-table-cell">{user.email}</td>
+                    <td className="d-none d-md-table-cell">{user.phone}</td>
+                    <td className="d-none d-lg-table-cell">{user.website}</td>
+                    <td className="text-center">
                         <ButtonGroup size="sm">
                             <Button
                                 as={Link}
                                 to={`/users/${user.id}`}
                                 variant="outline-primary"
+                                title="View details"
                             >
-                                View
+                                <i className="bi bi-eye"></i>
                             </Button>
                             <Button
                                 as={Link}
                                 to={`/users/${user.id}/edit`}
                                 variant="outline-secondary"
+                                title="Edit user"
                             >
-                                Edit
+                                <i className="bi bi-pencil"></i>
                             </Button>
                             <Button
                                 variant="outline-danger"
                                 onClick={() => onDelete(user)}
+                                title="Delete user"
                             >
-                                Delete
+                                <i className="bi bi-trash"></i>
                             </Button>
                         </ButtonGroup>
                     </td>

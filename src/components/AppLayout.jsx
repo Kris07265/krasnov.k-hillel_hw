@@ -5,7 +5,7 @@ const AppLayout = ({children}) => {
     return (
         <>
         <AppNavbar/>
-        <Container className="mt-4">
+        <Container className="my-4">
             {children}
         </Container>
         </>

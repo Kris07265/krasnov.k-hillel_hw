@@ -1,11 +1,11 @@
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {createUser} from "../api/usersApi.js";
 import {useState} from "react";
-import {Container} from "react-bootstrap";
+import {Button, Container} from "react-bootstrap";
 import UserForm from "../components/UserForm.jsx";
 import Loader from "../components/Loader.jsx";
 import ErrorMessage from "../components/ErrorMessage.jsx";
-import SuccessMessage from "../components/CuccessMessage.jsx";
+import SuccessMessage from "../components/SuccessMessage.jsx";
 
 const CreateUserPage = () => {
     const [loading, setLoading] = useState(false);
@@ -35,6 +35,11 @@ const CreateUserPage = () => {
 
     return (
         <Container>
+            <div className="mb-3">
+                <Button as={Link} to="/users" variant="primary" size="sm">
+                    ← Back to List
+                </Button>
+            </div>
             {error ? <ErrorMessage error = {error} onClose={() => setError(null)}/> : null}
             {isCreated ? <SuccessMessage success={isCreated} onClose={() => setIsCreated(null)}/> : null}
             <h1 className="my-4">Create New User</h1>

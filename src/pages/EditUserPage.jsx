@@ -1,11 +1,11 @@
-import {useNavigate, useParams} from "react-router-dom";
+import {Link, useNavigate, useParams} from "react-router-dom";
 import {getUserById, updateUser} from "../api/usersApi.js";
 import {useEffect, useState} from "react";
 import Loader from "../components/Loader.jsx";
-import {Container} from "react-bootstrap";
+import {Button, Container} from "react-bootstrap";
 import UserForm from "../components/UserForm.jsx";
 import ErrorMessage from "../components/ErrorMessage.jsx";
-import SuccessMessage from "../components/CuccessMessage.jsx";
+import SuccessMessage from "../components/SuccessMessage.jsx";
 
 const EditUserPage = () => {
     const [user, setUser] = useState(null);
@@ -19,8 +19,8 @@ const EditUserPage = () => {
         const fetchUser = async () => {
             try {
                 setLoading(true);
-                const user = await getUserById(id)
-                setUser(user)
+                const user = await getUserById(id);
+                setUser(user);
                 setError(null);
             } catch (error) {
                 setError(error);
@@ -65,9 +65,14 @@ const EditUserPage = () => {
 
     return (
         <Container>
-            <h1 className="my-4">Edit User {user?.name || ''}</h1>
+            <div className="mb-3">
+                <Button as={Link} to="/users" variant="primary" size="sm">
+                    ← Back to List
+                </Button>
+            </div>
             {error ? <ErrorMessage error = {error} onClose={() => setError(null)}/> : null}
             {isUpdated ? <SuccessMessage success={isUpdated} onClose={() => setIsUpdated(null)}/> : null}
+            <h1 className="my-4">Edit User {user?.name || ''}</h1>
             {user ? (
                 <UserForm
                     initialData={formatData(user)}

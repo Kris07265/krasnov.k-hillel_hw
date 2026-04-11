@@ -5,7 +5,7 @@ import UsersTable from "../components/UsersTable.jsx";
 import Loader from "../components/Loader.jsx";
 import ConfirmDeleteModal from "../components/ConfirmDeleteModal.jsx";
 import ErrorMessage from "../components/ErrorMessage.jsx";
-import SuccessMessage from "../components/CuccessMessage.jsx";
+import SuccessMessage from "../components/SuccessMessage.jsx";
 
 const UsersListPage = () => {
     const [users, setUsers] = useState([]);
