@@ -2,7 +2,7 @@ import {Navbar, Nav, Container} from "react-bootstrap";
 import {Link} from "react-router-dom";
 const AppNavbar = () => {
     return (
-        <Navbar expand="lg" className="bg-body-tertiary">
+        <Navbar bg="dark" data-bs-theme="dark" expand="lg">
             <Container>
                 <Navbar.Brand as={Link} to={"/"}>Users Manager</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />

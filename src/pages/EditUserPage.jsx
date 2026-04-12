@@ -25,7 +25,7 @@ const EditUserPage = () => {
         fetchUser(id);
     }, [id, fetchUser]);
 
-    const formatData = (userData) => {
+    const formData = (userData) => {
         if (!userData) return null;
         return {
             name: userData.name || '',
@@ -62,7 +62,7 @@ const EditUserPage = () => {
             <h1 className="my-4">Edit User {user?.name || ''}</h1>
             {user ? (
                 <UserForm
-                    initialData={formatData(user)}
+                    initialData={formData(user)}
                     onSubmit={handleUpdate}
                 />
             ) : null}
