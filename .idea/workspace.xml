@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="bcb53deb-8a75-4733-855f-4b8cd9fc4055" name="Changes" comment="started hw 47" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="SCSS File" />
+        <option value="JSX File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Kris07265&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Kris07265/krasnov.k-hillel_hw.git&quot;,
+    &quot;accountId&quot;: &quot;0ab13a64-565c-4502-845f-64885404f01f&quot;
+  }
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="3AW9LMzy7jPfNv1Fy7aUL4Co4IM" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "hw__47",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "C:/Users/PC/OneDrive/Desktop/krasnov.k-hillel_hw",
+    "list.type.of.created.stylesheet": "SCSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "to.speed.mode.migration.done": "true",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2025.2.4\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\PC\OneDrive\Desktop\krasnov.k-hillel_hw\src\components" />
+      <recent name="C:\Users\PC\OneDrive\Desktop\krasnov.k-hillel_hw\src\ProductList" />
+      <recent name="C:\Users\PC\OneDrive\Desktop\krasnov.k-hillel_hw\src\ProductForm" />
+      <recent name="C:\Users\PC\OneDrive\Desktop\krasnov.k-hillel_hw\src\ProductCard" />
+      <recent name="C:\Users\PC\OneDrive\Desktop\krasnov.k-hillel_hw\src\ProductFilter" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-WS-252.27397.92" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bcb53deb-8a75-4733-855f-4b8cd9fc4055" name="Changes" comment="" />
+      <created>1772697406183</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1772697406183</updated>
+      <workItem from="1772697407344" duration="38000" />
+      <workItem from="1772733534948" duration="5500000" />
+      <workItem from="1772739137780" duration="115000" />
+      <workItem from="1772816986807" duration="1313000" />
+      <workItem from="1772882344276" duration="19099000" />
+      <workItem from="1772987388168" duration="9166000" />
+      <workItem from="1773083230638" duration="7341000" />
+      <workItem from="1773158611679" duration="8778000" />
+      <workItem from="1773168095739" duration="135000" />
+      <workItem from="1773249505245" duration="7495000" />
+      <workItem from="1773303938617" duration="10711000" />
+      <workItem from="1773482054405" duration="10970000" />
+      <workItem from="1773586892729" duration="9952000" />
+      <workItem from="1773686958973" duration="3030000" />
+      <workItem from="1773760427969" duration="1452000" />
+      <workItem from="1773770522971" duration="1804000" />
+      <workItem from="1774246111103" duration="3909000" />
+      <workItem from="1774332087320" duration="14105000" />
+      <workItem from="1774455161757" duration="4862000" />
+      <workItem from="1774505004622" duration="29349000" />
+      <workItem from="1775393701440" duration="8899000" />
+      <workItem from="1775663003412" duration="8936000" />
+      <workItem from="1775677814498" duration="46000" />
+      <workItem from="1775754430771" duration="9086000" />
+      <workItem from="1775844996992" duration="464000" />
+      <workItem from="1775898512430" duration="29857000" />
+      <workItem from="1775931364060" duration="51000" />
+      <workItem from="1775982414190" duration="157000" />
+      <workItem from="1776017537769" duration="3877000" />
+      <workItem from="1776874127768" duration="1675000" />
+    </task>
+    <task id="LOCAL-00001" summary="Started hw 38">
+      <option name="closed" value="true" />
+      <created>1772733609772</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1772733609772</updated>
+    </task>
+    <task id="LOCAL-00002" summary="finished hw 38">
+      <option name="closed" value="true" />
+      <created>1772735442583</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1772735442583</updated>
+    </task>
+    <task id="LOCAL-00003" summary="fixed README.md">
+      <option name="closed" value="true" />
+      <created>1772735584238</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1772735584238</updated>
+    </task>
+    <task id="LOCAL-00004" summary="started hw 39">
+      <option name="closed" value="true" />
+      <created>1772736050251</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1772736050251</updated>
+    </task>
+    <task id="LOCAL-00005" summary="finished hw 39">
+      <option name="closed" value="true" />
+      <created>1772739030252</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1772739030252</updated>
+    </task>
+    <task id="LOCAL-00006" summary="fixed README.md">
+      <option name="closed" value="true" />
+      <created>1772739201481</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1772739201481</updated>
+    </task>
+    <task id="LOCAL-00007" summary="created Model.js">
+      <option name="closed" value="true" />
+      <created>1772890240802</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1772890240802</updated>
+    </task>
+    <task id="LOCAL-00008" summary="created modals">
+      <option name="closed" value="true" />
+      <created>1772910131219</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1772910131219</updated>
+    </task>
+    <task id="LOCAL-00009" summary="created View.js">
+      <option name="closed" value="true" />
+      <created>1772917589832</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1772917589832</updated>
+    </task>
+    <task id="LOCAL-00010" summary="created some functions in Controller.js">
+      <option name="closed" value="true" />
+      <created>1772996777161</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1772996777161</updated>
+    </task>
+    <task id="LOCAL-00011" summary="started hw 40">
+      <option name="closed" value="true" />
+      <created>1773083386958</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1773083386958</updated>
+    </task>
+    <task id="LOCAL-00012" summary="started hw 40">
+      <option name="closed" value="true" />
+      <created>1773090701194</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1773090701194</updated>
+    </task>
+    <task id="LOCAL-00013" summary="finished hw 40">
+      <option name="closed" value="true" />
+      <created>1773167350217</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1773167350217</updated>
+    </task>
+    <task id="LOCAL-00014" summary="fixed README.md">
+      <option name="closed" value="true" />
+      <created>1773168217183</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1773168217183</updated>
+    </task>
+    <task id="LOCAL-00015" summary="deleted extra file">
+      <option name="closed" value="true" />
+      <created>1773249637055</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1773249637055</updated>
+    </task>
+    <task id="LOCAL-00016" summary="created Controller.js">
+      <option name="closed" value="true" />
+      <created>1773256966492</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1773256966492</updated>
+    </task>
+    <task id="LOCAL-00017" summary="renamed files and create api.js">
+      <option name="closed" value="true" />
+      <created>1773304843260</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1773304843260</updated>
+    </task>
+    <task id="LOCAL-00018" summary="created filter and sort by name">
+      <option name="closed" value="true" />
+      <created>1773330391208</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1773330391208</updated>
+    </task>
+    <task id="LOCAL-00019" summary="created pagination">
+      <option name="closed" value="true" />
+      <created>1773491709919</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1773491709919</updated>
+    </task>
+    <task id="LOCAL-00020" summary="started hw 42">
+      <option name="closed" value="true" />
+      <created>1773587001484</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1773587001484</updated>
+    </task>
+    <task id="LOCAL-00021" summary="finished hw 42">
+      <option name="closed" value="true" />
+      <created>1773593733508</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1773593733508</updated>
+    </task>
+    <task id="LOCAL-00022" summary="started hw 43">
+      <option name="closed" value="true" />
+      <created>1773594188722</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1773594188723</updated>
+    </task>
+    <task id="LOCAL-00023" summary="finished hw 43">
+      <option name="closed" value="true" />
+      <created>1773596564572</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1773596564572</updated>
+    </task>
+    <task id="LOCAL-00024" summary="fixed README.md and index.html">
+      <option name="closed" value="true" />
+      <created>1773596776613</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1773596776613</updated>
+    </task>
+    <task id="LOCAL-00025" summary="started hw 44">
+      <option name="closed" value="true" />
+      <created>1773687123334</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1773687123334</updated>
+    </task>
+    <task id="LOCAL-00026" summary="finished hw 44">
+      <option name="closed" value="true" />
+      <created>1773690374095</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1773690374095</updated>
+    </task>
+    <task id="LOCAL-00027" summary="started hw 45">
+      <option name="closed" value="true" />
+      <created>1774252119665</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1774252119665</updated>
+    </task>
+    <task id="LOCAL-00028" summary="started hw 45">
+      <option name="closed" value="true" />
+      <created>1774252819968</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1774252819968</updated>
+    </task>
+    <task id="LOCAL-00029" summary="started hw 45">
+      <option name="closed" value="true" />
+      <created>1774253417005</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1774253417005</updated>
+    </task>
+    <task id="LOCAL-00030" summary="created Form">
+      <option name="closed" value="true" />
+      <created>1774373629116</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1774373629116</updated>
+    </task>
+    <task id="LOCAL-00031" summary="created Card and List">
+      <option name="closed" value="true" />
+      <created>1774460041044</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1774460041044</updated>
+    </task>
+    <task id="LOCAL-00032" summary="created scss files and filter">
+      <option name="closed" value="true" />
+      <created>1774547803317</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1774547803317</updated>
+    </task>
+    <task id="LOCAL-00033" summary="created editing card">
+      <option name="closed" value="true" />
+      <created>1774558604400</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1774558604400</updated>
+    </task>
+    <task id="LOCAL-00034" summary="fixed error in form img">
+      <option name="closed" value="true" />
+      <created>1774559085676</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1774559085676</updated>
+    </task>
+    <task id="LOCAL-00035" summary="started hw 46">
+      <option name="closed" value="true" />
+      <created>1775394137309</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1775394137309</updated>
+    </task>
+    <task id="LOCAL-00036" summary="started hw 46">
+      <option name="closed" value="true" />
+      <created>1775394710192</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1775394710192</updated>
+    </task>
+    <task id="LOCAL-00037" summary="created files, routes">
+      <option name="closed" value="true" />
+      <created>1775398490878</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1775398490878</updated>
+    </task>
+    <task id="LOCAL-00038" summary="created api, usersList">
+      <option name="closed" value="true" />
+      <created>1775402505154</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1775402505154</updated>
+    </task>
+    <task id="LOCAL-00039" summary="created UserDetails, UserForm">
+      <option name="closed" value="true" />
+      <created>1775672000317</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1775672000317</updated>
+    </task>
+    <task id="LOCAL-00040" summary="created ConfirmDeleteModal, Error and Success Message">
+      <option name="closed" value="true" />
+      <created>1775763925802</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1775763925802</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Add responsiveness">
+      <option name="closed" value="true" />
+      <created>1775902197209</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1775902197209</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Add filters, pagination">
+      <option name="closed" value="true" />
+      <created>1775912262860</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1775912262860</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Add LoginPage and NotFoundPage">
+      <option name="closed" value="true" />
+      <created>1775918419609</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1775918419609</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Add useUsers.js and propTypes">
+      <option name="closed" value="true" />
+      <created>1775930564261</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1775930564262</updated>
+    </task>
+    <task id="LOCAL-00045" summary="corrected UserForm.jsx">
+      <option name="closed" value="true" />
+      <created>1775931068010</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1775931068010</updated>
+    </task>
+    <task id="LOCAL-00046" summary="corrected project">
+      <option name="closed" value="true" />
+      <created>1776021835814</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1776021835814</updated>
+    </task>
+    <task id="LOCAL-00047" summary="started hw 47">
+      <option name="closed" value="true" />
+      <created>1776874427756</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1776874427758</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="started hw 42" />
+    <MESSAGE value="finished hw 42" />
+    <MESSAGE value="started hw 43" />
+    <MESSAGE value="finished hw 43" />
+    <MESSAGE value="fixed README.md and index.html" />
+    <MESSAGE value="started hw 44" />
+    <MESSAGE value="finished hw 44" />
+    <MESSAGE value="started hw 45" />
+    <MESSAGE value="created Form" />
+    <MESSAGE value="created Card and List" />
+    <MESSAGE value="created scss files and filter" />
+    <MESSAGE value="created editing card" />
+    <MESSAGE value="fixed error in form img" />
+    <MESSAGE value="started hw 46" />
+    <MESSAGE value="created files, routes" />
+    <MESSAGE value="created api, usersList" />
+    <MESSAGE value="created UserDetails, UserForm" />
+    <MESSAGE value="created ConfirmDeleteModal, Error and Success Message" />
+    <MESSAGE value="Add responsiveness" />
+    <MESSAGE value="Add filters, pagination" />
+    <MESSAGE value="Add LoginPage and NotFoundPage" />
+    <MESSAGE value="Add useUsers.js and propTypes" />
+    <MESSAGE value="corrected UserForm.jsx" />
+    <MESSAGE value="corrected project" />
+    <MESSAGE value="started hw 47" />
+    <option name="LAST_COMMIT_MESSAGE" value="started hw 47" />
+  </component>
+</project>
