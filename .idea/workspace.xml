@@ -4,7 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bcb53deb-8a75-4733-855f-4b8cd9fc4055" name="Changes" comment="started hw 47" />
+    <list default="true" id="bcb53deb-8a75-4733-855f-4b8cd9fc4055" name="Changes" comment="started hw 47">
+      <change afterPath="$PROJECT_DIR$/final-project/src/AppRouter.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/final-project/src/components/AppHeader.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/final-project/src/components/AppLayout.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/final-project/src/pages/CartPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/final-project/src/pages/CategoryPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/final-project/src/pages/HomePage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/final-project/src/pages/ProductDetailPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/App.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/main.jsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,8 +27,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="SCSS File" />
-        <option value="JSX File" />
         <option value="JavaScript File" />
+        <option value="JSX File" />
       </list>
     </option>
   </component>
@@ -124,7 +137,7 @@
       <workItem from="1775931364060" duration="51000" />
       <workItem from="1775982414190" duration="157000" />
       <workItem from="1776017537769" duration="3877000" />
-      <workItem from="1776874127768" duration="1675000" />
+      <workItem from="1776874127768" duration="8025000" />
     </task>
     <task id="LOCAL-00001" summary="Started hw 38">
       <option name="closed" value="true" />
@@ -502,7 +515,23 @@
       <option name="project" value="LOCAL" />
       <updated>1776874427758</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="started hw 47">
+      <option name="closed" value="true" />
+      <created>1776875890143</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1776875890143</updated>
+    </task>
+    <task id="LOCAL-00049" summary="started hw 47">
+      <option name="closed" value="true" />
+      <created>1776876093777</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1776876093777</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
