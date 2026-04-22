@@ -1,16 +1,60 @@
-# React + Vite
+Homework 47 "Диплоний проект"
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Video - https://youtu.be/dgn_mDWcFtI
 
-Currently, two official plugins are available:
+Тема:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Розробка клієнтської частини інтернет-магазину з використанням React
 
-## React Compiler
+Мета проєкту:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Створити сучасний вебзастосунок інтернет-магазину з адаптивним інтерфейсом, каталогом товарів, пошуком, фільтрацією, авторизацією, кошиком та оформленням замовлення.
 
-## Expanding the ESLint configuration
+Технологічний стек:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+React
+JavaScript
+Redux Toolkit
+RTK Query для роботи з API, кешування та керування серверним станом
+React Hook Form для роботи з формами
+MUI для UI-компонентів
+PropTypes для перевірки props у JavaScript-компонентах https://www.npmjs.com/package/prop-types
+DummyJSON API як джерело даних
+https://reactrouter.com/start/data/installation
+Джерела для реалізації:
+
+UI-прототип: готовий безкоштовний Figma template інтернет-магазину
+API: DummyJSON
+MUI для UI-компонентів
+Стан застосунку: Redux Toolkit + RTK Query
+Основний функціонал:
+
+перегляд списку товарів
+пошук товарів
+фільтрація за категоріями та іншими параметрами
+сторінка окремого товару
+додавання товарів до кошика
+зміна кількості товарів у кошику
+авторизація користувача
+форма оформлення замовлення
+відображення станів loading, error, empty
+адаптивна верстка для desktop і mobile
+Роль API у проєкті:
+
+DummyJSON використовується для отримання даних про користувачів, товари, кошики та для імітації авторизації. Це дозволяє побудувати повноцінний frontend-проєкт без розробки власного backend.
+
+Роль state management:
+
+Redux Toolkit використовується для глобального стану застосунку, а RTK Query — для запитів до API, кешування даних, повторного використання відповідей сервера та спрощення роботи з асинхронною логікою.
+
+Роль форм:
+
+React Hook Form використовується для реалізації форм авторизації, оформлення замовлення та інших сценаріїв введення даних з валідацією та керуванням станом полів.
+
+Роль UI-бібліотеки:
+
+shadcn/ui використовується для побудови сучасного інтерфейсу на базі готових компонентів, зокрема кнопок, полів введення, checkbox, dialog, select та інших елементів. Checkbox у shadcn/ui побудований на базі Radix UI.
+
+Результат проєкту:
+
+У результаті має бути реалізований frontend інтернет-магазину, який демонструє роботу з REST API, сучасний підхід до побудови інтерфейсів на React, керування локальним і серверним станом, роботу з формами та компонентний підхід до розробки.
