@@ -4,18 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bcb53deb-8a75-4733-855f-4b8cd9fc4055" name="Changes" comment="started hw 47">
-      <change afterPath="$PROJECT_DIR$/final-project/src/AppRouter.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/final-project/src/components/AppHeader.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/final-project/src/components/AppLayout.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/final-project/src/pages/CartPage.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/final-project/src/pages/CategoryPage.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/final-project/src/pages/HomePage.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/final-project/src/pages/ProductDetailPage.jsx" afterDir="false" />
+    <list default="true" id="bcb53deb-8a75-4733-855f-4b8cd9fc4055" name="Changes" comment="created Router">
+      <change afterPath="$PROJECT_DIR$/final-project/src/components/AppHeader/AppHeader.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/final-project/src/components/AppHeader/AppHeader.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/final-project/src/store/api/authApi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/final-project/src/store/api/baseApi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/final-project/src/store/api/productsApi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/final-project/src/store/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/final-project/src/store/slices/authSlice.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/final-project/src/store/slices/cartSlice.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/final-project/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/final-project/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/App.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/AppHeader.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/AppLayout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/AppLayout.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/final-project/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/main.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,9 +28,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="SCSS File" />
-        <option value="JavaScript File" />
         <option value="JSX File" />
+        <option value="JavaScript File" />
+        <option value="SCSS File" />
       </list>
     </option>
   </component>
@@ -73,7 +75,7 @@
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "hw__47",
     "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "C:/Users/PC/OneDrive/Desktop/krasnov.k-hillel_hw",
+    "last_opened_file_path": "C:/Users/PC/OneDrive/Desktop/krasnov.k-hillel_hw/final-project/src",
     "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -86,12 +88,15 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\PC\OneDrive\Desktop\krasnov.k-hillel_hw\final-project\src" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\PC\OneDrive\Desktop\krasnov.k-hillel_hw\final-project\src\components\AppHeader" />
       <recent name="C:\Users\PC\OneDrive\Desktop\krasnov.k-hillel_hw\src\components" />
       <recent name="C:\Users\PC\OneDrive\Desktop\krasnov.k-hillel_hw\src\ProductList" />
       <recent name="C:\Users\PC\OneDrive\Desktop\krasnov.k-hillel_hw\src\ProductForm" />
       <recent name="C:\Users\PC\OneDrive\Desktop\krasnov.k-hillel_hw\src\ProductCard" />
-      <recent name="C:\Users\PC\OneDrive\Desktop\krasnov.k-hillel_hw\src\ProductFilter" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -137,15 +142,8 @@
       <workItem from="1775931364060" duration="51000" />
       <workItem from="1775982414190" duration="157000" />
       <workItem from="1776017537769" duration="3877000" />
-      <workItem from="1776874127768" duration="8025000" />
-    </task>
-    <task id="LOCAL-00001" summary="Started hw 38">
-      <option name="closed" value="true" />
-      <created>1772733609772</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1772733609772</updated>
+      <workItem from="1776874127768" duration="8186000" />
+      <workItem from="1777049659292" duration="2883000" />
     </task>
     <task id="LOCAL-00002" summary="finished hw 38">
       <option name="closed" value="true" />
@@ -531,7 +529,15 @@
       <option name="project" value="LOCAL" />
       <updated>1776876093777</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="created Router">
+      <option name="closed" value="true" />
+      <created>1776882360625</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1776882360630</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -549,7 +555,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="started hw 42" />
     <MESSAGE value="finished hw 42" />
     <MESSAGE value="started hw 43" />
     <MESSAGE value="finished hw 43" />
@@ -574,6 +579,7 @@
     <MESSAGE value="corrected UserForm.jsx" />
     <MESSAGE value="corrected project" />
     <MESSAGE value="started hw 47" />
-    <option name="LAST_COMMIT_MESSAGE" value="started hw 47" />
+    <MESSAGE value="created Router" />
+    <option name="LAST_COMMIT_MESSAGE" value="created Router" />
   </component>
 </project>

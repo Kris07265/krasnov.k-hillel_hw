@@ -1,0 +1,90 @@
+// Переменные для цветов и шрифтов
+$font-integral: 'Integral CF', sans-serif;
+$font-satoshi: 'Satoshi', sans-serif;
+$bg-light-gray: #F0F0F0;
+$black: #000000;
+
+.header-container {
+  background-color: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 15px 0;
+
+  .header-logo {
+    font-family: $font-integral;
+    font-weight: 700;
+    font-size: 32px;
+    text-decoration: none;
+    color: $black;
+    letter-spacing: -0.04em;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  .nav-link {
+    font-family: $font-satoshi;
+    font-size: 16px;
+    color: $black;
+    text-decoration: none;
+    margin: 0 12px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 1px;
+      bottom: -2px;
+      background: $black;
+      transition: width 0.3s;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+
+  .search-wrapper {
+    background-color: $bg-light-gray;
+    border-radius: 62px;
+    padding: 12px 16px; // Увеличил паддинг для точности макета
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    margin: 0 40px;
+
+    .search-input {
+      border: none;
+      background: transparent;
+      outline: none;
+      width: 100%;
+      margin-left: 8px;
+      font-family: $font-satoshi;
+      font-size: 16px;
+      color: rgba(0, 0, 0, 0.4);
+
+      &::placeholder {
+        color: rgba(0, 0, 0, 0.4);
+      }
+    }
+  }
+
+  .icon-button {
+    color: $black !important;
+    margin-left: 8px !important;
+  }
+}
+
+// Кастомизация MUI Badge через SCSS
+.cart-badge {
+  .MuiBadge-badge {
+    background-color: $black;
+    color: #fff;
+    font-family: $font-satoshi;
+  }
+}

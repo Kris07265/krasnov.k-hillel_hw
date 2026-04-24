@@ -1,4 +1,4 @@
-import AppHeader from "./AppHeader.jsx";
+import AppHeader from "./AppHeader/AppHeader.jsx";
 import {Outlet} from "react-router";
 
 const AppLayout = () => {
