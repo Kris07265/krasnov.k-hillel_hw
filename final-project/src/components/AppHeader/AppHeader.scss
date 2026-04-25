@@ -1,90 +1,116 @@
-// Переменные для цветов и шрифтов
 $font-integral: 'Integral CF', sans-serif;
 $font-satoshi: 'Satoshi', sans-serif;
-$bg-light-gray: #F0F0F0;
-$black: #000000;
 
-.header-container {
+@mixin nav-link-base {
+  font-family: $font-satoshi;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
+  text-decoration: none;
+  color: #000;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.header-wrapper {
   background-color: #fff;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 15px 0;
 
-  .header-logo {
-    font-family: $font-integral;
-    font-weight: 700;
-    font-size: 32px;
-    text-decoration: none;
-    color: $black;
-    letter-spacing: -0.04em;
-    transition: opacity 0.2s ease;
+  .header-toolbar {
+    height: 85px;
+    display: flex;
+    align-items: center;
+  }
 
-    &:hover {
-      opacity: 0.7;
+  .header-left-section {
+    display: flex;
+    align-items: center;
+
+    .menu-mobile-btn {
+      margin-right: 8px;
+      color: #000;
+      @media (min-width: 900px) { display: none; }
     }
   }
 
-  .nav-link {
-    font-family: $font-satoshi;
-    font-size: 16px;
-    color: $black;
+  .header-logo {
+    font-family: $font-integral;
+    font-size: 32px;
+    font-weight: 700;
     text-decoration: none;
-    margin: 0 12px;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    position: relative;
+    color: #000;
+    line-height: 1;
+  }
 
-    &::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 1px;
-      bottom: -2px;
-      background: $black;
-      transition: width 0.3s;
-    }
+  .nav-desktop {
+    display: none;
+    @media (min-width: 900px) { display: flex; }
+    gap: 24px;
+    margin-left: 40px;
 
-    &:hover::after {
-      width: 100%;
+    .nav-link-lg {
+      @include nav-link-base;
     }
   }
 
   .search-wrapper {
-    background-color: $bg-light-gray;
-    border-radius: 62px;
-    padding: 12px 16px; // Увеличил паддинг для точности макета
-    display: flex;
-    align-items: center;
+    display: none;
+    @media (min-width: 900px) { display: flex; }
     flex-grow: 1;
     margin: 0 40px;
+    background-color: #F0F0F0;
+    border-radius: 62px;
+    padding: 12px 16px;
+    align-items: center;
 
+    .search-icon-inside { color: rgba(0, 0, 0, 0.4); }
     .search-input {
-      border: none;
       background: transparent;
+      border: none;
       outline: none;
       width: 100%;
-      margin-left: 8px;
-      font-family: $font-satoshi;
+      margin-left: 12px;
       font-size: 16px;
-      color: rgba(0, 0, 0, 0.4);
-
-      &::placeholder {
-        color: rgba(0, 0, 0, 0.4);
-      }
     }
-  }
-
-  .icon-button {
-    color: $black !important;
-    margin-left: 8px !important;
   }
 }
 
-// Кастомизация MUI Badge через SCSS
-.cart-badge {
-  .MuiBadge-badge {
-    background-color: $black;
-    color: #fff;
-    font-family: $font-satoshi;
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  @media (min-width: 900px) { gap: 16px; }
+
+  .search-mobile-btn {
+    color: #000;
+    @media (min-width: 900px) { display: none; }
   }
+
+  .action-btn {
+    color: #000;
+    padding: 0;
+  }
+}
+
+.mobile-drawer-content {
+  width: 250px;
+
+  .mobile-list {
+    padding-top: 16px;
+  }
+
+  .nav-link-md {
+    @include nav-link-base;
+    width: 100%;
+    padding: 12px 16px;
+  }
+}
+
+.cart-badge .MuiBadge-badge {
+  background-color: #000;
+  color: #fff;
 }

@@ -21,7 +21,7 @@ const AppRouter = createBrowserRouter([
                 element: <CartPage />
             },
             {
-                path: "category",
+                path: "category/:categoryName",
                 element: <CategoryPage />
             },
             {

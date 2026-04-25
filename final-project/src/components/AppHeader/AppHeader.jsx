@@ -1,39 +1,51 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { AppBar, Toolbar, Container, Box, Badge, IconButton } from '@mui/material';
+import { AppBar, Toolbar, Container, Box, Badge, IconButton, Drawer, List, ListItem, ListItemText } from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { Link } from 'react-router';
 
-import './AppHeader.scss'// Импортируем уже SCSS файл
+import './AppHeader.scss';
 
 const AppHeader = () => {
-    // Подключаемся к стору, который ты настроил в index.js
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const totalQuantity = useSelector((state) => state.cart.totalQuantity);
 
-    return (
-        <AppBar position="static" color="transparent" elevation={0} className="header-container">
-            <Container maxWidth="xl">
-                <Toolbar disableGutters>
-                    <Link to="/" className="header-logo">
-                        SHOP.CO
-                    </Link>
+    const toggleDrawer = (open) => () => {
+        setMobileMenuOpen(open);
+    };
 
-                    {/* Навигация */}
-                    <Box sx={{ display: { xs: 'none', md: 'flex' }, ml: 4 }}>
-                        <Link to="/shop" className="nav-link">
-                            Shop <KeyboardArrowDownIcon fontSize="small" />
+    return (
+        <AppBar position='static' color="transparent" elevation={0} className="header-wrapper">
+                <Toolbar disableGutters className="header-toolbar">
+                    <Box className="header-left-section">
+                        <IconButton
+                            edge="start"
+                            className="menu-mobile-btn"
+                            onClick={toggleDrawer(true)}
+                        >
+                            <MenuIcon />
+                        </IconButton>
+
+                        <Link to="/" className="header-logo">
+                            SHOP.CO
                         </Link>
-                        <Link to="/on-sale" className="nav-link">On Sale</Link>
-                        <Link to="/new-arrivals" className="nav-link">New Arrivals</Link>
-                        <Link to="/brands" className="nav-link">Brands</Link>
                     </Box>
 
-                    {/* Поиск */}
-                    <Box className="search-wrapper" sx={{ display: { xs: 'none', sm: 'flex' } }}>
-                        <SearchIcon sx={{ color: 'rgba(0,0,0,0.4)' }} />
+                    <Box className="nav-desktop">
+                        <Link to="/shop" className="nav-link-lg">
+                            Shop <KeyboardArrowDownIcon fontSize="small" />
+                        </Link>
+                        <Link to="/on-sale" className="nav-link-lg">On Sale</Link>
+                        <Link to="/new-arrivals" className="nav-link-lg">New Arrivals</Link>
+                        <Link to="/brands" className="nav-link-lg">Brands</Link>
+                    </Box>
+
+                    <Box className="search-wrapper">
+                        <SearchIcon className="search-icon-inside"/>
                         <input
                             type="text"
                             placeholder="Search for products..."
@@ -41,25 +53,52 @@ const AppHeader = () => {
                         />
                     </Box>
 
-                    {/* Иконки */}
-                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                        <IconButton sx={{ display: { xs: 'flex', sm: 'none' } }} className="icon-button">
+                    <Box className="header-actions">
+                        <IconButton className="search-mobile-btn">
                             <SearchIcon />
                         </IconButton>
 
-                        <IconButton component={Link} to="/cart" className="icon-button">
-                            {/* Badge использует данные из твоего cartSlice */}
-                            <Badge badgeContent={totalQuantity} className="cart-badge">
+                        <IconButton component={Link} to="/cart" className="action-btn">
+                            <Badge badgeContent={totalQuantity} color="primary" className="cart-badge">
                                 <ShoppingCartOutlinedIcon />
                             </Badge>
                         </IconButton>
 
-                        <IconButton component={Link} to="/profile" className="icon-button">
+                        <IconButton component={Link} to="/profile" className="action-btn">
                             <AccountCircleOutlinedIcon />
                         </IconButton>
                     </Box>
                 </Toolbar>
-            </Container>
+
+            <Drawer anchor="left" open={mobileMenuOpen} onClose={toggleDrawer(false)}>
+                <Box className="mobile-drawer-content" role="presentation" onClick={toggleDrawer(false)}>
+                    <List className="mobile-list">
+                        <ListItem disablePadding onClick={toggleDrawer(false)}>
+                            <Link to="/shop" className="nav-link-md">
+                                Shop <KeyboardArrowDownIcon />
+                            </Link>
+                        </ListItem>
+
+                        <ListItem disablePadding onClick={toggleDrawer(false)}>
+                            <Link to="/on-sale" className="nav-link-md">
+                                On Sale
+                            </Link>
+                        </ListItem>
+
+                        <ListItem disablePadding onClick={toggleDrawer(false)}>
+                            <Link to="/new-arrivals" className="nav-link-md">
+                                New Arrivals
+                            </Link>
+                        </ListItem>
+
+                        <ListItem disablePadding onClick={toggleDrawer(false)}>
+                            <Link to="/brands" className="nav-link-md">
+                                Brands
+                            </Link>
+                        </ListItem>
+                    </List>
+                </Box>
+            </Drawer>
         </AppBar>
     );
 };

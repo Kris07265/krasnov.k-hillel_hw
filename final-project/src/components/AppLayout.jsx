@@ -1,13 +1,16 @@
 import AppHeader from "./AppHeader/AppHeader.jsx";
 import {Outlet} from "react-router";
+import {Container} from "@mui/material";
+import AppFooter from "./AppFooter/AppFooter.jsx";
 
 const AppLayout = () => {
     return (
         <>
-            <AppHeader/>
-            <div className="container">
+            <Container fixed>
+                <AppHeader/>
                 <Outlet/>
-            </div>
+            </Container>
+            <AppFooter/>
         </>
     )
 }
