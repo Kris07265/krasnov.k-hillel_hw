@@ -4,14 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bcb53deb-8a75-4733-855f-4b8cd9fc4055" name="Changes" comment="created Api">
-      <change afterPath="$PROJECT_DIR$/final-project/src/components/AppFooter/AppFooter.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/final-project/src/components/AppFooter/AppFooter.scss" afterDir="false" />
+    <list default="true" id="bcb53deb-8a75-4733-855f-4b8cd9fc4055" name="Changes" comment="created Header, Footer">
+      <change afterPath="$PROJECT_DIR$/final-project/src/components/AppBrandsBar/AppBrandsBar.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/final-project/src/components/AppBrandsBar/AppBrandsBar.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/final-project/src/components/AppHero/AppHero.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/final-project/src/components/AppHero/AppHero.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/final-project/src/components/BrowseByStyle/BrowseByStyle.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/final-project/src/components/BrowseByStyle/BrowseByStyle.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/final-project/src/components/ProductCard/ProductCard.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/final-project/src/components/ProductCard/ProductCard.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/final-project/src/components/ProductSection/ProductSection.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/final-project/src/components/ProductSection/ProductSection.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/AppRouter.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/AppRouter.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/AppHeader/AppHeader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/AppHeader/AppHeader.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/AppHeader/AppHeader.scss" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/AppHeader/AppHeader.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/AppLayout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/AppLayout.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/pages/HomePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/pages/HomePage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/store/api/productsApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/store/api/productsApi.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,27 +65,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "hw__47",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "C:/Users/PC/OneDrive/Desktop/krasnov.k-hillel_hw",
-    "list.type.of.created.stylesheet": "SCSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "to.speed.mode.migration.done": "true",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2025.2.4\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;hw__47&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/PC/OneDrive/Desktop/krasnov.k-hillel_hw&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2025.2.4\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\PC\OneDrive\Desktop\krasnov.k-hillel_hw\final-project\src" />
@@ -137,15 +143,8 @@
       <workItem from="1776017537769" duration="3877000" />
       <workItem from="1776874127768" duration="8186000" />
       <workItem from="1777049659292" duration="2921000" />
-      <workItem from="1777114109238" duration="11986000" />
-    </task>
-    <task id="LOCAL-00003" summary="fixed README.md">
-      <option name="closed" value="true" />
-      <created>1772735584238</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1772735584238</updated>
+      <workItem from="1777114109238" duration="12580000" />
+      <workItem from="1777198443608" duration="6204000" />
     </task>
     <task id="LOCAL-00004" summary="started hw 39">
       <option name="closed" value="true" />
@@ -531,7 +530,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777052593766</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="created Header, Footer">
+      <option name="closed" value="true" />
+      <created>1777139066286</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1777139066286</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -549,7 +556,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="started hw 43" />
     <MESSAGE value="finished hw 43" />
     <MESSAGE value="fixed README.md and index.html" />
     <MESSAGE value="started hw 44" />
@@ -574,6 +580,7 @@
     <MESSAGE value="started hw 47" />
     <MESSAGE value="created Router" />
     <MESSAGE value="created Api" />
-    <option name="LAST_COMMIT_MESSAGE" value="created Api" />
+    <MESSAGE value="created Header, Footer" />
+    <option name="LAST_COMMIT_MESSAGE" value="created Header, Footer" />
   </component>
 </project>

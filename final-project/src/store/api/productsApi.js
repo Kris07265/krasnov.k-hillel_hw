@@ -13,8 +13,16 @@ export const productsApi = baseApi.injectEndpoints({
             query: (id) => `products/${id}`,
             providesTags: (result, error, id) => [{ type: 'Product', id }],
         }),
+
+        getCategories: builder.query({
+            query: () => 'products/category-list',
+        }),
+
+        getHeroProduct: builder.query({
+            query: () => 'products/86',
+        }),
     }),
     overrideExisting: false,
 });
 
-export const { useGetProductsQuery, useGetProductByIdQuery } = productsApi;
+export const { useGetProductsQuery, useGetProductByIdQuery, useGetCategoriesQuery, useGetHeroProductQuery } = productsApi;
