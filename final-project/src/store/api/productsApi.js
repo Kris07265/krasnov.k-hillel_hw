@@ -21,8 +21,12 @@ export const productsApi = baseApi.injectEndpoints({
         getHeroProduct: builder.query({
             query: () => 'products/86',
         }),
+
+        getReviews: builder.query({
+            query: () => 'comments?limit=10',
+        }),
     }),
     overrideExisting: false,
 });
 
-export const { useGetProductsQuery, useGetProductByIdQuery, useGetCategoriesQuery, useGetHeroProductQuery } = productsApi;
+export const { useGetProductsQuery, useGetProductByIdQuery, useGetCategoriesQuery, useGetHeroProductQuery, useGetReviewsQuery } = productsApi;
