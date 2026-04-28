@@ -2,6 +2,8 @@ import AppHero from "../components/AppHero/AppHero.jsx";
 import AppBrandsBar from "../components/AppBrandsBar/AppBrandsBar.jsx";
 import {useGetProductsQuery} from "../store/api/productsApi.js";
 import ProductSection from "../components/ProductSection/ProductSection.jsx";
+import BrowseByStyle from "../components/BrowseByStyle/BrowseByStyle.jsx";
+import HappyCustomers from "../components/HappyCustomers/HappyCustomers.jsx";
 
 const HomePage = () => {
 
@@ -25,6 +27,9 @@ const HomePage = () => {
                 isLoading={isTopLoading}
                 error={topError}
             />
+
+            <BrowseByStyle/>
+            <HappyCustomers/>
         </>
     )
 }
