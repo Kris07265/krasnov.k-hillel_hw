@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bcb53deb-8a75-4733-855f-4b8cd9fc4055" name="Changes" comment="corrected errors">
+    <list default="true" id="bcb53deb-8a75-4733-855f-4b8cd9fc4055" name="Changes" comment="created BrowseByStyle, HappyCustomers">
+      <change afterPath="$PROJECT_DIR$/final-project/src/components/HeroProductDetail/HeroProductDetail.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/final-project/src/components/HeroProductDetail/HeroProductDetail.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/BrowseByStyle/BrowseByStyle.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/BrowseByStyle/BrowseByStyle.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/BrowseByStyle/BrowseByStyle.scss" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/BrowseByStyle/BrowseByStyle.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/ProductSection/ProductSection.scss" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/ProductSection/ProductSection.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/Reviews/Reviews.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/HappyCustomers/HappyCustomers.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/Reviews/Reviews.scss" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/HappyCustomers/HappyCustomers.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/pages/HomePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/pages/HomePage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/pages/ProductDetailPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/pages/ProductDetailPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/store/slices/cartSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/store/slices/cartSlice.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,15 +140,8 @@
       <workItem from="1777218135590" duration="220000" />
       <workItem from="1777282364865" duration="4271000" />
       <workItem from="1777305330000" duration="440000" />
-      <workItem from="1777364671669" duration="10827000" />
-    </task>
-    <task id="LOCAL-00006" summary="fixed README.md">
-      <option name="closed" value="true" />
-      <created>1772739201481</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1772739201481</updated>
+      <workItem from="1777364671669" duration="10923000" />
+      <workItem from="1777565389144" duration="4514000" />
     </task>
     <task id="LOCAL-00007" summary="created Model.js">
       <option name="closed" value="true" />
@@ -536,7 +527,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777305753434</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="created BrowseByStyle, HappyCustomers">
+      <option name="closed" value="true" />
+      <created>1777376398895</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1777376398896</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -554,7 +553,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="started hw 44" />
     <MESSAGE value="finished hw 44" />
     <MESSAGE value="started hw 45" />
     <MESSAGE value="created Form" />
@@ -579,6 +577,7 @@
     <MESSAGE value="created Header, Footer" />
     <MESSAGE value="created Hero, ProductSection" />
     <MESSAGE value="corrected errors" />
-    <option name="LAST_COMMIT_MESSAGE" value="corrected errors" />
+    <MESSAGE value="created BrowseByStyle, HappyCustomers" />
+    <option name="LAST_COMMIT_MESSAGE" value="created BrowseByStyle, HappyCustomers" />
   </component>
 </project>

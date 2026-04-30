@@ -1,6 +1,10 @@
+import HeroProductDetail from "../components/HeroProductDetail/HeroProductDetail.jsx";
+
 const ProductDetailPage = () => {
     return (
-        <div>Product Detail Page</div>
+        <>
+        <HeroProductDetail/>
+        </>
     )
 }
 
