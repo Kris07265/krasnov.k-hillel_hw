@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bcb53deb-8a75-4733-855f-4b8cd9fc4055" name="Changes" comment="created BrowseByStyle, HappyCustomers">
-      <change afterPath="$PROJECT_DIR$/final-project/src/components/HeroProductDetail/HeroProductDetail.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/final-project/src/components/HeroProductDetail/HeroProductDetail.scss" afterDir="false" />
+    <list default="true" id="bcb53deb-8a75-4733-855f-4b8cd9fc4055" name="Changes" comment="created HeroProductDetail">
+      <change afterPath="$PROJECT_DIR$/final-project/src/store/api/reviewsApi.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/pages/ProductDetailPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/pages/ProductDetailPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/store/slices/cartSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/store/slices/cartSlice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/AppBrandsBar/AppBrandsBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/AppBrandsBar/AppBrandsBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/AppBrandsBar/AppBrandsBar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/AppBrandsBar/AppBrandsBar.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/AppHeader/AppHeader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/AppHeader/AppHeader.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/AppHero/AppHero.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/AppHero/AppHero.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/HappyCustomers/HappyCustomers.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/HappyCustomers/HappyCustomers.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/store/api/productsApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/store/api/productsApi.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,9 +22,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="JSX File" />
         <option value="SCSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -141,15 +144,8 @@
       <workItem from="1777282364865" duration="4271000" />
       <workItem from="1777305330000" duration="440000" />
       <workItem from="1777364671669" duration="10923000" />
-      <workItem from="1777565389144" duration="4514000" />
-    </task>
-    <task id="LOCAL-00007" summary="created Model.js">
-      <option name="closed" value="true" />
-      <created>1772890240802</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1772890240802</updated>
+      <workItem from="1777565389144" duration="4560000" />
+      <workItem from="1777619802570" duration="7704000" />
     </task>
     <task id="LOCAL-00008" summary="created modals">
       <option name="closed" value="true" />
@@ -535,7 +531,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777376398896</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="created HeroProductDetail">
+      <option name="closed" value="true" />
+      <created>1777570746949</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1777570746949</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -553,7 +557,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="finished hw 44" />
     <MESSAGE value="started hw 45" />
     <MESSAGE value="created Form" />
     <MESSAGE value="created Card and List" />
@@ -578,6 +581,7 @@
     <MESSAGE value="created Hero, ProductSection" />
     <MESSAGE value="corrected errors" />
     <MESSAGE value="created BrowseByStyle, HappyCustomers" />
-    <option name="LAST_COMMIT_MESSAGE" value="created BrowseByStyle, HappyCustomers" />
+    <MESSAGE value="created HeroProductDetail" />
+    <option name="LAST_COMMIT_MESSAGE" value="created HeroProductDetail" />
   </component>
 </project>

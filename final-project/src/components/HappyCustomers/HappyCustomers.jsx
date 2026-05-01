@@ -3,11 +3,11 @@ import {Box, Typography, Container, CircularProgress, Rating, IconButton} from '
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import { useGetReviewsQuery } from "../../store/api/productsApi.js";
+import {useGetReviewsQuery} from "../../store/api/reviewsApi.js";
 import './HappyCustomers.scss';
 
 const HappyCustomers = () => {
-    const { data, isLoading, isError } = useGetReviewsQuery();
+    const { data, isLoading, isError } = useGetReviewsQuery(10);
     const reviews = data?.comments || [];
 
     const scrollRef = useRef(null);

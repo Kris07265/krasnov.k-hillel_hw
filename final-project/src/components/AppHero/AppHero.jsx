@@ -1,10 +1,11 @@
 import React from 'react';
 import { Box, Container, Typography, Button, CircularProgress } from '@mui/material';
 import "./AppHero.scss"
-import { useGetHeroProductQuery } from "../../store/api/productsApi.js";
+import {useGetProductByIdQuery} from "../../store/api/productsApi.js";
 
 const AppHero = () => {
-    const { data: product, isLoading, isError } = useGetHeroProductQuery();
+
+    const { data: product, isLoading, isError } = useGetProductByIdQuery(86);
 
     return (
         <Box component="section" className="hero-wrapper">
