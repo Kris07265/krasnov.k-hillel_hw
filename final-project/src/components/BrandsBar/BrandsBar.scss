@@ -1,0 +1,42 @@
+@import "../../assets/fonts/fonts";
+$font-integral: 'Integral CF', sans-serif;
+
+.brands {
+  background-color: #000;
+  padding: 30px 0;
+  width: 100%;
+  min-height: 122px;
+  display: flex;
+  align-items: center;
+  color: #fff;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    @media (max-width: 900px) {
+      justify-content: center;
+      gap: 24px 34px;
+    }
+  }
+
+  &__logo {
+    font-family: $font-integral;
+    font-size: 24px;
+    font-weight: 700;
+    white-space: nowrap;
+    text-transform: uppercase;
+
+    @media (min-width: 900px) {
+      font-size: 32px;
+    }
+  }
+
+  &--loading {
+    justify-content: center;
+    height: 122px;
+  }
+}

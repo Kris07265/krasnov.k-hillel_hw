@@ -1,0 +1,66 @@
+@import "../../assets/fonts/fonts";
+$font-integral: 'Integral CF', sans-serif;
+
+.related-products {
+  padding: 40px 0;
+
+  @media (min-width: 900px) {
+    padding: 64px 0;
+  }
+
+  &__loader {
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+  }
+
+  &__title {
+    &.MuiTypography-root {
+      font-family: $font-integral;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 1.1;
+      text-align: center;
+      color: #000000;
+      margin-bottom: 32px;
+      text-transform: uppercase;
+
+      @media (min-width: 900px) {
+        font-size: 48px;
+        margin-bottom: 55px;
+      }
+    }
+  }
+
+  &__grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding: 0 16px;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @media (min-width: 900px) {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      padding: 0;
+      overflow-x: visible;
+    }
+  }
+
+  &__item {
+    min-width: 200px;
+    max-width: 280px;
+    flex: 0 0 auto;
+
+    @media (min-width: 900px) {
+      min-width: 0;
+      max-width: none;
+      flex: 1 1 auto;
+    }
+  }
+}

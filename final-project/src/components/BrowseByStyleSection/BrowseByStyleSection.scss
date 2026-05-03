@@ -1,0 +1,105 @@
+@import "../../assets/fonts/fonts";
+$font-integral: 'Integral CF', sans-serif;
+$font-satoshi: 'Satoshi', sans-serif;
+
+.browse-style {
+  padding: 40px 16px;
+
+  @media (min-width: 900px) {
+    padding: 80px 0;
+  }
+
+  &__card {
+    background-color: #F0F0F0;
+    border-radius: 20px;
+    padding: 40px 24px;
+
+    @media (min-width: 900px) {
+      border-radius: 40px;
+      padding: 70px 64px;
+    }
+  }
+
+  &__title {
+    &.MuiTypography-root {
+      font-family: $font-integral;
+      font-weight: 700;
+      font-size: 32px;
+      text-align: center;
+      margin-bottom: 28px;
+      color: #000;
+
+      @media (min-width: 900px) {
+        font-size: 48px;
+        margin-bottom: 64px;
+      }
+    }
+  }
+
+  &__loader {
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+    color: #000;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+
+    @media (min-width: 900px) {
+      grid-template-columns: 0.7fr 1.3fr;
+      gap: 20px;
+    }
+  }
+
+  &__item {
+    position: relative;
+    height: 190px;
+    background-color: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+
+    @media (min-width: 900px) {
+      height: 289px;
+    }
+
+    &--type-0 { @media (min-width: 900px) { grid-column: 1 / 2; } }
+    &--type-1 { @media (min-width: 900px) { grid-column: 2 / 3; } }
+    &--type-2 { @media (min-width: 900px) { grid-column: 1 / 2; } }
+    &--type-3 { @media (min-width: 900px) { grid-column: 2 / 3; } }
+  }
+
+  &__item-label {
+    &.MuiTypography-root {
+      position: absolute;
+      top: 25px;
+      left: 25px;
+      font-family: $font-satoshi;
+      font-weight: 700;
+      font-size: 24px;
+      color: #000;
+      z-index: 2;
+
+      @media (min-width: 900px) {
+        top: 36px;
+        left: 36px;
+        font-size: 36px;
+      }
+    }
+  }
+
+  &__item-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}

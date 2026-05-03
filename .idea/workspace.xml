@@ -4,16 +4,42 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bcb53deb-8a75-4733-855f-4b8cd9fc4055" name="Changes" comment="corrected errors">
-      <change afterPath="$PROJECT_DIR$/final-project/src/components/ProductReviewsSection/ProductReviewsSection.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/final-project/src/components/ProductReviewsSection/ProductReviewsSection.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/final-project/src/components/RelatedProducts/RelatedProducts.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/final-project/src/components/RelatedProducts/RelatedProducts.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/final-project/src/components/ReviewCard/ReviewCard.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/final-project/src/components/ReviewCard/ReviewCard.scss" afterDir="false" />
+    <list default="true" id="bcb53deb-8a75-4733-855f-4b8cd9fc4055" name="Changes" comment="created ProductReviewsSection, RelatedProducts">
+      <change afterPath="$PROJECT_DIR$/final-project/src/assets/fonts/fonts-files/Satoshi-Bold.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/final-project/src/assets/fonts/fonts-files/Satoshi-Medium.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/final-project/src/assets/fonts/fonts-files/Satoshi-Regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/final-project/src/assets/fonts/fonts.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/final-project/src/components/BrandsBar/BrandsBar.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/final-project/src/components/Footer/Footer.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/final-project/src/components/Header/Header.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/HappyCustomers/HappyCustomers.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/HappyCustomers/HappyCustomers.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/HappyCustomers/HappyCustomers.scss" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/HappyCustomers/HappyCustomers.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/AppRouter.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/AppRouter.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/AppBrandsBar/AppBrandsBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/BrandsBar/BrandsBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/AppBrandsBar/AppBrandsBar.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/AppFooter/AppFooter.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/Footer/Footer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/AppFooter/AppFooter.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/AppHeader/AppHeader.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/AppHeader/AppHeader.scss" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/Header/Header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/AppHero/AppHero.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/HeroSection/HeroSection.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/AppHero/AppHero.scss" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/HeroSection/HeroSection.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/AppLayout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/Layout/Layout.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/BrowseByStyle/BrowseByStyle.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/BrowseByStyleSection/BrowseByStyleSection.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/BrowseByStyle/BrowseByStyle.scss" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/BrowseByStyleSection/BrowseByStyleSection.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/HappyCustomers/HappyCustomers.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/ReviewsSection/ReviewsSection.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/HappyCustomers/HappyCustomers.scss" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/ReviewsSection/ReviewsSection.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/HeroProductDetail/HeroProductDetail.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/ProductDetailHeroSection/ProductDetailHeroSection.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/HeroProductDetail/HeroProductDetail.scss" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/ProductDetailHeroSection/ProductDetailHeroSection.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/ProductCard/ProductCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/ProductCard/ProductCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/ProductCard/ProductCard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/ProductCard/ProductCard.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/ProductReviewsSection/ProductReviewsSection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/ProductDetailReviewsSection/ProductDetailReviewsSection.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/ProductReviewsSection/ProductReviewsSection.scss" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/ProductDetailReviewsSection/ProductDetailReviewsSection.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/ProductSection/ProductSection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/ProductSection/ProductSection.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/ProductSection/ProductSection.scss" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/ProductSection/ProductSection.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/RelatedProducts/RelatedProducts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/ProductDetailRelatedProductsSection/ProductDetailRelatedProductsSection.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/RelatedProducts/RelatedProducts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/ProductDetailRelatedProductsSection/ProductDetailRelatedProductsSection.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/ReviewCard/ReviewCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/ReviewCard/ReviewCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/ReviewCard/ReviewCard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/ReviewCard/ReviewCard.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/pages/HomePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/pages/HomePage.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/final-project/src/pages/ProductDetailPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/pages/ProductDetailPage.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -88,11 +114,11 @@
       <recent name="C:\Users\PC\OneDrive\Desktop\krasnov.k-hillel_hw\final-project\src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\PC\OneDrive\Desktop\krasnov.k-hillel_hw\final-project\src\assets\fonts\fonts-files" />
+      <recent name="C:\Users\PC\OneDrive\Desktop\krasnov.k-hillel_hw\final-project\src\assets\fonts" />
+      <recent name="C:\Users\PC\OneDrive\Desktop\krasnov.k-hillel_hw\final-project\src\components\Layout" />
       <recent name="C:\Users\PC\OneDrive\Desktop\krasnov.k-hillel_hw\final-project\src\components\AppHeader" />
       <recent name="C:\Users\PC\OneDrive\Desktop\krasnov.k-hillel_hw\src\components" />
-      <recent name="C:\Users\PC\OneDrive\Desktop\krasnov.k-hillel_hw\src\ProductList" />
-      <recent name="C:\Users\PC\OneDrive\Desktop\krasnov.k-hillel_hw\src\ProductForm" />
-      <recent name="C:\Users\PC\OneDrive\Desktop\krasnov.k-hillel_hw\src\ProductCard" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -148,15 +174,8 @@
       <workItem from="1777364671669" duration="10923000" />
       <workItem from="1777565389144" duration="4560000" />
       <workItem from="1777619802570" duration="8988000" />
-      <workItem from="1777793134745" duration="5887000" />
-    </task>
-    <task id="LOCAL-00009" summary="created View.js">
-      <option name="closed" value="true" />
-      <created>1772917589832</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1772917589832</updated>
+      <workItem from="1777793134745" duration="6178000" />
+      <workItem from="1777814407599" duration="8868000" />
     </task>
     <task id="LOCAL-00010" summary="created some functions in Controller.js">
       <option name="closed" value="true" />
@@ -542,7 +561,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777632594242</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="created ProductReviewsSection, RelatedProducts">
+      <option name="closed" value="true" />
+      <created>1777799459295</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1777799459295</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -560,7 +587,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="started hw 45" />
     <MESSAGE value="created Form" />
     <MESSAGE value="created Card and List" />
     <MESSAGE value="created scss files and filter" />
@@ -585,6 +611,7 @@
     <MESSAGE value="created BrowseByStyle, HappyCustomers" />
     <MESSAGE value="created HeroProductDetail" />
     <MESSAGE value="corrected errors" />
-    <option name="LAST_COMMIT_MESSAGE" value="corrected errors" />
+    <MESSAGE value="created ProductReviewsSection, RelatedProducts" />
+    <option name="LAST_COMMIT_MESSAGE" value="created ProductReviewsSection, RelatedProducts" />
   </component>
 </project>

@@ -1,3 +1,4 @@
+@import "../../assets/fonts/fonts";
 $font-satoshi: 'Satoshi', sans-serif;
 
 .review-card {
@@ -10,17 +11,21 @@ $font-satoshi: 'Satoshi', sans-serif;
   gap: 12px;
   height: auto;
 
-  .review-rating {
-    color: #FFC633;
-    font-size: 20px;
+  &__rating {
+    &.MuiRating-root {
+      color: #FFC633;
+      font-size: 20px;
+    }
   }
 
-  .review-name-row {
+  &__name-row {
     display: flex;
     align-items: center;
     gap: 4px;
+  }
 
-    .review-name {
+  &__name {
+    &.MuiTypography-root {
       font-family: $font-satoshi;
       font-weight: 700;
       font-size: 16px;
@@ -30,28 +35,39 @@ $font-satoshi: 'Satoshi', sans-serif;
         font-size: 20px;
       }
     }
+  }
 
-    .verified-icon {
+  &__verified-icon {
+    &.MuiSvgIcon-root {
       color: #01AB31;
       font-size: 19px;
     }
   }
 
-  .review-text {
-    font-family: $font-satoshi;
-    font-size: 14px;
-    line-height: 20px;
-    color: rgba(0, 0, 0, 0.6);
+  &__text {
+    &.MuiTypography-root {
+      font-family: $font-satoshi;
+      font-size: 14px;
+      line-height: 20px;
+      color: rgba(0, 0, 0, 0.6);
 
-    @media (min-width: 900px) {
-      font-size: 16px;
-      line-height: 22px;
+      @media (min-width: 900px) {
+        font-size: 16px;
+        line-height: 22px;
+      }
     }
   }
 
-  .review-date {
-    margin-top: auto;
-    color: rgba(0, 0, 0, 0.6);
-    font-weight: 500;
+  &__date {
+    &.MuiTypography-root {
+      margin-top: auto;
+      color: rgba(0, 0, 0, 0.6);
+      font-weight: 500;
+      font-size: 14px;
+
+      @media (min-width: 900px) {
+        font-size: 16px;
+      }
+    }
   }
 }

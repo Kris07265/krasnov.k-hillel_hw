@@ -1,0 +1,222 @@
+@import "../../assets/fonts/fonts";
+$font-integral: 'Integral CF', sans-serif;
+$font-satoshi: 'Satoshi', sans-serif;
+.product-hero {
+  padding-top: 20px;
+  padding-bottom: 50px;
+
+  &__breadcrumbs {
+    margin-bottom: 24px;
+    a {
+      text-decoration: none;
+      color: rgba(0, 0, 0, 0.6);
+      font-size: 14px;
+      &:hover { text-decoration: underline; color: #000; }
+    }
+  }
+
+  &__grid {
+    margin-top: 8px;
+    align-items: flex-start;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__title {
+    &.MuiTypography-root {
+      font-size: 40px;
+      font-weight: 700;
+      text-transform: uppercase;
+      line-height: 1.2;
+      margin: 0;
+      color: #000;
+    }
+  }
+
+  &__rating-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    .MuiRating-root { color: #FFC633; }
+  }
+
+  &__rating-text {
+    &.MuiTypography-root { color: #000; }
+  }
+
+  &__price-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__price {
+    &.MuiTypography-root {
+      font-size: 32px;
+      font-weight: 700;
+      color: #000;
+    }
+  }
+
+  &__price-old {
+    &.MuiTypography-root {
+      font-size: 32px;
+      font-weight: 700;
+      color: rgba(0, 0, 0, 0.3);
+      text-decoration: line-through;
+    }
+  }
+
+  &__discount {
+    background: rgba(255, 51, 51, 0.1);
+    color: #ff3333;
+    padding: 6px 14px;
+    border-radius: 62px;
+    font-weight: 500;
+    font-size: 16px;
+  }
+
+  &__description {
+    &.MuiTypography-root {
+      color: rgba(0, 0, 0, 0.6);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+  }
+
+  &__divider {
+    margin: 24px 0 !important;
+    border-color: rgba(0, 0, 0, 0.1) !important;
+  }
+
+  &__option-title {
+    &.MuiTypography-root {
+      color: rgba(0, 0, 0, 0.6);
+      margin-bottom: 16px;
+      font-size: 16px;
+    }
+  }
+
+  &__color-list {
+    display: flex;
+    gap: 12px;
+  }
+
+  &__color-circle {
+    width: 37px;
+    height: 37px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    &:hover { transform: scale(1.1); }
+  }
+
+  &__size-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  &__size-btn {
+    &.MuiButton-root {
+      background-color: #F0F0F0;
+      color: rgba(0, 0, 0, 0.6);
+      border-radius: 62px;
+      padding: 10px 24px;
+      text-transform: none;
+      font-weight: 400;
+      box-shadow: none;
+      &:hover { background-color: #e0e0e0; }
+    }
+    &--active.MuiButton-root {
+      background-color: #000;
+      color: #fff;
+      &:hover { background-color: #333; }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: 20px;
+    margin-top: 8px;
+  }
+
+  &__qty {
+    display: flex;
+    align-items: center;
+    background-color: #F0F0F0;
+    border-radius: 62px;
+    padding: 6px 16px;
+    gap: 16px;
+  }
+
+  &__qty-value {
+    &.MuiTypography-root {
+      font-weight: 500;
+      min-width: 20px;
+      text-align: center;
+    }
+  }
+
+  &__add-btn {
+    &.MuiButton-root {
+      background-color: #000;
+      color: #fff;
+      border-radius: 62px;
+      padding: 12px;
+      font-weight: 500;
+      text-transform: none;
+      &:hover { background-color: #333; }
+    }
+  }
+
+  &__gallery {
+    display: flex;
+    gap: 14px;
+  }
+
+  &__thumbnails {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  &__thumb {
+    width: 152px;
+    height: 167px;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid transparent;
+    background-color: #F0EEED;
+    img { width: 100%; height: 100%; object-fit: contain; }
+    &--active { border-color: #000; }
+  }
+
+  &__main-image {
+    flex-grow: 1;
+    height: 530px;
+    border-radius: 20px;
+    background-color: #F0EEED;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    img { width: 100%; height: 100%; object-fit: contain; }
+  }
+
+  &__loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+  }
+}

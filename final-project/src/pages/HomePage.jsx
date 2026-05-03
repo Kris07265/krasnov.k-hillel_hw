@@ -1,9 +1,9 @@
-import AppHero from "../components/AppHero/AppHero.jsx";
-import AppBrandsBar from "../components/AppBrandsBar/AppBrandsBar.jsx";
+import HeroSection from "../components/HeroSection/HeroSection.jsx";
+import BrandsBar from "../components/BrandsBar/BrandsBar.jsx";
 import {useGetProductsQuery} from "../store/api/productsApi.js";
 import ProductSection from "../components/ProductSection/ProductSection.jsx";
-import BrowseByStyle from "../components/BrowseByStyle/BrowseByStyle.jsx";
-import HappyCustomers from "../components/HappyCustomers/HappyCustomers.jsx";
+import BrowseByStyleSection from "../components/BrowseByStyleSection/BrowseByStyleSection.jsx";
+import ReviewsSection from "../components/ReviewsSection/ReviewsSection.jsx";
 
 const HomePage = () => {
 
@@ -11,8 +11,8 @@ const HomePage = () => {
     const { data: topSellingData, isLoading: isTopLoading, error: topError } = useGetProductsQuery({ limit: 4, skip: 8 });
     return (
         <>
-            <AppHero />
-            <AppBrandsBar/>
+            <HeroSection />
+            <BrandsBar/>
 
             <ProductSection
                 title="NEW ARRIVALS"
@@ -28,8 +28,8 @@ const HomePage = () => {
                 error={topError}
             />
 
-            <BrowseByStyle/>
-            <HappyCustomers/>
+            <BrowseByStyleSection/>
+            <ReviewsSection/>
         </>
     )
 }

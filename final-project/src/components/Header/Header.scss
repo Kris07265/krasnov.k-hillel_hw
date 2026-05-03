@@ -1,0 +1,130 @@
+@import "../../assets/fonts/fonts";
+$font-integral: 'Integral CF', sans-serif;
+$font-satoshi: 'Satoshi', sans-serif;
+
+@mixin nav-link-base {
+  font-family: $font-satoshi;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
+  text-decoration: none;
+  color: #000;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.header {
+  background-color: #fff;
+
+  &__toolbar {
+    height: 85px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__left-section {
+    display: flex;
+    align-items: center;
+  }
+
+  &__menu-mobile-btn {
+    &.MuiIconButton-root {
+      margin-right: 8px;
+      color: #000;
+      @media (min-width: 900px) { display: none; }
+    }
+  }
+
+  &__logo {
+    font-family: $font-integral;
+    font-size: 32px;
+    font-weight: 700;
+    text-decoration: none;
+    color: #000;
+    line-height: 1;
+  }
+
+  &__nav-desktop {
+    display: none;
+    @media (min-width: 900px) { display: flex; }
+    gap: 24px;
+    margin-left: 40px;
+  }
+
+  &__nav-link {
+    @include nav-link-base;
+
+    &--lg {
+    }
+
+    &--md {
+      width: 100%;
+      padding: 12px 16px;
+    }
+  }
+
+  &__search-wrapper {
+    display: none;
+    @media (min-width: 900px) { display: flex; }
+    flex-grow: 1;
+    margin: 0 40px;
+    background-color: #F0F0F0;
+    border-radius: 62px;
+    padding: 12px 16px;
+    align-items: center;
+  }
+
+  &__search-icon-inside {
+    color: rgba(0, 0, 0, 0.4);
+  }
+
+  &__search-input {
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+    margin-left: 12px;
+    font-size: 16px;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    @media (min-width: 900px) { gap: 16px; }
+  }
+
+  &__search-mobile-btn {
+    &.MuiIconButton-root {
+      color: #000;
+      @media (min-width: 900px) { display: none; }
+    }
+  }
+
+  &__action-btn {
+    &.MuiIconButton-root {
+      color: #000;
+      padding: 0;
+    }
+  }
+
+  &__mobile-drawer {
+    width: 250px;
+  }
+
+  &__mobile-list {
+    padding-top: 16px;
+  }
+
+  &__cart-badge {
+    .MuiBadge-badge {
+      background-color: #000;
+      color: #fff;
+    }
+  }
+}

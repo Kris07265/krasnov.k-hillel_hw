@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { Box, Typography, Rating } from '@mui/material';
 import { Link } from 'react-router';
@@ -11,18 +10,22 @@ const ProductCard = ({ product }) => {
         : null;
 
     return (
-        <Link to={`/product/${product?.id}`} className="product-card-link">
+        <Link to={`/product/${product?.id}`} className="product-card__wrapper">
             <Box className="product-card">
-                <Box className="product-card-image">
-                    <img src={product?.images[0]} alt={product?.title} />
+                <Box className="product-card__image-container">
+                    <img
+                        src={product?.images[0]}
+                        alt={product?.title}
+                        className="product-card__image"
+                    />
                 </Box>
 
-                <Box className="product-card-info">
-                    <Typography variant="h4" className="product-title">
+                <Box className="product-card__info">
+                    <Typography variant="h4" className="product-card__title">
                         {product?.title}
                     </Typography>
 
-                    <Box className="product-rating">
+                    <Box className="product-card__rating">
                         <Rating
                             value={product?.rating}
                             precision={0.5}
@@ -30,22 +33,22 @@ const ProductCard = ({ product }) => {
                             icon={<StarIcon fontSize="inherit" />}
                             emptyIcon={<StarIcon fontSize="inherit" />}
                         />
-                        <Typography variant="body2" className="rating-value">
+                        <Typography variant="body2" className="product-card__rating-value">
                             {product.rating}/<span>5</span>
                         </Typography>
                     </Box>
 
-                    <Box className="product-price-block">
-                        <Typography className="current-price">
+                    <Box className="product-card__price-block">
+                        <Typography className="product-card__price">
                             ${product?.price}
                         </Typography>
 
                         {oldPrice && (
                             <>
-                                <Typography className="old-price">
+                                <Typography className="product-card__price-old">
                                     ${oldPrice}
                                 </Typography>
-                                <Box className="discount-tag">
+                                <Box className="product-card__discount">
                                     -{Math.round(product.discountPercentage)}%
                                 </Box>
                             </>
@@ -63,7 +66,7 @@ ProductCard.propTypes = {
         title: PropTypes.string.isRequired,
         price: PropTypes.number.isRequired,
         rating: PropTypes.number,
-        images: PropTypes.string,
+        images: PropTypes.arrayOf(PropTypes.string),
         discountPercentage: PropTypes.number,
     }).isRequired,
 };

@@ -1,0 +1,77 @@
+@import "../../assets/fonts/fonts";
+$font-integral: 'Integral CF', sans-serif;
+
+.customers {
+  padding: 40px 0;
+  overflow: hidden;
+
+  @media (min-width: 900px) {
+    padding: 80px 0;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 24px;
+
+    @media (min-width: 900px) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__title {
+    &.MuiTypography-root {
+      font-family: $font-integral;
+      font-weight: 700;
+      font-size: 32px;
+      color: #000;
+      margin: 0;
+
+      @media (min-width: 900px) {
+        font-size: 48px;
+      }
+    }
+  }
+
+  &__navigation {
+    display: flex;
+    gap: 8px;
+  }
+
+  &__arrow {
+    &.MuiButtonBase-root {
+      color: #000;
+      padding: 8px;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+      }
+    }
+  }
+
+  &__loader {
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+  }
+
+  &__slider {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 10px 0 20px 0;
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  &__card-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+}

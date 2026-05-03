@@ -1,13 +1,13 @@
-import HeroProductDetail from "../components/HeroProductDetail/HeroProductDetail.jsx";
-import ProductReviewsSection from "../components/ProductReviewsSection/ProductReviewsSection.jsx";
-import RelatedProducts from "../components/RelatedProducts/RelatedProducts.jsx";
+import ProductDetailHeroSection from "../components/ProductDetailHeroSection/ProductDetailHeroSection.jsx";
+import ProductDetailReviewsSection from "../components/ProductDetailReviewsSection/ProductDetailReviewsSection.jsx";
+import ProductDetailRelatedProductsSection from "../components/ProductDetailRelatedProductsSection/ProductDetailRelatedProductsSection.jsx";
 
 const ProductDetailPage = () => {
     return (
         <>
-            <HeroProductDetail/>
-            <ProductReviewsSection/>
-            <RelatedProducts/>
+            <ProductDetailHeroSection/>
+            <ProductDetailReviewsSection/>
+            <ProductDetailRelatedProductsSection/>
         </>
     )
 }

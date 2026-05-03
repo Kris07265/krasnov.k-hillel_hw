@@ -1,4 +1,3 @@
-import React from 'react';
 import { Box, Typography, Rating } from '@mui/material';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import './ReviewCard.scss';
@@ -9,20 +8,22 @@ const ReviewCard = ({ review, showDate = false }) => {
             <Rating
                 value={5}
                 readOnly
-                className="review-rating"
+                className="review-card__rating"
             />
-            <Box className="review-name-row">
-                <Typography className="review-name">
+
+            <Box className="review-card__name-row">
+                <Typography className="review-card__name">
                     {review.user?.fullName || "Anonymous"}
                 </Typography>
-                <CheckCircleIcon className="verified-icon" />
+                <CheckCircleIcon className="review-card__verified-icon" />
             </Box>
-            <Typography className="review-text">
+
+            <Typography className="review-card__text">
                 "{review.body}"
             </Typography>
 
             {showDate && (
-                <Typography variant="caption" className="review-date">
+                <Typography variant="caption" className="review-card__date">
                     Posted on August 14, 2023
                 </Typography>
             )}
