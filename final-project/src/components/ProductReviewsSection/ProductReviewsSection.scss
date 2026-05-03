@@ -1,0 +1,132 @@
+$font-integral: 'Integral CF', sans-serif;
+$font-satoshi: 'Satoshi', sans-serif;
+
+.product-reviews-section {
+  margin: 24px 0 40px;
+
+  .tabs-navigation {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 24px;
+
+    .tab-item {
+      padding: 18px 0;
+      font-family: $font-satoshi;
+      font-size: 16px;
+      color: rgba(0, 0, 0, 0.6);
+      cursor: pointer;
+      flex: 1;
+      text-align: center;
+      transition: 0.3s;
+
+      @media (min-width: 900px) {
+        font-size: 20px;
+      }
+
+      &.active {
+        color: #000;
+        border-bottom: 2px solid #000;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .reviews-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+
+    .section-title {
+      font-family: $font-integral;
+      font-weight: 700;
+      font-size: 20px;
+
+      @media (min-width: 900px) {
+        font-size: 24px;
+      }
+
+      .reviews-count {
+        font-size: 14px;
+        font-weight: 400;
+        color: rgba(0, 0, 0, 0.6);
+        @media (min-width: 900px) { font-size: 16px; }
+      }
+    }
+
+    .header-actions {
+      .desktop-only {
+        @media (max-width: 600px) { display: none; }
+      }
+    }
+  }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+
+    @media (min-width: 900px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+  }
+
+  .icon-circle-btn {
+    background: #F0F0F0;
+    width: 40px;
+    height: 40px;
+    @media (min-width: 900px) { width: 48px; height: 48px; }
+  }
+
+  .select-btn {
+    background: #F0F0F0;
+    color: #000;
+    border-radius: 62px;
+    text-transform: none;
+    box-shadow: none;
+    font-weight: 500;
+    padding: 8px 16px;
+    &:hover { background: #e0e0e0; box-shadow: none; }
+  }
+
+  .black-btn {
+    background: #000;
+    color: #fff;
+    border-radius: 62px;
+    padding: 8px 16px;
+    text-transform: none;
+    font-weight: 500;
+    font-size: 12px;
+
+    @media (min-width: 900px) {
+      padding: 12px 28px;
+      font-size: 16px;
+    }
+
+    &:hover { background: rgba(0,0,0,0.8); }
+  }
+
+  .load-more-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+  }
+
+  .load-more {
+    border-radius: 62px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: #000;
+    padding: 12px 40px;
+    text-transform: none;
+    font-family: $font-satoshi;
+    font-weight: 500;
+
+    &:hover {
+      background-color: #000;
+      color: #fff;
+      border-color: #000;
+    }
+  }
+}

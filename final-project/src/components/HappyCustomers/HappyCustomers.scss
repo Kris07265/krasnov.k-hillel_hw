@@ -1,8 +1,8 @@
 $font-integral: 'Integral CF', sans-serif;
-$font-satoshi: 'Satoshi', sans-serif;
 
 .customers-section {
   padding: 40px 0;
+  overflow: hidden;
 
   @media (min-width: 900px) {
     padding: 80px 0;
@@ -23,13 +23,11 @@ $font-satoshi: 'Satoshi', sans-serif;
     font-family: $font-integral;
     font-weight: 700;
     font-size: 32px;
-    margin-bottom: 24px;
     color: #000;
-    text-align: left;
+    margin: 0;
 
     @media (min-width: 900px) {
       font-size: 48px;
-      margin-bottom: 40px;
     }
   }
 
@@ -44,10 +42,6 @@ $font-satoshi: 'Satoshi', sans-serif;
       &:hover {
         background-color: rgba(0, 0, 0, 0.05);
       }
-
-      svg {
-        font-size: 24px;
-      }
     }
   }
 
@@ -61,7 +55,7 @@ $font-satoshi: 'Satoshi', sans-serif;
     display: flex;
     overflow-x: auto;
     gap: 20px;
-    padding-bottom: 20px;
+    padding: 10px 0 20px 0;
     scroll-behavior: smooth;
 
     &::-webkit-scrollbar {
@@ -69,64 +63,10 @@ $font-satoshi: 'Satoshi', sans-serif;
     }
     -ms-overflow-style: none;
     scrollbar-width: none;
-
   }
 
-  .customer-card {
-    min-width: 310px;
-    background: #FFFFFF;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 20px;
-    padding: 24px;
+  .card-container {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    min-height: 185px;
-
-    @media (min-width: 900px) {
-      min-width: auto;
-      min-height: 240px;
-      padding: 28px;
-      flex: 1 0 25%;
-    }
-
-    .customer-rating {
-      color: #FFC633;
-      font-size: 20px;
-    }
-
-    .customer-name-row {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-
-      .customer-name {
-        font-family: $font-satoshi;
-        font-weight: 700;
-        font-size: 16px;
-        color: #000;
-
-        @media (min-width: 900px) {
-          font-size: 20px;
-        }
-      }
-
-      .verified-icon {
-        color: #01AB31;
-        font-size: 19px;
-      }
-    }
-
-    .customer-text {
-      font-family: $font-satoshi;
-      font-size: 14px;
-      line-height: 20px;
-      color: rgba(0, 0, 0, 0.6);
-
-      @media (min-width: 900px) {
-        font-size: 16px;
-        line-height: 22px;
-      }
-    }
   }
 }

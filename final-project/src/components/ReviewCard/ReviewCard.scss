@@ -1,0 +1,57 @@
+$font-satoshi: 'Satoshi', sans-serif;
+
+.review-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: auto;
+
+  .review-rating {
+    color: #FFC633;
+    font-size: 20px;
+  }
+
+  .review-name-row {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    .review-name {
+      font-family: $font-satoshi;
+      font-weight: 700;
+      font-size: 16px;
+      color: #000;
+
+      @media (min-width: 900px) {
+        font-size: 20px;
+      }
+    }
+
+    .verified-icon {
+      color: #01AB31;
+      font-size: 19px;
+    }
+  }
+
+  .review-text {
+    font-family: $font-satoshi;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgba(0, 0, 0, 0.6);
+
+    @media (min-width: 900px) {
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+
+  .review-date {
+    margin-top: auto;
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: 500;
+  }
+}
