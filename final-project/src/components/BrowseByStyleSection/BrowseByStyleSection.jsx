@@ -1,5 +1,6 @@
 import { Box, Typography, Container, CircularProgress } from '@mui/material';
 import { useGetCategoriesQuery, useGetProductsQuery } from "../../store/api/productsApi.js";
+import { Link } from 'react-router';
 import './BrowseByStyleSection.scss';
 
 const BrowseByStyleSection = () => {
@@ -33,7 +34,10 @@ const BrowseByStyleSection = () => {
                             return (
                                 <Box
                                     key={index}
+                                    component={Link}
+                                    to={`/category/${categoryName}`}
                                     className={`browse-style__item browse-style__item--type-${index}`}
+                                    sx={{ textDecoration: 'none' }}
                                 >
                                     <Typography className="browse-style__item-label">
                                         {categoryName.charAt(0).toUpperCase() + categoryName.slice(1)}
