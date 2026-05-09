@@ -18,7 +18,7 @@ const ProductDetailReviewsSection = () => {
     if (isError) return null;
 
     return (
-        <Container maxWidth="xl">
+        <Container>
             <Box component="section" className="product-reviews">
                 <Box className="product-reviews__tabs">
                     <Typography className="product-reviews__tab">Product Details</Typography>

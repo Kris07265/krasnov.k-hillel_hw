@@ -14,7 +14,7 @@ const BrowseByStyleSection = () => {
     const isLoading = isCategoriesLoading || isProductsLoading;
 
     return (
-        <Container maxWidth="xl" className="browse-style">
+        <Container className="browse-style">
             <Box className="browse-style__card">
                 <Typography variant="h2" className="browse-style__title">
                     BROWSE BY DRESS STYLE

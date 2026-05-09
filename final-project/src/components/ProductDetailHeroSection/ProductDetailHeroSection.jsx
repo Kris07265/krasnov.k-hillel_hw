@@ -41,7 +41,7 @@ const ProductDetailHeroSection = () => {
         : null;
 
     return (
-        <Container maxWidth="xl" className="product-hero">
+        <Container className="product-hero">
             <Breadcrumbs separator={<NavigateNextIcon fontSize="small" />} className="product-hero__breadcrumbs">
                 <Link to="/">Home</Link>
                 <Link to="/shop">Shop</Link>

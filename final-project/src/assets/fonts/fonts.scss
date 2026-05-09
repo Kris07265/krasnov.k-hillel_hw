@@ -1,8 +1,7 @@
-$fonts-src: "./fonts-files";
 
 @font-face {
   font-family: 'Satoshi';
-  src: url('#{$fonts-src}/Satoshi-Regular.woff2') format('woff2');
+  src: url('./fonts-files/Satoshi-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -10,7 +9,7 @@ $fonts-src: "./fonts-files";
 
 @font-face {
   font-family: 'Satoshi';
-  src: url('#{$fonts-src}/Satoshi-Medium.woff2') format('woff2');
+  src: url('./fonts-files/Satoshi-Medium.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -18,7 +17,7 @@ $fonts-src: "./fonts-files";
 
 @font-face {
   font-family: 'Satoshi';
-  src: url('#{$fonts-src}/Satoshi-Bold.woff2') format('woff2');
+  src: url('./fonts-files/Satoshi-Bold.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -27,7 +26,7 @@ $fonts-src: "./fonts-files";
 /*
 @font-face {
   font-family: 'Integral CF';
-  src: url('#{$fonts-src}/IntegralCF-Bold.woff2') format('woff2');
+  src: url('./fonts-files/IntegralCF-Bold.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
   font-display: swap;

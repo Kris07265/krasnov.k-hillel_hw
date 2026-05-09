@@ -17,7 +17,7 @@ const ProductDetailRelatedProductsSection = () => {
 
     return (
         <Box component="section" className="related-products">
-            <Container maxWidth="xl">
+            <Container>
                 <Typography variant="h2" className="related-products__title">
                     You might also like
                 </Typography>

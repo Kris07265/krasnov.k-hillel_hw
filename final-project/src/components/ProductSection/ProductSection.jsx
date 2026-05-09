@@ -25,7 +25,7 @@ const ProductSection = ({ title, products, isLoading, error }) => {
 
     return (
         <Box component="section" className="product-section">
-            <Container maxWidth="xl">
+            <Container>
                 <Typography variant="h2" className="product-section__title">
                     {title}
                 </Typography>

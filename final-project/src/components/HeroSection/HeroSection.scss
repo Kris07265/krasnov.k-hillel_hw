@@ -1,4 +1,4 @@
-@import "../../assets/fonts/fonts";
+@use "../../assets/fonts/fonts.scss";
 $font-integral: 'Integral CF', sans-serif;
 $font-satoshi: 'Satoshi', sans-serif;
 
@@ -6,14 +6,12 @@ $font-satoshi: 'Satoshi', sans-serif;
   background-color: #F2F0F1;
   overflow: hidden;
   width: 100%;
+  padding-top: 40px;
 
-  &__container {
-    padding-top: 40px;
-
-    @media (min-width: 900px) {
-      padding-top: 80px;
-    }
+  @media (min-width: 900px) {
+    padding-top: 80px;
   }
+
 
   &__layout {
     display: flex;

@@ -19,7 +19,7 @@ const BrandsBar = () => {
 
     return (
         <Box component="section" className="brands">
-            <Container maxWidth="xl" className="brands__container">
+            <Container className="brands__container">
                 {displayedBrands.map((category) => (
                     <span key={category} className="brands__logo">
                         {category.replace('-', ' ').toUpperCase()}

@@ -11,7 +11,7 @@ import './Footer.scss';
 const Footer = () => {
     return (
         <Box component="footer" className="footer">
-            <Container maxWidth="xl" className="footer__newsletter-container">
+            <Container className="footer__newsletter-container">
                 <Box className="footer__newsletter">
                     <Typography variant="h4" className="footer__newsletter-text">
                         STAY UP TO DATE ABOUT OUR LATEST OFFERS

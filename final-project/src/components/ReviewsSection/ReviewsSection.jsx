@@ -36,7 +36,7 @@ const ReviewsSection = () => {
 
     return (
         <Box component="section" className="customers">
-            <Container maxWidth="xl">
+            <Container>
                 <Box className="customers__header">
                     <Typography variant="h2" className="customers__title">
                         OUR HAPPY CUSTOMERS

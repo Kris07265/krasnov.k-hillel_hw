@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import {useState} from "react";
-import { AppBar, Toolbar, Box, Badge, IconButton, Drawer, List, ListItem} from '@mui/material';
+import {AppBar, Toolbar, Box, Badge, IconButton, Drawer, List, ListItem, Container} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
@@ -20,6 +20,7 @@ const Header = () => {
 
     return (
         <AppBar position='static' color="transparent" elevation={0} className="header">
+            <Container>
             <Toolbar disableGutters className="header__toolbar">
                 <Box className="header__left-section">
                     <IconButton
@@ -99,6 +100,7 @@ const Header = () => {
                     </List>
                 </Box>
             </Drawer>
+        </Container>
         </AppBar>
     );
 };

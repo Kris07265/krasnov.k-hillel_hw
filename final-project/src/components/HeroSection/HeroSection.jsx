@@ -8,7 +8,7 @@ const HeroSection = () => {
 
     return (
         <Box component="section" className="hero">
-            <Container maxWidth="xl" className="hero__container">
+            <Container>
                 <Box className="hero__layout">
 
                     <Box className="hero__content">

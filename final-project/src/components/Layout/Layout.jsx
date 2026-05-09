@@ -6,10 +6,8 @@ import Footer from "../Footer/Footer.jsx";
 const Layout = () => {
     return (
         <>
-            <Container fixed>
-                <Header/>
-                <Outlet/>
-            </Container>
+            <Header/>
+            <Outlet/>
             <Footer/>
         </>
     )
