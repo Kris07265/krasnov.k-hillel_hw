@@ -7,8 +7,19 @@ import ReviewsSection from "../components/ReviewsSection/ReviewsSection.jsx";
 
 const HomePage = () => {
 
-    const { data: newArrivalsData, isLoading: isNewLoading, error: newError } = useGetProductsQuery({ limit: 4, skip: 4});
-    const { data: topSellingData, isLoading: isTopLoading, error: topError } = useGetProductsQuery({ limit: 4, skip: 8 });
+    const { data: newArrivalsData, isLoading: isNewLoading, error: newError } =
+        useGetProductsQuery({
+            limit: 4,
+            sortBy: 'id',
+            order: 'desc'
+        });
+
+    const { data: topSellingData, isLoading: isTopLoading, error: topError } =
+        useGetProductsQuery({
+            limit: 4,
+            sortBy: 'rating',
+            order: 'desc'
+        });
     return (
         <>
             <HeroSection />

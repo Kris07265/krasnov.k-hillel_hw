@@ -36,6 +36,7 @@ $font-satoshi: 'Satoshi', sans-serif;
     &.MuiIconButton-root {
       margin-right: 8px;
       color: #000;
+      // Скрываем на десктопе (900px+)
       @media (min-width: 900px) { display: none; }
     }
   }
@@ -56,16 +57,72 @@ $font-satoshi: 'Satoshi', sans-serif;
     margin-left: 40px;
   }
 
+  &__nav-shop {
+    cursor: pointer;
+  }
+
   &__nav-link {
     @include nav-link-base;
+  }
 
-    &--lg {
-    }
+  // Стили выпадающего меню (Desktop)
+  &__dropdown-paper {
+    border-radius: 12px !important;
+    margin-top: 8px !important;
+    min-width: 160px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1) !important;
+  }
 
-    &--md {
-      width: 100%;
-      padding: 12px 16px;
+  &__dropdown-item {
+    &.MuiMenuItem-root {
+      font-family: $font-satoshi;
+      text-transform: capitalize;
+      font-size: 14px;
+      padding: 10px 20px;
+      &:hover { background-color: #F0F0F0; }
     }
+  }
+
+  // Мобильный Drawer
+  &__mobile-drawer {
+    width: 250px;
+    padding: 20px 0;
+  }
+
+  &__mobile-item {
+    display: block !important;
+    padding: 8px 20px !important;
+  }
+
+  &__mobile-accordion {
+    &.MuiAccordion-root {
+      background: transparent;
+      &:before { display: none; } // Убираем стандартную линию MUI
+    }
+  }
+
+  &__mobile-accordion-summary {
+    &.MuiAccordionSummary-root {
+      padding: 0;
+      min-height: auto !important;
+      .MuiAccordionSummary-content { margin: 0 !important; }
+    }
+  }
+
+  &__mobile-accordion-details {
+    padding: 10px 0 0 15px !important;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__mobile-sublink {
+    font-family: $font-satoshi;
+    font-size: 14px;
+    text-transform: capitalize;
+    color: rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+    &:hover { color: #000; }
   }
 
   &__search-wrapper {
@@ -79,52 +136,26 @@ $font-satoshi: 'Satoshi', sans-serif;
     align-items: center;
   }
 
-  &__search-icon-inside {
-    color: rgba(0, 0, 0, 0.4);
-  }
-
   &__search-input {
-    background: transparent;
     border: none;
+    background: none;
     outline: none;
     width: 100%;
     margin-left: 12px;
+    font-family: $font-satoshi;
     font-size: 16px;
   }
 
-  &__actions {
+  &__icons {
     display: flex;
     align-items: center;
-    gap: 12px;
-    @media (min-width: 900px) { gap: 16px; }
+    gap: 8px;
   }
 
-  &__search-mobile-btn {
-    &.MuiIconButton-root {
-      color: #000;
+  &__icon-btn {
+    &.MuiIconButton-root { color: #000; }
+    &--mobile-search {
       @media (min-width: 900px) { display: none; }
-    }
-  }
-
-  &__action-btn {
-    &.MuiIconButton-root {
-      color: #000;
-      padding: 0;
-    }
-  }
-
-  &__mobile-drawer {
-    width: 250px;
-  }
-
-  &__mobile-list {
-    padding-top: 16px;
-  }
-
-  &__cart-badge {
-    .MuiBadge-badge {
-      background-color: #000;
-      color: #fff;
     }
   }
 }

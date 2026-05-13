@@ -19,7 +19,7 @@ import { useGetProductsByCategoryQuery } from "../../store/api/productsApi.js";
 import ProductCard from '../ProductCard/ProductCard.jsx';
 import './ProductsList.scss';
 
-const ProductsList = ({ categoryName = "Casual", onFilterClick }) => {
+const ProductsList = ({ categoryName, onFilterClick }) => {
     const pageSize = 9;
     const [page, setPage] = useState(1);
     const [sortBy, setSortBy] = useState('most-popular');

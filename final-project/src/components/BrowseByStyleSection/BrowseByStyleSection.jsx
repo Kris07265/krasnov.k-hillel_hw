@@ -1,18 +1,14 @@
 import { Box, Typography, Container, CircularProgress } from '@mui/material';
-import { useGetCategoriesQuery, useGetProductsQuery } from "../../store/api/productsApi.js";
-import { Link } from 'react-router';
+import { useGetCategoriesQuery } from "../../store/api/productsApi.js";
 import './BrowseByStyleSection.scss';
+import BrowseByStyleItem from "../BrowseByStyleItem/BrowseByStyleItem.jsx";
 
 const BrowseByStyleSection = () => {
-    const { data: categories, isLoading: isCategoriesLoading, isError: isCategoriesError } = useGetCategoriesQuery();
-    const { data: productsData, isLoading: isProductsLoading, isError: isProductsError } = useGetProductsQuery({ limit: 4, skip: 8 });
+    const { data: categories, isLoading, isError } = useGetCategoriesQuery();
 
     const styleCategories = categories ? categories.slice(0, 4) : [];
-    const products = productsData?.products || [];
 
-    if (isCategoriesError || isProductsError) return null;
-
-    const isLoading = isCategoriesLoading || isProductsLoading;
+    if (isError) return null;
 
     return (
         <Container className="browse-style">
@@ -29,28 +25,13 @@ const BrowseByStyleSection = () => {
                     <Box className="browse-style__grid">
                         {styleCategories.map((cat, index) => {
                             const categoryName = typeof cat === 'string' ? cat : cat.name;
-                            const productImage = products[index]?.images[0];
 
                             return (
-                                <Box
-                                    key={index}
-                                    component={Link}
-                                    to={`/category/${categoryName}`}
-                                    className={`browse-style__item browse-style__item--type-${index}`}
-                                    sx={{ textDecoration: 'none' }}
-                                >
-                                    <Typography className="browse-style__item-label">
-                                        {categoryName.charAt(0).toUpperCase() + categoryName.slice(1)}
-                                    </Typography>
-
-                                    {productImage && (
-                                        <img
-                                            src={productImage}
-                                            alt={categoryName}
-                                            className="browse-style__item-image"
-                                        />
-                                    )}
-                                </Box>
+                                <BrowseByStyleItem
+                                    key={categoryName}
+                                    categoryName={categoryName}
+                                    index={index}
+                                />
                             );
                         })}
                     </Box>

@@ -1,6 +1,5 @@
 @use "../../assets/fonts/fonts.scss";
 $font-integral: 'Integral CF', sans-serif;
-$font-satoshi: 'Satoshi', sans-serif;
 
 .browse-style {
   padding: 40px 16px;
@@ -52,54 +51,5 @@ $font-satoshi: 'Satoshi', sans-serif;
       grid-template-columns: 1fr 1fr 1fr;
       gap: 20px;
     }
-  }
-
-  &__item {
-    position: relative;
-    height: 190px;
-    background-color: #fff;
-    border-radius: 20px;
-    overflow: hidden;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-
-    &:hover {
-      transform: scale(1.02);
-    }
-
-    @media (min-width: 900px) {
-      height: 289px;
-    }
-
-    &--type-0 { @media (min-width: 900px) { grid-column: 1/2; } }
-    &--type-1 { @media (min-width: 900px) { grid-column: 2/4; } }
-    &--type-2 { @media (min-width: 900px) { grid-column: 1/3; } }
-    &--type-3 { @media (min-width: 900px) { grid-column: 3/4; } }
-  }
-
-  &__item-label {
-    &.MuiTypography-root {
-      position: absolute;
-      top: 25px;
-      left: 25px;
-      font-family: $font-satoshi;
-      font-weight: 700;
-      font-size: 24px;
-      color: #000;
-      z-index: 2;
-
-      @media (min-width: 900px) {
-        top: 36px;
-        left: 36px;
-        font-size: 36px;
-      }
-    }
-  }
-
-  &__item-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
   }
 }
