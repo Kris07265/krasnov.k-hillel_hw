@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import {
     Box,
@@ -15,24 +15,74 @@ import {
 import TuneIcon from '@mui/icons-material/Tune';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import { useGetProductsByCategoryQuery } from "../../store/api/productsApi.js";
+import { useGetProductsByCategoryQuery, useGetProductsQuery } from "../../store/api/productsApi.js";
 import ProductCard from '../ProductCard/ProductCard.jsx';
+import { useLocation } from 'react-router';
 import './ProductsList.scss';
 
-const ProductsList = ({ categoryName, onFilterClick }) => {
+const ProductsList = ({ categoryName, onFilterClick, activeFilters }) => {
+    const location = useLocation();
     const pageSize = 9;
+
+    const initialSort = location.state?.sort || 'default';
+
     const [page, setPage] = useState(1);
-    const [sortBy, setSortBy] = useState('most-popular');
+    const [sortBy, setSortBy] = useState(initialSort);
 
-    const skip = (page - 1) * pageSize;
+    const skipValue = (page - 1) * pageSize;
 
-    const { data, isLoading, isError } = useGetProductsByCategoryQuery({
-        category: categoryName,
-        params: {
-            limit: pageSize,
-            skip: skip,
+    const getQueryParams = () => {
+        const baseParams = {
+            limit: 100,
+            skip: 0,
+        };
+
+        if (sortBy === 'new-arrivals') {
+            return { ...baseParams, sortBy: 'id', order: 'desc' };
         }
+        if (sortBy === 'top-rating') {
+            return { ...baseParams, sortBy: 'rating', order: 'desc' };
+        }
+
+        return baseParams;
+    };
+
+    const queryParams = getQueryParams();
+
+    const categoryData = useGetProductsByCategoryQuery({
+        category: categoryName,
+        params: queryParams
+    }, { skip: !categoryName });
+
+    const allProductsData = useGetProductsQuery(queryParams, {
+        skip: !!categoryName
     });
+
+    const currentRequest = categoryName ? categoryData : allProductsData;
+    const { data, isLoading, isError } = currentRequest;
+
+    const filteredProducts = useMemo(() => {
+        if (!data?.products) return [];
+
+        return data.products.filter(product => {
+            const matchesPrice = product.price >= activeFilters.price[0] && product.price <= activeFilters.price[1];
+            const matchesRating = product.rating >= activeFilters.rating;
+            const matchesWeight = product.weight >= activeFilters.weight[0] && product.weight <= activeFilters.weight[1];
+            const matchesWidth = product.dimensions.width >= activeFilters.width[0] && product.dimensions.width <= activeFilters.width[1];
+            const matchesHeight = product.dimensions.height >= activeFilters.height[0] && product.dimensions.height <= activeFilters.height[1];
+            const matchesDepth = product.dimensions.depth >= activeFilters.depth[0] && product.dimensions.depth <= activeFilters.depth[1];
+
+            return matchesPrice && matchesRating && matchesWeight && matchesWidth && matchesHeight && matchesDepth;
+        });
+    }, [data, activeFilters]);
+
+    const sortedProducts = useMemo(() => {
+        return [...filteredProducts];
+    }, [filteredProducts]);
+
+    const totalItems = sortedProducts.length;
+    const pageCount = Math.ceil(totalItems / pageSize);
+    const paginatedProducts = sortedProducts.slice(skipValue, skipValue + pageSize);
 
     const handlePageChange = (event, value) => {
         setPage(value);
@@ -41,6 +91,7 @@ const ProductsList = ({ categoryName, onFilterClick }) => {
 
     const handleSortChange = (event) => {
         setSortBy(event.target.value);
+        setPage(1);
     };
 
     if (isLoading) {
@@ -52,23 +103,19 @@ const ProductsList = ({ categoryName, onFilterClick }) => {
     }
 
     if (isError) {
-        return <Typography className="products-list__error">Error</Typography>;
+        return <Typography className="products-list__error">Error loading products</Typography>;
     }
-
-    const products = data?.products || [];
-    const totalItems = data?.total || 0;
-    const pageCount = Math.ceil(totalItems / pageSize);
 
     return (
         <Box className="products-list">
             <Box className="products-list__header">
                 <Typography variant="h2" className="products-list__title">
-                    {categoryName}
+                    {categoryName || "All Products"}
                 </Typography>
 
                 <Box className="products-list__controls">
                     <Typography variant="body1" className="products-list__count">
-                        Showing {skip + 1}-{Math.min(skip + pageSize, totalItems)} of {totalItems} Products
+                        Showing {totalItems > 0 ? skipValue + 1 : 0}-{Math.min(skipValue + pageSize, totalItems)} of {totalItems} Products
                     </Typography>
 
                     <Box className="products-list__sort">
@@ -82,9 +129,9 @@ const ProductsList = ({ categoryName, onFilterClick }) => {
                                 disableUnderline
                                 className="products-list__sort-select"
                             >
-                                <MenuItem value="most-popular">Most Popular</MenuItem>
-                                <MenuItem value="low-price">Price: Low to High</MenuItem>
-                                <MenuItem value="high-price">Price: High to Low</MenuItem>
+                                <MenuItem value="default">Default</MenuItem>
+                                <MenuItem value="new-arrivals">NEW ARRIVALS</MenuItem>
+                                <MenuItem value="top-rating">TOP RATING</MenuItem>
                             </Select>
                         </FormControl>
                     </Box>
@@ -99,12 +146,16 @@ const ProductsList = ({ categoryName, onFilterClick }) => {
             </Box>
 
             <Grid container spacing={{ xs: 2, md: 3 }} className="products-list__grid">
-                {products?.map((product) => (
+                {paginatedProducts.map((product) => (
                     <Grid size={{xs: 6, md: 4}} key={product.id} className="products-list__grid-item">
                         <ProductCard product={product} />
                     </Grid>
                 ))}
             </Grid>
+
+            {totalItems === 0 && (
+                <Typography sx={{ textAlign: 'center', py: 5 }}>No products found matching filters.</Typography>
+            )}
 
             <Box className="products-list__pagination-container">
                 <Pagination
@@ -137,7 +188,8 @@ const ProductsList = ({ categoryName, onFilterClick }) => {
 
 ProductsList.propTypes = {
     categoryName: PropTypes.string,
-    onFilterClick: PropTypes.func
+    onFilterClick: PropTypes.func,
+    activeFilters: PropTypes.object
 };
 
 export default ProductsList;

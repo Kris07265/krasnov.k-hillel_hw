@@ -3,7 +3,7 @@ import { Box, Typography, Button, Container, CircularProgress } from '@mui/mater
 import ProductCard from '../ProductCard/ProductCard';
 import './ProductSection.scss';
 
-const ProductSection = ({ title, products, isLoading, error }) => {
+const ProductSection = ({ title, products, isLoading, error, onViewAllClick }) => {
 
     if (isLoading) {
         return (
@@ -39,7 +39,11 @@ const ProductSection = ({ title, products, isLoading, error }) => {
                 </Box>
 
                 <Box className="product-section__view-all-wrapper">
-                    <Button variant="outlined" className="product-section__view-all-btn">
+                    <Button
+                        variant="outlined"
+                        className="product-section__view-all-btn"
+                        onClick={onViewAllClick}
+                    >
                         View All
                     </Button>
                 </Box>
@@ -55,6 +59,7 @@ ProductSection.propTypes = {
     products: PropTypes.array,
     isLoading: PropTypes.bool,
     error: PropTypes.any,
+    onViewAllClick: PropTypes.func
 };
 
 export default ProductSection;

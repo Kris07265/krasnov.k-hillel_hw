@@ -4,15 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bcb53deb-8a75-4733-855f-4b8cd9fc4055" name="Changes" comment="created CategoryPage">
-      <change afterPath="$PROJECT_DIR$/final-project/src/components/BrowseByStyleItem/BrowseByStyleItem.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/final-project/src/components/BrowseByStyleItem/BrowseByStyleItem.scss" afterDir="false" />
+    <list default="true" id="bcb53deb-8a75-4733-855f-4b8cd9fc4055" name="Changes" comment="corrected errors">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/BrowseByStyleSection/BrowseByStyleSection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/BrowseByStyleSection/BrowseByStyleSection.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/BrowseByStyleSection/BrowseByStyleSection.scss" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/BrowseByStyleSection/BrowseByStyleSection.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/AppRouter.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/AppRouter.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/Filters/Filters.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/Filters/Filters.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/Filters/Filters.scss" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/Filters/Filters.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/final-project/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/Header/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/Header/Header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/Header/Header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/ProductSection/ProductSection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/ProductSection/ProductSection.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/final-project/src/components/ProductsList/ProductsList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/ProductsList/ProductsList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/pages/CategoryPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/pages/CategoryPage.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/final-project/src/pages/HomePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/pages/HomePage.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -152,15 +152,8 @@
       <workItem from="1777909308478" duration="2263000" />
       <workItem from="1778312427214" duration="11324000" />
       <workItem from="1778333899664" duration="10149000" />
-      <workItem from="1778690916154" duration="4249000" />
-    </task>
-    <task id="LOCAL-00013" summary="finished hw 40">
-      <option name="closed" value="true" />
-      <created>1773167350217</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1773167350217</updated>
+      <workItem from="1778690916154" duration="4574000" />
+      <workItem from="1778836130596" duration="12534000" />
     </task>
     <task id="LOCAL-00014" summary="fixed README.md">
       <option name="closed" value="true" />
@@ -546,7 +539,15 @@
       <option name="project" value="LOCAL" />
       <updated>1778344102456</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="corrected errors">
+      <option name="closed" value="true" />
+      <created>1778695517963</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1778695517963</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -587,8 +588,8 @@
     <MESSAGE value="created HeroProductDetail" />
     <MESSAGE value="created ProductReviewsSection, RelatedProducts" />
     <MESSAGE value="created fonts, corrected errors" />
-    <MESSAGE value="corrected errors" />
     <MESSAGE value="created CategoryPage" />
-    <option name="LAST_COMMIT_MESSAGE" value="created CategoryPage" />
+    <MESSAGE value="corrected errors" />
+    <option name="LAST_COMMIT_MESSAGE" value="corrected errors" />
   </component>
 </project>

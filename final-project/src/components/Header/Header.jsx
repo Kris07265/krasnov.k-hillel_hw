@@ -33,8 +33,18 @@ const Header = () => {
     };
 
     const handleCategoryClick = (categoryName) => {
-        navigate(`/category/${categoryName}`);
+        if (categoryName === 'all') {
+            navigate('/all-products');
+        } else {
+            navigate(`/category/${categoryName}`);
+        }
         handleCloseMenu();
+        setMobileMenuOpen(false);
+    };
+
+    const handleNewArrivalsClick = (e) => {
+        e.preventDefault();
+        navigate('/all-products', { state: { sort: 'new-arrivals' } });
         setMobileMenuOpen(false);
     };
 
@@ -74,6 +84,14 @@ const Header = () => {
                                     paper: { className: 'header__dropdown-paper' }
                                 }}
                             >
+                                <MenuItem
+                                    onClick={() => handleCategoryClick('all')}
+                                    className="header__dropdown-item"
+                                    style={{ fontWeight: 'bold' }}
+                                >
+                                    All Products
+                                </MenuItem>
+
                                 {categories?.map((category) => (
                                     <MenuItem
                                         key={category}
@@ -86,7 +104,13 @@ const Header = () => {
                             </Menu>
 
                             <Link to="/on-sale" className="header__nav-link header__nav-link--lg">On Sale</Link>
-                            <Link to="/new-arrivals" className="header__nav-link header__nav-link--lg">New Arrivals</Link>
+                            <Link
+                                to="/all-products"
+                                className="header__nav-link header__nav-link--lg"
+                                onClick={handleNewArrivalsClick}
+                            >
+                                New Arrivals
+                            </Link>
                             <Link to="/brands" className="header__nav-link header__nav-link--lg">Brands</Link>
                         </nav>
                     </Box>
@@ -124,6 +148,14 @@ const Header = () => {
                                     <Typography className="header__nav-link">Shop</Typography>
                                 </AccordionSummary>
                                 <AccordionDetails className="header__mobile-accordion-details">
+                                    <Box
+                                        className="header__mobile-sublink"
+                                        onClick={() => handleCategoryClick('all')}
+                                        style={{ fontWeight: 'bold' }}
+                                    >
+                                        All Products
+                                    </Box>
+
                                     {categories?.map((category) => (
                                         <Box
                                             key={category}
@@ -141,7 +173,13 @@ const Header = () => {
                             <Link to="/on-sale" className="header__nav-link" onClick={toggleDrawer(false)}>On Sale</Link>
                         </ListItem>
                         <ListItem disablePadding className="header__mobile-item">
-                            <Link to="/new-arrivals" className="header__nav-link" onClick={toggleDrawer(false)}>New Arrivals</Link>
+                            <Link
+                                to="/all-products"
+                                className="header__nav-link"
+                                onClick={handleNewArrivalsClick}
+                            >
+                                New Arrivals
+                            </Link>
                         </ListItem>
                         <ListItem disablePadding className="header__mobile-item">
                             <Link to="/brands" className="header__nav-link" onClick={toggleDrawer(false)}>Brands</Link>
