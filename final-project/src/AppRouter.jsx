@@ -1,8 +1,8 @@
 import {createBrowserRouter} from "react-router";
-import CartPage from "./pages/CartPage.jsx";
-import CategoryPage from "./pages/CategoryPage.jsx";
-import ProductDetailPage from "./pages/ProductDetailPage.jsx";
-import HomePage from "./pages/HomePage.jsx";
+import CartPage from "./pages/CartPage/CartPage.jsx";
+import CategoryPage from "./pages/CategoryPage/CategoryPage.jsx";
+import ProductDetailPage from "./pages/ProductDetailPage/ProductDetailPage.jsx";
+import HomePage from "./pages/HomePage/HomePage.jsx";
 import Layout from "./components/Layout/Layout.jsx";
 
 const AppRouter = createBrowserRouter([

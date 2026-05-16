@@ -1,9 +1,9 @@
-import HeroSection from "../components/HeroSection/HeroSection.jsx";
-import BrandsBar from "../components/BrandsBar/BrandsBar.jsx";
-import {useGetProductsQuery} from "../store/api/productsApi.js";
-import ProductSection from "../components/ProductSection/ProductSection.jsx";
-import BrowseByStyleSection from "../components/BrowseByStyleSection/BrowseByStyleSection.jsx";
-import ReviewsSection from "../components/ReviewsSection/ReviewsSection.jsx";
+import HeroSection from "../../components/HeroSection/HeroSection.jsx";
+import BrandsBar from "../../components/BrandsBar/BrandsBar.jsx";
+import {useGetProductsQuery} from "../../store/api/productsApi.js";
+import ProductSection from "../../components/ProductSection/ProductSection.jsx";
+import BrowseByStyleSection from "../../components/BrowseByStyleSection/BrowseByStyleSection.jsx";
+import ReviewsSection from "../../components/ReviewsSection/ReviewsSection.jsx";
 import { useNavigate } from "react-router";
 
 const HomePage = () => {

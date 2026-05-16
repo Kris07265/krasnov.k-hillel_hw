@@ -1,0 +1,46 @@
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router';
+import { Container, Grid, Typography, Breadcrumbs, Button } from '@mui/material';
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+
+import CartItemList from '../../components/CartItemList/CartItemList';
+import CartOrderSummary from '../../components/CartOrderSummary/CartOrderSummary';
+import './CartPage.scss';
+
+const CartPage = () => {
+    const { items, totalAmount } = useSelector((state) => state.cart);
+
+    if (items.length === 0) {
+        return (
+            <Container className="cart-view-page cart-view-page--empty">
+                <Typography className="cart-view-page__empty-title">
+                    Your cart is empty
+                </Typography>
+                <Button variant="contained" component={Link} to="/" className="cart-view-page__shop-btn" disableRipple>
+                    Go to Shop
+                </Button>
+            </Container>
+        );
+    }
+
+    return (
+        <Container className="cart-view-page">
+            <Breadcrumbs separator={<NavigateNextIcon fontSize="small" />} className="cart-view-page__breadcrumbs">
+                <Link to="/">Home</Link>
+                <Typography>Cart</Typography>
+            </Breadcrumbs>
+
+            <Grid container spacing={3} className="cart-view-page__grid">
+                <Grid size={{xs:12, md: 7}} className="cart-view-page__items-col">
+                    <CartItemList items={items} />
+                </Grid>
+
+                <Grid size={{xs:12, md: 5}} className="cart-view-page__summary-col">
+                    <CartOrderSummary subtotal={totalAmount} />
+                </Grid>
+            </Grid>
+        </Container>
+    );
+};
+
+export default CartPage;

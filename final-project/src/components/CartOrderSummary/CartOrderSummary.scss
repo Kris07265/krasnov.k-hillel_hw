@@ -1,0 +1,187 @@
+@use "../../assets/fonts/fonts.scss";
+
+.order-summary {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  padding: 20px 24px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    &.MuiTypography-root {
+      font-family: 'Satoshi', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: #000;
+      margin-bottom: 24px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__label {
+    &.MuiTypography-root {
+      font-family: 'Satoshi', sans-serif;
+      font-size: 20px;
+      color: rgba(0, 0, 0, 0.6);
+    }
+  }
+
+  &__val {
+    &.MuiTypography-root {
+      font-family: 'Satoshi', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: #000;
+
+      &--discount {
+        color: #FF3333;
+      }
+    }
+  }
+
+  &__line {
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.1);
+    margin: 4px 0;
+  }
+
+  &__total-label {
+    &.MuiTypography-root {
+      font-family: 'Satoshi', sans-serif;
+      font-size: 20px;
+      color: #000;
+    }
+  }
+
+  &__total-val {
+    &.MuiTypography-root {
+      font-family: 'Satoshi', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: #000;
+    }
+  }
+
+  &__promo {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+
+  &__promo-input {
+    .MuiInputBase-root {
+      background-color: #F0F0F0;
+      border-radius: 62px;
+      padding-left: 16px;
+      font-size: 16px;
+
+      fieldset {
+        border: none;
+      }
+    }
+
+    .MuiInputBase-input {
+      padding: 12px 0;
+      font-family: 'Satoshi', sans-serif;
+      color: #000;
+
+      &::placeholder {
+        color: rgba(0, 0, 0, 0.4);
+        opacity: 1;
+      }
+    }
+  }
+
+  &__promo-icon {
+    color: rgba(0, 0, 0, 0.4);
+  }
+
+  &__promo-btn {
+    &.MuiButton-root {
+      background-color: #000;
+      color: #fff;
+      border-radius: 62px;
+      padding: 12px 36px;
+      text-transform: none;
+      font-family: 'Satoshi', sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      box-shadow: none;
+
+      &:hover {
+        background-color: #333;
+        box-shadow: none;
+      }
+    }
+  }
+
+  &__checkout-btn {
+    &.MuiButton-root {
+      background-color: #000;
+      color: #fff;
+      border-radius: 62px;
+      padding: 16px;
+      text-transform: none;
+      font-family: 'Satoshi', sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      box-shadow: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+
+      .MuiButton-endIcon {
+        margin: 0;
+      }
+
+      &:hover {
+        background-color: #333;
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .order-summary {
+    padding: 20px 16px;
+
+    &__label, &__val {
+      &.MuiTypography-root {
+        font-size: 16px;
+      }
+    }
+
+    &__total-label {
+      &.MuiTypography-root {
+        font-size: 18px;
+      }
+    }
+
+    &__total-val {
+      &.MuiTypography-root {
+        font-size: 20px;
+      }
+    }
+
+    &__promo-btn {
+      &.MuiButton-root {
+        padding: 12px 24px;
+      }
+    }
+  }
+}

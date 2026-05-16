@@ -1,0 +1,38 @@
+@use "../../assets/fonts/fonts.scss";
+
+.cart-items-section {
+  width: 100%;
+
+  &__main-title {
+    &.MuiTypography-root {
+      font-family: 'Integral CF', sans-serif;
+      font-size: 40px;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: #000;
+      margin-bottom: 24px;
+    }
+  }
+
+  &__block {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    padding: 20px 24px;
+    background-color: #fff;
+  }
+}
+
+@media (max-width: 960px) {
+  .cart-items-section {
+    &__main-title {
+      &.MuiTypography-root {
+        font-size: 32px;
+        margin-bottom: 8px;
+      }
+    }
+
+    &__block {
+      padding: 14px 14px;
+    }
+  }
+}

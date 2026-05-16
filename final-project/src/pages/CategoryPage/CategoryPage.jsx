@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import { Container, Grid, Drawer} from '@mui/material';
-import Filters from "../components/Filters/Filters.jsx";
-import ProductsList from "../components/ProductsList/ProductsList.jsx";
+import Filters from "../../components/Filters/Filters.jsx";
+import ProductsList from "../../components/ProductsList/ProductsList.jsx";
 import {useParams} from "react-router";
 
 const CategoryPage = () => {
