@@ -4,21 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bcb53deb-8a75-4733-855f-4b8cd9fc4055" name="Changes" comment="corrected errors">
-      <change afterPath="$PROJECT_DIR$/final-project/src/components/CartItem/CartItem.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/final-project/src/components/CartItem/CartItem.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/final-project/src/components/CartItemList/CartItemList.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/final-project/src/components/CartItemList/CartItemList.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/final-project/src/components/CartOrderSummary/CartOrderSummary.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/final-project/src/components/CartOrderSummary/CartOrderSummary.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/final-project/src/pages/CartPage/CartPage.scss" afterDir="false" />
+    <list default="true" id="bcb53deb-8a75-4733-855f-4b8cd9fc4055" name="Changes" comment="created CartPage">
+      <change afterPath="$PROJECT_DIR$/final-project/src/components/ProductDetailTabsSection/ProductDetailTabsSection.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/AppRouter.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/AppRouter.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/pages/CartPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/pages/CartPage/CartPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/pages/CategoryPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/pages/CategoryPage/CategoryPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/pages/HomePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/pages/HomePage/HomePage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/pages/ProductDetailPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/pages/ProductDetailPage/ProductDetailPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/store/slices/cartSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/store/slices/cartSlice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/ProductDetailHeroSection/ProductDetailHeroSection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/ProductDetailHeroSection/ProductDetailHeroSection.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/ProductDetailHeroSection/ProductDetailHeroSection.scss" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/ProductDetailHeroSection/ProductDetailHeroSection.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/ProductDetailRelatedProductsSection/ProductDetailRelatedProductsSection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/ProductDetailRelatedProductsSection/ProductDetailRelatedProductsSection.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/ProductDetailReviewsSection/ProductDetailReviewsSection.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/ProductDetailReviewsSection/ProductDetailReviewsSection.scss" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/ProductDetailTabsSection/ProductDetailTabsSection.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/ReviewCard/ReviewCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/ReviewCard/ReviewCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/pages/ProductDetailPage/ProductDetailPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/pages/ProductDetailPage/ProductDetailPage.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,15 +155,8 @@
       <workItem from="1778690916154" duration="4574000" />
       <workItem from="1778836130596" duration="12578000" />
       <workItem from="1778944276502" duration="400000" />
-      <workItem from="1778951178431" duration="2445000" />
-    </task>
-    <task id="LOCAL-00015" summary="deleted extra file">
-      <option name="closed" value="true" />
-      <created>1773249637055</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1773249637055</updated>
+      <workItem from="1778951178431" duration="2593000" />
+      <workItem from="1779030758902" duration="4759000" />
     </task>
     <task id="LOCAL-00016" summary="created Controller.js">
       <option name="closed" value="true" />
@@ -554,7 +542,15 @@
       <option name="project" value="LOCAL" />
       <updated>1778848976536</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="created CartPage">
+      <option name="closed" value="true" />
+      <created>1778953771720</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1778953771720</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -572,7 +568,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="created scss files and filter" />
     <MESSAGE value="created editing card" />
     <MESSAGE value="fixed error in form img" />
     <MESSAGE value="started hw 46" />
@@ -597,6 +592,7 @@
     <MESSAGE value="created fonts, corrected errors" />
     <MESSAGE value="created CategoryPage" />
     <MESSAGE value="corrected errors" />
-    <option name="LAST_COMMIT_MESSAGE" value="corrected errors" />
+    <MESSAGE value="created CartPage" />
+    <option name="LAST_COMMIT_MESSAGE" value="created CartPage" />
   </component>
 </project>

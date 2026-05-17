@@ -1,0 +1,179 @@
+@use "../../assets/fonts/fonts.scss";
+$font-integral: 'Integral CF', sans-serif;
+$font-satoshi: 'Satoshi', sans-serif;
+
+.product-reviews {
+  margin: 24px 0 40px;
+
+  &__loader {
+    display: flex;
+    justify-content: center;
+    padding: 64px 0;
+  }
+
+  &__tabs-container {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 24px;
+  }
+
+  &__tabs {
+    .MuiTabs-indicator {
+      background-color: #000;
+      height: 2px;
+    }
+  }
+
+  &__tab {
+    &.MuiTab-root {
+      padding: 18px 0;
+      font-family: $font-satoshi;
+      font-size: 16px;
+      color: rgba(0, 0, 0, 0.6);
+      cursor: pointer;
+      text-transform: none;
+      font-weight: 400;
+      transition: 0.3s;
+
+      @media (min-width: 900px) {
+        font-size: 20px;
+      }
+
+      &:hover {
+        color: #000;
+      }
+
+      &.Mui-selected {
+        color: #000;
+        font-weight: 500;
+      }
+    }
+  }
+
+  &__content-panel {
+    animation: fadeIn 0.4s ease;
+  }
+
+  &__panel-title {
+    &.MuiTypography-root {
+      font-family: $font-integral;
+      font-weight: 700;
+      font-size: 20px;
+      margin-bottom: 24px;
+      text-transform: uppercase;
+
+      @media (min-width: 900px) {
+        font-size: 24px;
+      }
+    }
+  }
+
+  &__specs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 600px;
+    background: #F0F0F0;
+    padding: 24px;
+    border-radius: 20px;
+  }
+
+  &__spec-item {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+    &:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+  }
+
+  &__spec-label {
+    &.MuiTypography-root {
+      font-family: $font-satoshi;
+      font-weight: 500;
+      color: rgba(0, 0, 0, 0.6);
+    }
+  }
+
+  &__spec-value {
+    &.MuiTypography-root {
+      font-family: $font-satoshi;
+      font-weight: 700;
+      color: #000;
+    }
+  }
+
+  &__accordion {
+    &.MuiAccordion-root {
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      margin-bottom: 12px;
+      font-family: $font-satoshi;
+
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  &__faq-question {
+    &.MuiTypography-root {
+      font-family: $font-satoshi;
+      font-weight: 500;
+      font-size: 16px;
+    }
+  }
+
+  &__faq-answer {
+    &.MuiTypography-root {
+      font-family: $font-satoshi;
+      color: rgba(0, 0, 0, 0.6);
+      line-height: 1.5;
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  &__title {
+    &.MuiTypography-root {
+      font-family: $font-integral;
+      font-weight: 700;
+      font-size: 20px;
+      color: #000;
+
+      @media (min-width: 900px) {
+        font-size: 24px;
+      }
+    }
+  }
+
+  &__count {
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.6);
+    @media (min-width: 900px) { font-size: 16px; }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+
+    @media (min-width: 900px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}

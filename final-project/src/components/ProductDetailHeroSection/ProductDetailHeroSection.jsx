@@ -7,19 +7,11 @@ import {
 } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
-import CheckIcon from '@mui/icons-material/Check';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 
 import { useGetProductByIdQuery } from "../../store/api/productsApi.js";
 import { addItem } from "../../store/slices/cartSlice.js";
 import './ProductDetailHeroSection.scss';
-
-const sizes = ['Small', 'Medium', 'Large', 'X-Large'];
-const colors = [
-    { name: 'Olive', hex: '#4F4631' },
-    { name: 'DeepBlue', hex: '#314F4A' },
-    { name: 'Navy', hex: '#31344F' }
-];
 
 const ProductDetailHeroSection = () => {
     const { id } = useParams();
@@ -27,8 +19,6 @@ const ProductDetailHeroSection = () => {
     const { data: product, isLoading } = useGetProductByIdQuery(id);
 
     const [quantity, setQuantity] = useState(1);
-    const [selectedSize, setSelectedSize] = useState('Large');
-    const [selectedColor, setSelectedColor] = useState(colors[0].hex);
     const [activeImageIndex, setActiveImageIndex] = useState(0);
 
     if (isLoading) return <Box className="product-hero__loader"><CircularProgress color="inherit" /></Box>;
@@ -49,7 +39,7 @@ const ProductDetailHeroSection = () => {
             </Breadcrumbs>
 
             <Grid container spacing={4} className="product-hero__grid">
-                <Grid item xs={12} md={6}>
+                <Grid size={{xs:12, md: 6}}>
                     <Box className="product-hero__gallery">
                         <Box className="product-hero__thumbnails">
                             {product.images.slice(0, 3).map((img, idx) => (
@@ -68,7 +58,7 @@ const ProductDetailHeroSection = () => {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} md={6}>
+                <Grid size={{xs:12, md: 6}}>
                     <Box className="product-hero__info">
                         <Typography variant="h1" className="product-hero__title">{product.title}</Typography>
 
@@ -88,41 +78,6 @@ const ProductDetailHeroSection = () => {
                         </Box>
 
                         <Typography className="product-hero__description">{product.description}</Typography>
-
-                        <Divider className="product-hero__divider" />
-
-                        <Box className="product-hero__option">
-                            <Typography className="product-hero__option-title">Select Colors</Typography>
-                            <Box className="product-hero__color-list">
-                                {colors.map(color => (
-                                    <Box
-                                        key={color.hex}
-                                        className={`product-hero__color-circle ${selectedColor === color.hex ? 'product-hero__color-circle--selected' : ''}`}
-                                        style={{ backgroundColor: color.hex }}
-                                        onClick={() => setSelectedColor(color.hex)}
-                                    >
-                                        {selectedColor === color.hex && <CheckIcon sx={{ color: '#fff', fontSize: 16 }} />}
-                                    </Box>
-                                ))}
-                            </Box>
-                        </Box>
-
-                        <Divider className="product-hero__divider" />
-
-                        <Box className="product-hero__option">
-                            <Typography className="product-hero__option-title">Choose Size</Typography>
-                            <Box className="product-hero__size-list">
-                                {sizes.map(size => (
-                                    <Button
-                                        key={size}
-                                        className={`product-hero__size-btn ${selectedSize === size ? 'product-hero__size-btn--active' : ''}`}
-                                        onClick={() => setSelectedSize(size)}
-                                    >
-                                        {size}
-                                    </Button>
-                                ))}
-                            </Box>
-                        </Box>
 
                         <Divider className="product-hero__divider" />
 

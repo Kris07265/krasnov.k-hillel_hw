@@ -1,6 +1,7 @@
 @use "../../assets/fonts/fonts.scss";
 $font-integral: 'Integral CF', sans-serif;
 $font-satoshi: 'Satoshi', sans-serif;
+
 .product-hero {
   padding-top: 20px;
   padding-bottom: 50px;
@@ -91,56 +92,6 @@ $font-satoshi: 'Satoshi', sans-serif;
   &__divider {
     margin: 24px 0 !important;
     border-color: rgba(0, 0, 0, 0.1) !important;
-  }
-
-  &__option-title {
-    &.MuiTypography-root {
-      color: rgba(0, 0, 0, 0.6);
-      margin-bottom: 16px;
-      font-size: 16px;
-    }
-  }
-
-  &__color-list {
-    display: flex;
-    gap: 12px;
-  }
-
-  &__color-circle {
-    width: 37px;
-    height: 37px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
-    &:hover { transform: scale(1.1); }
-  }
-
-  &__size-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-
-  &__size-btn {
-    &.MuiButton-root {
-      background-color: #F0F0F0;
-      color: rgba(0, 0, 0, 0.6);
-      border-radius: 62px;
-      padding: 10px 24px;
-      text-transform: none;
-      font-weight: 400;
-      box-shadow: none;
-      &:hover { background-color: #e0e0e0; }
-    }
-    &--active.MuiButton-root {
-      background-color: #000;
-      color: #fff;
-      &:hover { background-color: #333; }
-    }
   }
 
   &__actions {
