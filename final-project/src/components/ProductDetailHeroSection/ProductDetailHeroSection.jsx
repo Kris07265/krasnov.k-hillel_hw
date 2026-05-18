@@ -1,4 +1,4 @@
-import { useParams, Link } from 'react-router';
+import { useParams} from 'react-router';
 import { useDispatch } from 'react-redux';
 import {useState} from "react";
 import {
@@ -7,7 +7,6 @@ import {
 } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
-import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 
 import { useGetProductByIdQuery } from "../../store/api/productsApi.js";
 import { addItem } from "../../store/slices/cartSlice.js";
@@ -32,12 +31,6 @@ const ProductDetailHeroSection = () => {
 
     return (
         <Container className="product-hero">
-            <Breadcrumbs separator={<NavigateNextIcon fontSize="small" />} className="product-hero__breadcrumbs">
-                <Link to="/">Home</Link>
-                <Link to="/shop">Shop</Link>
-                <Typography color="text.primary">{product.category}</Typography>
-            </Breadcrumbs>
-
             <Grid container spacing={4} className="product-hero__grid">
                 <Grid size={{xs:12, md: 6}}>
                     <Box className="product-hero__gallery">

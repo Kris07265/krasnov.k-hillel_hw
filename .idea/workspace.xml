@@ -4,20 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bcb53deb-8a75-4733-855f-4b8cd9fc4055" name="Changes" comment="corrected errors">
-      <change afterPath="$PROJECT_DIR$/final-project/src/components/AuthMenu/AuthMenu.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/final-project/src/components/AuthMenu/AuthMenu.scss" afterDir="false" />
+    <list default="true" id="bcb53deb-8a75-4733-855f-4b8cd9fc4055" name="Changes" comment="created AuthMenu">
+      <change afterPath="$PROJECT_DIR$/final-project/src/components/BreadcrumbsComponent/BreadcrumbsComponent.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/final-project/src/components/BreadcrumbsComponent/BreadcrumbsComponent.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/BrandsBar/BrandsBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/BrandsBar/BrandsBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/Header/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/ProductDetailTabsSection/ProductDetailTabsSection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/ProductDetailTabsSection/ProductDetailTabsSection.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/ProductSection/ProductSection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/ProductSection/ProductSection.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/ProductSection/ProductSection.scss" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/ProductSection/ProductSection.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/ReviewCard/ReviewCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/ReviewCard/ReviewCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/ReviewsSection/ReviewsSection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/ReviewsSection/ReviewsSection.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/store/api/reviewsApi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/ProductDetailHeroSection/ProductDetailHeroSection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/ProductDetailHeroSection/ProductDetailHeroSection.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/pages/CartPage/CartPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/pages/CartPage/CartPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/pages/CategoryPage/CategoryPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/pages/CategoryPage/CategoryPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/pages/ProductDetailPage/ProductDetailPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/pages/ProductDetailPage/ProductDetailPage.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,15 +155,8 @@
       <workItem from="1778944276502" duration="400000" />
       <workItem from="1778951178431" duration="2593000" />
       <workItem from="1779030758902" duration="4906000" />
-      <workItem from="1779100437489" duration="7974000" />
-    </task>
-    <task id="LOCAL-00017" summary="renamed files and create api.js">
-      <option name="closed" value="true" />
-      <created>1773304843260</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1773304843260</updated>
+      <workItem from="1779100437489" duration="8029000" />
+      <workItem from="1779116853459" duration="3893000" />
     </task>
     <task id="LOCAL-00018" summary="created filter and sort by name">
       <option name="closed" value="true" />
@@ -555,7 +542,15 @@
       <option name="project" value="LOCAL" />
       <updated>1779035596721</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="created AuthMenu">
+      <option name="closed" value="true" />
+      <created>1779108710380</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1779108710380</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -573,7 +568,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="created editing card" />
     <MESSAGE value="fixed error in form img" />
     <MESSAGE value="started hw 46" />
     <MESSAGE value="created files, routes" />
@@ -598,6 +592,7 @@
     <MESSAGE value="created CategoryPage" />
     <MESSAGE value="created CartPage" />
     <MESSAGE value="corrected errors" />
-    <option name="LAST_COMMIT_MESSAGE" value="corrected errors" />
+    <MESSAGE value="created AuthMenu" />
+    <option name="LAST_COMMIT_MESSAGE" value="created AuthMenu" />
   </component>
 </project>

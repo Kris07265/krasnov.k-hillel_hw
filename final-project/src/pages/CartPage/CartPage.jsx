@@ -1,11 +1,11 @@
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router';
-import { Container, Grid, Typography, Breadcrumbs, Button } from '@mui/material';
-import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import { Container, Grid, Typography, Button } from '@mui/material';
 
 import CartItemList from '../../components/CartItemList/CartItemList';
 import CartOrderSummary from '../../components/CartOrderSummary/CartOrderSummary';
 import './CartPage.scss';
+import BreadcrumbsComponent from "../../components/BreadcrumbsComponent/BreadcrumbsComponent.jsx";
 
 const CartPage = () => {
     const { items, totalAmount } = useSelector((state) => state.cart);
@@ -25,10 +25,7 @@ const CartPage = () => {
 
     return (
         <Container className="cart-view-page">
-            <Breadcrumbs separator={<NavigateNextIcon fontSize="small" />} className="cart-view-page__breadcrumbs">
-                <Link to="/">Home</Link>
-                <Typography>Cart</Typography>
-            </Breadcrumbs>
+            <BreadcrumbsComponent />
 
             <Grid container spacing={3} className="cart-view-page__grid">
                 <Grid size={{xs:12, md: 7}} className="cart-view-page__items-col">

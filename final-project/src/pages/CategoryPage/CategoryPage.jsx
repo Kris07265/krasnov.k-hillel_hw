@@ -3,6 +3,7 @@ import { Container, Grid, Drawer} from '@mui/material';
 import Filters from "../../components/Filters/Filters.jsx";
 import ProductsList from "../../components/ProductsList/ProductsList.jsx";
 import {useParams} from "react-router";
+import BreadcrumbsComponent from "../../components/BreadcrumbsComponent/BreadcrumbsComponent.jsx";
 
 const CategoryPage = () => {
     const { categoryName } = useParams();
@@ -31,6 +32,7 @@ const CategoryPage = () => {
 
     return (
         <Container sx={{ py: 4 }}>
+            <BreadcrumbsComponent />
             <Grid container spacing={{ md: 10 }}>
                 <Grid size={{md: 3}} sx={{ display: { xs: 'none', md: 'block' } }}>
                     <Filters
