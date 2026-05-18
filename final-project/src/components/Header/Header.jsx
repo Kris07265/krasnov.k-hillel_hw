@@ -27,7 +27,6 @@ const Header = () => {
     const totalQuantity = useSelector((state) => state.cart.totalQuantity);
     const { data: categories } = useGetCategoriesQuery();
 
-    // Хендлеры для меню "Shop"
     const handleOpenMenu = (event) => {
         setAnchorEl(event.currentTarget);
     };
@@ -81,7 +80,7 @@ const Header = () => {
 
                         <nav className="header__nav-desktop">
                             <Box
-                                className="header__nav-link header__nav-link--lg header__nav-shop"
+                                className="header__nav-link header__nav-shop"
                                 onClick={handleOpenMenu}
                             >
                                 Shop <KeyboardArrowDownIcon fontSize="small" />
@@ -98,8 +97,7 @@ const Header = () => {
                             >
                                 <MenuItem
                                     onClick={() => handleCategoryClick('all')}
-                                    className="header__dropdown-item"
-                                    style={{ fontWeight: 'bold' }}
+                                    className="header__dropdown-item header__dropdown-item--bold"
                                 >
                                     All Products
                                 </MenuItem>
@@ -115,20 +113,20 @@ const Header = () => {
                                 ))}
                             </Menu>
 
-                            <Link to="/on-sale" className="header__nav-link header__nav-link--lg">On Sale</Link>
+                            <Link to="/on-sale" className="header__nav-link">On Sale</Link>
                             <Link
                                 to="/all-products"
-                                className="header__nav-link header__nav-link--lg"
+                                className="header__nav-link"
                                 onClick={handleNewArrivalsClick}
                             >
                                 New Arrivals
                             </Link>
-                            <Link to="/brands" className="header__nav-link header__nav-link--lg">Brands</Link>
+                            <Link to="/brands" className="header__nav-link">Brands</Link>
                         </nav>
                     </Box>
 
                     <Box className="header__search-wrapper">
-                        <SearchIcon className="header__search-icon-inside" />
+                        <SearchIcon className="header__search-icon" />
                         <input type="text" placeholder="Search for products..." className="header__search-input" />
                     </Box>
 
@@ -162,9 +160,8 @@ const Header = () => {
                                 </AccordionSummary>
                                 <AccordionDetails className="header__mobile-accordion-details">
                                     <Box
-                                        className="header__mobile-sublink"
+                                        className="header__mobile-sublink header__mobile-sublink--bold"
                                         onClick={() => handleCategoryClick('all')}
-                                        style={{ fontWeight: 'bold' }}
                                     >
                                         All Products
                                     </Box>

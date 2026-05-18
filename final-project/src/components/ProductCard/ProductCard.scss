@@ -23,13 +23,13 @@ $font-satoshi: 'Satoshi', sans-serif;
     width: 100%;
     aspect-ratio: 1 / 1;
     background-color: #F0EEED;
-    border-radius: 20px;
-    margin-bottom: 16px;
+    border-radius: 13px;
+    margin-bottom: 10px;
     overflow: hidden;
 
-    @media (max-width: 600px) {
-      border-radius: 13px;
-      margin-bottom: 10px;
+    @media (min-width: 601px) {
+      border-radius: 20px;
+      margin-bottom: 16px;
     }
   }
 
@@ -51,14 +51,11 @@ $font-satoshi: 'Satoshi', sans-serif;
       font-family: $font-satoshi;
       font-weight: 700;
       font-size: 16px;
-      line-height: 1.2;
+      line-height: 1;
       color: #000;
-      margin-bottom: 8px;
-
+      margin-bottom: 4px;
       white-space: nowrap;
       overflow: hidden;
-      text-overflow: ellipsis;
-      min-height: 1.2em;
 
       @media (min-width: 900px) {
         font-size: 20px;
@@ -69,15 +66,20 @@ $font-satoshi: 'Satoshi', sans-serif;
   &__rating {
     display: flex;
     align-items: center;
-    gap: 13px;
-    margin-bottom: 8px;
+    gap: 4px;
+    margin-bottom: 4px;
     margin-top: auto;
+    @media (min-width: 601px) {
+      gap: 6px;
+      margin-bottom: 8px;
+    }
 
     .MuiRating-root {
       color: #FFC633;
-      font-size: 18px;
-      @media (max-width: 600px) {
-        font-size: 15px;
+      font-size: 15px;
+
+      @media (min-width: 601px) {
+        font-size: 18px;
       }
     }
   }
@@ -131,9 +133,13 @@ $font-satoshi: 'Satoshi', sans-serif;
     background-color: rgba(255, 51, 51, 0.1);
     color: #FF3333;
     font-family: $font-satoshi;
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 500;
-    padding: 6px 14px;
+    padding: 3px 8px;
     border-radius: 62px;
+    @media (min-width: 900px) {
+      font-size: 12px;
+      padding: 6px 13px;
+    }
   }
 }

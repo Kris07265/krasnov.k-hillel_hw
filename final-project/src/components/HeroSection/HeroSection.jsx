@@ -25,18 +25,18 @@ const HeroSection = () => {
 
                         <Box className="hero__stats">
                             <Box className="hero__stat-item">
-                                <Typography variant="h3">200+</Typography>
-                                <Typography variant="body2">International Brands</Typography>
+                                <Typography variant="h3" className="hero__stat-value">200+</Typography>
+                                <Typography variant="body2" className="hero__stat-label">International Brands</Typography>
                             </Box>
                             <Box className="hero__stat-divider" />
                             <Box className="hero__stat-item">
-                                <Typography variant="h3">2,000+</Typography>
-                                <Typography variant="body2">High-Quality Products</Typography>
+                                <Typography variant="h3" className="hero__stat-value">2,000+</Typography>
+                                <Typography variant="body2" className="hero__stat-label">High-Quality Products</Typography>
                             </Box>
                             <Box className="hero__stat-divider" />
                             <Box className="hero__stat-item">
-                                <Typography variant="h3">30,000+</Typography>
-                                <Typography variant="body2">Happy Customers</Typography>
+                                <Typography variant="h3" className="hero__stat-value">30,000+</Typography>
+                                <Typography variant="body2" className="hero__stat-label">Happy Customers</Typography>
                             </Box>
                         </Box>
                     </Box>
@@ -51,7 +51,7 @@ const HeroSection = () => {
                                 <img
                                     src={product?.images[0]}
                                     alt={product?.title}
-                                    className="hero__img hero__img--api"
+                                    className="hero__img"
                                 />
                             )}
                         </Box>

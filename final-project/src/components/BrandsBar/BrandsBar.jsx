@@ -1,4 +1,5 @@
 import { Box, Container, CircularProgress } from '@mui/material';
+import {Link} from 'react-router'
 import { useGetCategoriesQuery } from "../../store/api/productsApi.js";
 import './BrandsBar.scss';
 
@@ -15,15 +16,19 @@ const BrandsBar = () => {
 
     if (error || !categories) return null;
 
-    const displayedBrands = categories.slice(0, 5);
+    const displayedBrands = categories.slice(0, 4);
 
     return (
         <Box component="section" className="brands">
             <Container className="brands__container">
                 {displayedBrands.map((category) => (
-                    <span key={category} className="brands__logo">
+                    <Link
+                        key={category}
+                        to={`/category/${category}`}
+                        className="brands__logo"
+                    >
                         {category.replace('-', ' ').toUpperCase()}
-                    </span>
+                    </Link>
                 ))}
             </Container>
         </Box>

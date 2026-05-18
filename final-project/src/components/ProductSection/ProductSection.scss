@@ -79,11 +79,12 @@ $font-integral: 'Integral CF', sans-serif;
       border-radius: 62px;
       padding: 16px 54px;
       text-transform: none;
-      font-size: 16px;
+      font-size: 14px;
+      font-weight: 500;
       width: 100%;
 
       @media (min-width: 900px) {
-        width: 218px;
+        max-width: 218px;
       }
 
       &:hover {
