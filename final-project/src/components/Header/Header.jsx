@@ -13,23 +13,35 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { Link, useNavigate } from 'react-router';
 
 import { useGetCategoriesQuery } from "../../store/api/productsApi.js";
+import AuthMenu from "../AuthMenu/AuthMenu.jsx";
 import './Header.scss';
 
 const Header = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [anchorEl, setAnchorEl] = useState(null);
+    const [authAnchorEl, setAuthAnchorEl] = useState(null);
+
     const open = Boolean(anchorEl);
 
     const navigate = useNavigate();
     const totalQuantity = useSelector((state) => state.cart.totalQuantity);
     const { data: categories } = useGetCategoriesQuery();
 
+    // Хендлеры для меню "Shop"
     const handleOpenMenu = (event) => {
         setAnchorEl(event.currentTarget);
     };
 
     const handleCloseMenu = () => {
         setAnchorEl(null);
+    };
+
+    const handleOpenAuthMenu = (event) => {
+        setAuthAnchorEl(event.currentTarget);
+    };
+
+    const handleCloseAuthMenu = () => {
+        setAuthAnchorEl(null);
     };
 
     const handleCategoryClick = (categoryName) => {
@@ -129,7 +141,8 @@ const Header = () => {
                                 <ShoppingCartOutlinedIcon />
                             </Badge>
                         </IconButton>
-                        <IconButton className="header__icon-btn">
+
+                        <IconButton className="header__icon-btn" onClick={handleOpenAuthMenu}>
                             <AccountCircleOutlinedIcon />
                         </IconButton>
                     </Box>
@@ -187,6 +200,8 @@ const Header = () => {
                     </List>
                 </Box>
             </Drawer>
+
+            <AuthMenu anchorEl={authAnchorEl} handleClose={handleCloseAuthMenu} />
         </AppBar>
     );
 };

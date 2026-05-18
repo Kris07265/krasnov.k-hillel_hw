@@ -2,13 +2,19 @@ import { useRef } from 'react';
 import { Box, Typography, Container, CircularProgress, IconButton } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import { useGetReviewsQuery } from "../../store/api/reviewsApi.js";
+import { useGetProductsQuery } from "../../store/api/productsApi.js";
 import ReviewCard from '../ReviewCard/ReviewCard.jsx';
 import './ReviewsSection.scss';
 
 const ReviewsSection = () => {
-    const { data, isLoading, isError } = useGetReviewsQuery(10);
-    const reviews = data?.comments || [];
+    const { data, isLoading, isError } = useGetProductsQuery({
+        limit: 10,
+        sortBy: 'rating',
+        order: 'desc'
+    });
+
+    const products = data?.products || [];
+    const reviews = products.flatMap(product => product.reviews || []);
 
     const scrollRef = useRef(null);
 
@@ -53,9 +59,9 @@ const ReviewsSection = () => {
                 </Box>
 
                 <Box className="customers__slider" ref={scrollRef}>
-                    {reviews.map((review) => (
+                    {reviews.map((review, index) => (
                         <Box
-                            key={review.id}
+                            key={`${review.id || index}`}
                             className="customers__card-wrapper"
                             sx={{ minWidth: { xs: '310px', md: '400px' } }}
                         >

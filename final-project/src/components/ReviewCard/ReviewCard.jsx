@@ -2,13 +2,13 @@ import { Box, Typography, Rating } from '@mui/material';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import './ReviewCard.scss';
 
-const ReviewCard = ({ review, showDate = false }) => {
-    const reviewerName = review.reviewerName || review.user?.fullName || "Anonymous";
-    const commentText = review.comment || review.body || "";
+const ReviewCard = ({ review }) => {
+    const reviewerName = review.reviewerName || "Anonymous";
+    const commentText = review.comment || "";
     const ratingValue = review.rating !== undefined ? review.rating : 5;
 
     const formatDate = (dateString) => {
-        if (!dateString) return "August 14, 2023";
+        if (!dateString) return null;
         const date = new Date(dateString);
         return date.toLocaleDateString('en-US', {
             month: 'long',
@@ -37,13 +37,11 @@ const ReviewCard = ({ review, showDate = false }) => {
                 "{commentText}"
             </Typography>
 
-            {showDate && (
-                <Typography variant="caption" className="review-card__date">
+            <Typography variant="caption" className="review-card__date">
                 Posted on {formatDate(review.date)}
-                </Typography>
-                )}
-</Box>
-);
+            </Typography>
+        </Box>
+    );
 };
 
 export default ReviewCard;

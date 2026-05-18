@@ -15,7 +15,7 @@ const BrandsBar = () => {
 
     if (error || !categories) return null;
 
-    const displayedBrands = categories.slice(0, 4);
+    const displayedBrands = categories.slice(0, 5);
 
     return (
         <Box component="section" className="brands">

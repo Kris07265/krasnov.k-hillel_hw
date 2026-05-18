@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { Box, Typography, Button, Container, CircularProgress } from '@mui/material';
+import {Box, Typography, Button, Container, CircularProgress, Grid} from '@mui/material';
 import ProductCard from '../ProductCard/ProductCard';
 import './ProductSection.scss';
 
@@ -30,13 +30,13 @@ const ProductSection = ({ title, products, isLoading, error, onViewAllClick }) =
                     {title}
                 </Typography>
 
-                <Box className="product-section__grid">
+                <Grid container spacing={{xs: 2, md: 4}} className="product-section__grid">
                     {products?.map((product) => (
-                        <Box key={product.id} className="product-section__item">
+                        <Grid size={3} key={product.id} className="product-section__item">
                             <ProductCard product={product} />
-                        </Box>
+                        </Grid>
                     ))}
-                </Box>
+                </Grid>
 
                 <Box className="product-section__view-all-wrapper">
                     <Button

@@ -94,7 +94,7 @@ const ProductDetailTabsSection = () => {
 
                         <Box className="product-reviews__grid">
                             {reviews.map((review, index) => (
-                                <ReviewCard key={review.id || index} review={review} showDate={true} />
+                                <ReviewCard key={review.id || index} review={review} />
                             ))}
                         </Box>
 
