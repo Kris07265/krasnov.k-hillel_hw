@@ -1,6 +1,7 @@
 import { Box, Container, Typography, Button, CircularProgress } from '@mui/material';
 import "./HeroSection.scss"
 import {useGetProductByIdQuery} from "../../store/api/productsApi.js";
+import heroStar from '../../assets/img/heroStar.png';
 
 const HeroSection = () => {
 
@@ -54,6 +55,16 @@ const HeroSection = () => {
                                     className="hero__img"
                                 />
                             )}
+                            <img
+                                src={`${heroStar}`}
+                                alt="vector"
+                                className="hero__star hero__star--small"
+                            />
+                            <img
+                                src={`${heroStar}`}
+                                alt="vector"
+                                className="hero__star hero__star--large"
+                            />
                         </Box>
                     </Box>
 

@@ -4,17 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bcb53deb-8a75-4733-855f-4b8cd9fc4055" name="Changes" comment="created BreadcrumbsComponent">
-      <change afterPath="$PROJECT_DIR$/final-project/src/assets/fonts/fonts-files/Montserrat-Bold.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/assets/fonts/fonts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/assets/fonts/fonts.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/BrandsBar/BrandsBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/BrandsBar/BrandsBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/BrandsBar/BrandsBar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/BrandsBar/BrandsBar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/Header/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/Header/Header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/Header/Header.scss" afterDir="false" />
+    <list default="true" id="bcb53deb-8a75-4733-855f-4b8cd9fc4055" name="Changes" comment="corrected errors">
+      <change afterPath="$PROJECT_DIR$/final-project/src/assets/img/heroStar.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/BrowseByStyleItem/BrowseByStyleItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/BrowseByStyleItem/BrowseByStyleItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/BrowseByStyleItem/BrowseByStyleItem.scss" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/BrowseByStyleItem/BrowseByStyleItem.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/final-project/src/components/HeroSection/HeroSection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/HeroSection/HeroSection.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/final-project/src/components/HeroSection/HeroSection.scss" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/HeroSection/HeroSection.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/ProductCard/ProductCard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/ProductCard/ProductCard.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/ProductSection/ProductSection.scss" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/ProductSection/ProductSection.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,11 +84,11 @@
       <recent name="C:\Users\PC\OneDrive\Desktop\krasnov.k-hillel_hw\final-project\src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\PC\OneDrive\Desktop\krasnov.k-hillel_hw\final-project\src\assets\img" />
       <recent name="C:\Users\PC\OneDrive\Desktop\krasnov.k-hillel_hw\final-project\src\assets\fonts" />
       <recent name="C:\Users\PC\OneDrive\Desktop\krasnov.k-hillel_hw\final-project\src\assets\fonts\fonts-files" />
       <recent name="C:\Users\PC\OneDrive\Desktop\krasnov.k-hillel_hw\final-project\src\pages\ProductDetailPage" />
       <recent name="C:\Users\PC\OneDrive\Desktop\krasnov.k-hillel_hw\final-project\src\pages\HomePage" />
-      <recent name="C:\Users\PC\OneDrive\Desktop\krasnov.k-hillel_hw\final-project\src\pages\CategoryPage" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -159,15 +155,8 @@
       <workItem from="1778951178431" duration="2593000" />
       <workItem from="1779030758902" duration="4906000" />
       <workItem from="1779100437489" duration="8029000" />
-      <workItem from="1779116853459" duration="9438000" />
-    </task>
-    <task id="LOCAL-00019" summary="created pagination">
-      <option name="closed" value="true" />
-      <created>1773491709919</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1773491709919</updated>
+      <workItem from="1779116853459" duration="9472000" />
+      <workItem from="1779168551509" duration="4292000" />
     </task>
     <task id="LOCAL-00020" summary="started hw 42">
       <option name="closed" value="true" />
@@ -553,7 +542,15 @@
       <option name="project" value="LOCAL" />
       <updated>1779120805952</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="corrected errors">
+      <option name="closed" value="true" />
+      <created>1779126389732</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1779126389732</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -593,9 +590,9 @@
     <MESSAGE value="created fonts, corrected errors" />
     <MESSAGE value="created CategoryPage" />
     <MESSAGE value="created CartPage" />
-    <MESSAGE value="corrected errors" />
     <MESSAGE value="created AuthMenu" />
     <MESSAGE value="created BreadcrumbsComponent" />
-    <option name="LAST_COMMIT_MESSAGE" value="created BreadcrumbsComponent" />
+    <MESSAGE value="corrected errors" />
+    <option name="LAST_COMMIT_MESSAGE" value="corrected errors" />
   </component>
 </project>

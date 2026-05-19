@@ -17,27 +17,21 @@ const BrowseByStyleItem = ({ categoryName, index }) => {
             component={Link}
             to={`/category/${categoryName}`}
             className={`browse-style-item browse-style-item--type-${index}`}
-            sx={{ textDecoration: 'none', position: 'relative', overflow: 'hidden' }}
+            style={{
+                backgroundImage: !isLoading && productImage ? `url(${productImage})` : 'none'
+            }}
         >
             <Typography className="browse-style-item__label">
                 {categoryName.charAt(0).toUpperCase() + categoryName.slice(1)}
             </Typography>
 
-            {isLoading ? (
+            {isLoading && (
                 <Skeleton
                     variant="rectangular"
                     width="100%"
                     height="100%"
-                    className="browse-style-item__image"
+                    className="browse-style-item__skeleton"
                 />
-            ) : (
-                productImage && (
-                    <img
-                        src={productImage}
-                        alt={categoryName}
-                        className="browse-style-item__image"
-                    />
-                )
             )}
         </Box>
     );

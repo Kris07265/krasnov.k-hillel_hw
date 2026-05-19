@@ -1,11 +1,17 @@
 @use "../../assets/fonts/fonts.scss";
-$font-integral: 'Integral CF', sans-serif;
 $font-satoshi: 'Satoshi', sans-serif;
 
 .browse-style-item {
-  position: relative;
+  text-decoration: none;
+  display: flex;
+  align-items: flex-start;
+  padding: 16px 24px;
+  box-sizing: border-box;
   height: 190px;
   background-color: #fff;
+  background-size: contain;
+  background-position: right center;
+  background-repeat: no-repeat;
   border-radius: 20px;
   overflow: hidden;
   cursor: pointer;
@@ -17,6 +23,7 @@ $font-satoshi: 'Satoshi', sans-serif;
 
   @media (min-width: 900px) {
     height: 289px;
+    padding: 25px 36px;
   }
 
   &--type-0 { @media (min-width: 900px) { grid-column: 1/2; } }
@@ -26,33 +33,14 @@ $font-satoshi: 'Satoshi', sans-serif;
 
   &__label {
     &.MuiTypography-root {
-      position: absolute;
-      top: 16px;
-      left: 24px;
       font-family: $font-satoshi;
       font-weight: 700;
       font-size: 24px;
       color: #000;
-      z-index: 2;
 
       @media (min-width: 900px) {
-        top: 25px;
-        left: 36px;
         font-size: 36px;
       }
-    }
-  }
-
-  &__image {
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
-
-    @media (max-width: 900px) {
-      right: -20px;
     }
   }
 }
