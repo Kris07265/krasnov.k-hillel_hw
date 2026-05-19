@@ -8,12 +8,6 @@ $font-integral: 'Integral CF', sans-serif;
     padding: 64px 0;
   }
 
-  &__loader {
-    display: flex;
-    justify-content: center;
-    padding: 40px 0;
-  }
-
   &__title {
     &.MuiTypography-root {
       font-family: $font-integral;

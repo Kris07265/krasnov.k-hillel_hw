@@ -5,12 +5,6 @@ $font-satoshi: 'Satoshi', sans-serif;
 .product-reviews {
   margin: 24px 0 40px;
 
-  &__loader {
-    display: flex;
-    justify-content: center;
-    padding: 64px 0;
-  }
-
   &__tabs-container {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     margin-bottom: 24px;

@@ -1,4 +1,4 @@
-import { Box, Container, Typography, Button, CircularProgress } from '@mui/material';
+import {Box, Container, Typography, Button, Skeleton} from '@mui/material';
 import "./HeroSection.scss"
 import {useGetProductByIdQuery} from "../../store/api/productsApi.js";
 import heroStar from '../../assets/img/heroStar.png';
@@ -45,9 +45,16 @@ const HeroSection = () => {
                     <Box className="hero__image-section">
                         <Box className="hero__image-container">
                             {isLoading ? (
-                                <Box className="hero__loader">
-                                    <CircularProgress color="inherit" />
-                                </Box>
+                                <Skeleton
+                                    variant="rectangular"
+                                    animation="wave"
+                                    sx={{
+                                        width: '60%',
+                                        height: { xs: '250px', md: '450px' },
+                                        borderRadius: '8px',
+                                        backgroundColor: 'rgba(0, 0, 0, 0.06)'
+                                    }}
+                                />
                             ) : isError ? null : (
                                 <img
                                     src={product?.images[0]}

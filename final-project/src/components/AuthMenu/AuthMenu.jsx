@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import { Menu, Box, Typography } from '@mui/material';
+import { Menu, Box, Typography, Skeleton } from '@mui/material';
 
 import { useLoginMutation, useGetMeQuery } from '../../store/api/authApi.js';
 import { setCredentials, logout } from '../../store/slices/authSlice.js';
@@ -14,8 +14,8 @@ const AuthMenu = ({ anchorEl, handleClose }) => {
     const [isRegister, setIsRegister] = useState(false);
 
     const token = useSelector((state) => state.auth.token);
-    const { data: currentUser } = useGetMeQuery(undefined, { skip: !token });
-    const [login, { isLoading }] = useLoginMutation();
+    const { data: currentUser, isLoading: isLoadingMe } = useGetMeQuery(undefined, { skip: !token });
+    const [login, { isLoading: isLoginLoading }] = useLoginMutation();
 
     const dynamicSchema = yup.object().shape({
         ...(isRegister && {
@@ -71,10 +71,18 @@ const AuthMenu = ({ anchorEl, handleClose }) => {
                 paper: { className: 'auth-menu__paper' }
             }}
         >
-            {token && currentUser ? (
+            {token ? (
                 <Box className="auth-menu__user-box">
                     <Typography className="auth-menu__welcome">
-                        Hi, {currentUser.firstName || currentUser.username || 'User'}!
+                        {isLoadingMe ? (
+                            <Skeleton
+                                variant="text"
+                                animation="wave"
+                                sx={{ width: '120px', height: '24px', display: 'inline-block' }}
+                            />
+                        ) : (
+                            `Hi, ${currentUser?.firstName || currentUser?.username || 'User'}!`
+                        )}
                     </Typography>
                     <button type="button" className="auth-menu__logout-btn" onClick={handleLogout}>
                         Log Out
@@ -132,8 +140,19 @@ const AuthMenu = ({ anchorEl, handleClose }) => {
                             {errors.password && <p className="auth-menu__error-text">{errors.password.message}</p>}
                         </Box>
 
-                        <button type="submit" className="auth-menu__submit-btn" disabled={isLoading}>
-                            {isLoading ? 'Loading...' : isRegister ? 'Sign Up' : 'Sign In'}
+                        <button type="submit" className="auth-menu__submit-btn" disabled={isLoginLoading}>
+                            {isLoginLoading ? (
+                                <Skeleton
+                                    variant="circular"
+                                    animation="wave"
+                                    sx={{
+                                        width: '20px',
+                                        height: '20px',
+                                        margin: '0 auto',
+                                        backgroundColor: 'rgba(255, 255, 255, 0.3)'
+                                    }}
+                                />
+                            ) : isRegister ? 'Sign Up' : 'Sign In'}
                         </button>
                     </form>
                 </Box>

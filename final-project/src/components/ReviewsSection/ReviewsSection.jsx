@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { Box, Typography, Container, CircularProgress, IconButton } from '@mui/material';
+import { Box, Typography, Container, IconButton, Skeleton } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { useGetProductsQuery } from "../../store/api/productsApi.js";
@@ -32,14 +32,6 @@ const ReviewsSection = () => {
 
     if (isError) return null;
 
-    if (isLoading) {
-        return (
-            <Box className="customers__loader">
-                <CircularProgress color="inherit" />
-            </Box>
-        );
-    }
-
     return (
         <Box component="section" className="customers">
             <Container>
@@ -59,15 +51,31 @@ const ReviewsSection = () => {
                 </Box>
 
                 <Box className="customers__slider" ref={scrollRef}>
-                    {reviews.map((review, index) => (
-                        <Box
-                            key={`${review.id || index}`}
-                            className="customers__card-wrapper"
-                            sx={{ minWidth: { xs: '310px', md: '400px' } }}
-                        >
-                            <ReviewCard review={review} />
-                        </Box>
-                    ))}
+                    {isLoading ? (
+                        [...Array(4)].map((_, index) => (
+                            <Box
+                                key={index}
+                                className="customers__card-wrapper"
+                                sx={{ minWidth: { xs: '310px', md: '400px' } }}
+                            >
+                                <Skeleton
+                                    variant="rectangular"
+                                    animation="wave"
+                                    sx={{ width: '100%', height: '240px', borderRadius: '20px' }}
+                                />
+                            </Box>
+                        ))
+                    ) : (
+                        reviews.map((review, index) => (
+                            <Box
+                                key={`${review.id || index}`}
+                                className="customers__card-wrapper"
+                                sx={{ minWidth: { xs: '310px', md: '400px' } }}
+                            >
+                                <ReviewCard review={review} />
+                            </Box>
+                        ))
+                    )}
                 </Box>
             </Container>
         </Box>

@@ -10,7 +10,7 @@ import {
     Select,
     FormControl,
     IconButton,
-    CircularProgress,
+    Skeleton,
 } from '@mui/material';
 import TuneIcon from '@mui/icons-material/Tune';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
@@ -94,14 +94,6 @@ const ProductsList = ({ categoryName, onFilterClick, activeFilters }) => {
         setPage(1);
     };
 
-    if (isLoading) {
-        return (
-            <Box className="products-list products-list--loading" sx={{ display: 'flex', justifyContent: 'center', p: 5 }}>
-                <CircularProgress color="inherit" />
-            </Box>
-        );
-    }
-
     if (isError) {
         return <Typography className="products-list__error">Error loading products</Typography>;
     }
@@ -115,7 +107,11 @@ const ProductsList = ({ categoryName, onFilterClick, activeFilters }) => {
 
                 <Box className="products-list__controls">
                     <Typography variant="body1" className="products-list__count">
-                        Showing {totalItems > 0 ? skipValue + 1 : 0}-{Math.min(skipValue + pageSize, totalItems)} of {totalItems} Products
+                        {isLoading ? (
+                            <Skeleton variant="text" animation="wave" sx={{ width: '140px', height: '22px', display: 'inline-block' }} />
+                        ) : (
+                            `Showing ${totalItems > 0 ? skipValue + 1 : 0}-${Math.min(skipValue + pageSize, totalItems)} of {totalItems} Products`
+                        )}
                     </Typography>
 
                     <Box className="products-list__sort">
@@ -146,14 +142,26 @@ const ProductsList = ({ categoryName, onFilterClick, activeFilters }) => {
             </Box>
 
             <Grid container spacing={{ xs: 2, md: 3 }} className="products-list__grid">
-                {paginatedProducts.map((product) => (
-                    <Grid size={{xs: 6, md: 4}} key={product.id} className="products-list__grid-item">
-                        <ProductCard product={product} />
-                    </Grid>
-                ))}
+                {isLoading ? (
+                    [...Array(pageSize)].map((_, i) => (
+                        <Grid size={{xs: 6, md: 4}} key={i} className="products-list__grid-item">
+                            <Skeleton
+                                variant="rectangular"
+                                animation="wave"
+                                sx={{ width: '100%', height: '360px', borderRadius: '20px' }}
+                            />
+                        </Grid>
+                    ))
+                ) : (
+                    paginatedProducts.map((product) => (
+                        <Grid size={{xs: 6, md: 4}} key={product.id} className="products-list__grid-item">
+                            <ProductCard product={product} />
+                        </Grid>
+                    ))
+                )}
             </Grid>
 
-            {totalItems === 0 && (
+            {!isLoading && totalItems === 0 && (
                 <Typography sx={{ textAlign: 'center', py: 5 }}>No products found matching filters.</Typography>
             )}
 

@@ -1,17 +1,10 @@
 import PropTypes from 'prop-types';
-import {Box, Typography, Button, Container, CircularProgress, Grid} from '@mui/material';
+import {Box, Typography, Button, Container, Grid, Skeleton} from '@mui/material';
 import ProductCard from '../ProductCard/ProductCard';
 import './ProductSection.scss';
+import React from "react";
 
 const ProductSection = ({ title, products, isLoading, error, onViewAllClick }) => {
-
-    if (isLoading) {
-        return (
-            <Box className="product-section__loader">
-                <CircularProgress color="inherit" />
-            </Box>
-        );
-    }
 
     if (error) {
         return (
@@ -31,11 +24,27 @@ const ProductSection = ({ title, products, isLoading, error, onViewAllClick }) =
                 </Typography>
 
                 <Grid container spacing={{xs: 2, md: 4}} className="product-section__grid">
-                    {products?.map((product) => (
-                        <Grid size={3} key={product.id} className="product-section__item">
-                            <ProductCard product={product} />
-                        </Grid>
-                    ))}
+                    {isLoading
+                        ? [1, 2, 3, 4].map((_, idx) => (
+                            <Box key={idx} className="related-products__item">
+                                <Box sx={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                                    <Skeleton
+                                        variant="rectangular"
+                                        animation="wave"
+                                        sx={{ width: '100%', pt: '100%', borderRadius: '20px' }}
+                                    />
+                                    <Skeleton variant="text" animation="wave" sx={{ width: '80%', height: '24px' }} />
+                                    <Skeleton variant="text" animation="wave" sx={{ width: '40%', height: '20px' }} />
+                                    <Skeleton variant="text" animation="wave" sx={{ width: '60%', height: '24px' }} />
+                                </Box>
+                            </Box>
+                        ))
+                        : products?.map((product) => (
+                            <Grid size={3} key={product.id} className="product-section__item">
+                                <ProductCard product={product} />
+                            </Grid>
+                        ))
+                    }
                 </Grid>
 
                 <Box className="product-section__view-all-wrapper">

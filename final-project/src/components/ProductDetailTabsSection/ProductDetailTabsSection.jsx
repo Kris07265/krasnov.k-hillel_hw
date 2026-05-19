@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useParams } from 'react-router';
 import {
-    Box, Typography, CircularProgress, Container,
+    Box, Typography, Container, Skeleton,
     Tabs, Tab, Accordion, AccordionSummary, AccordionDetails
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -21,12 +21,6 @@ const ProductDetailTabsSection = () => {
     const handleTabChange = (event, newValue) => {
         setActiveTab(newValue);
     };
-
-    if (isProductLoading) return (
-        <Box className="product-reviews__loader">
-            <CircularProgress color="inherit" />
-        </Box>
-    );
 
     if (isProductError) return null;
 
@@ -53,7 +47,16 @@ const ProductDetailTabsSection = () => {
                         <Typography variant="h5" className="product-reviews__panel-title">
                             Technical Specifications
                         </Typography>
-                        {productData ? (
+                        {isProductLoading ? (
+                            <Box className="product-reviews__specs-list" sx={{ width: '100%' }}>
+                                {[...Array(5)].map((_, i) => (
+                                    <Box key={i} className="product-reviews__spec-item">
+                                        <Skeleton variant="text" animation="wave" sx={{ width: '100px', height: '24px' }} />
+                                        <Skeleton variant="text" animation="wave" sx={{ width: '140px', height: '24px' }} />
+                                    </Box>
+                                ))}
+                            </Box>
+                        ) : productData ? (
                             <Box className="product-reviews__specs-list">
                                 <Box className="product-reviews__spec-item">
                                     <Typography className="product-reviews__spec-label">Brand:</Typography>
@@ -88,14 +91,29 @@ const ProductDetailTabsSection = () => {
                     <Box className="product-reviews__content-panel">
                         <Box className="product-reviews__header">
                             <Typography variant="h4" className="product-reviews__title">
-                                All Reviews <span className="product-reviews__count">({reviews.length})</span>
+                                All Reviews <span className="product-reviews__count">
+                                    {isProductLoading ? (
+                                        <Skeleton variant="text" animation="wave" sx={{ width: '30px', height: '24px', display: 'inline-block', verticalAlign: 'middle' }} />
+                                    ) : `(${reviews.length})`}
+                                </span>
                             </Typography>
                         </Box>
 
                         <Box className="product-reviews__grid">
-                            {reviews.map((review, index) => (
-                                <ReviewCard key={review.id || index} review={review} />
-                            ))}
+                            {isProductLoading ? (
+                                [...Array(4)].map((_, i) => (
+                                    <Skeleton
+                                        key={i}
+                                        variant="rectangular"
+                                        animation="wave"
+                                        sx={{ width: '100%', height: '240px', borderRadius: '20px' }}
+                                    />
+                                ))
+                            ) : (
+                                reviews.map((review, index) => (
+                                    <ReviewCard key={review.id || index} review={review} />
+                                ))
+                            )}
                         </Box>
 
                     </Box>

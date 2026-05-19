@@ -1,5 +1,5 @@
-import { Box, Container, CircularProgress } from '@mui/material';
-import {Link} from 'react-router'
+import { Box, Container, Skeleton } from '@mui/material';
+import { Link } from 'react-router';
 import { useGetCategoriesQuery } from "../../store/api/productsApi.js";
 import './BrandsBar.scss';
 
@@ -8,8 +8,22 @@ const BrandsBar = () => {
 
     if (isLoading) {
         return (
-            <Box className="brands brands--loading">
-                <CircularProgress size={20} color="inherit" />
+            <Box component="section" className="brands">
+                <Container className="brands__container">
+                    {Array.from(new Array(4)).map((_, index) => (
+                        <Skeleton
+                            key={index}
+                            variant="text"
+                            animation="wave"
+                            sx={{
+                                width: { xs: '120px', md: '160px' },
+                                height: { xs: '40px', md: '50px' },
+                                backgroundColor: 'rgba(255, 255, 255, 0.15)',
+                                borderRadius: '4px'
+                            }}
+                        />
+                    ))}
+                </Container>
             </Box>
         );
     }

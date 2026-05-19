@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import {useState} from "react";
 import {
     Container, Grid, Box, Typography, Rating,
-    Button, Divider, CircularProgress, IconButton, Breadcrumbs
+    Button, Divider, Skeleton, IconButton, Breadcrumbs
 } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
@@ -20,12 +20,11 @@ const ProductDetailHeroSection = () => {
     const [quantity, setQuantity] = useState(1);
     const [activeImageIndex, setActiveImageIndex] = useState(0);
 
-    if (isLoading) return <Box className="product-hero__loader"><CircularProgress color="inherit" /></Box>;
-    if (!product || !product.images) return null;
+    if (!isLoading && (!product || !product.images)) return null;
 
-    const mainImage = product.images[activeImageIndex] || product.images[0];
+    const mainImage = product?.images?.[activeImageIndex] || product?.images?.[0];
 
-    const oldPrice = product.discountPercentage
+    const oldPrice = product?.discountPercentage
         ? Math.round(product.price / (1 - product.discountPercentage / 100))
         : null;
 
@@ -35,55 +34,99 @@ const ProductDetailHeroSection = () => {
                 <Grid size={{xs:12, md: 6}}>
                     <Box className="product-hero__gallery">
                         <Box className="product-hero__thumbnails">
-                            {product.images.slice(0, 3).map((img, idx) => (
-                                <Box
-                                    key={idx}
-                                    className={`product-hero__thumb ${activeImageIndex === idx ? 'product-hero__thumb--active' : ''}`}
-                                    onClick={() => setActiveImageIndex(idx)}
-                                >
-                                    <img src={img} alt={`thumb-${idx}`} />
-                                </Box>
-                            ))}
+                            {isLoading ? (
+                                [1, 2, 3].map((_, idx) => (
+                                    <Skeleton
+                                        key={idx}
+                                        variant="rectangular"
+                                        animation="wave"
+                                        sx={{ width: '152px', height: '167px', borderRadius: '20px' }}
+                                    />
+                                ))
+                            ) : (
+                                product.images.slice(0, 3).map((img, idx) => (
+                                    <Box
+                                        key={idx}
+                                        className={`product-hero__thumb ${activeImageIndex === idx ? 'product-hero__thumb--active' : ''}`}
+                                        onClick={() => setActiveImageIndex(idx)}
+                                    >
+                                        <img src={img} alt={`thumb-${idx}`} />
+                                    </Box>
+                                ))
+                            )}
                         </Box>
                         <Box className="product-hero__main-image">
-                            <img src={mainImage} alt={product.title} />
+                            {isLoading ? (
+                                <Skeleton
+                                    variant="rectangular"
+                                    animation="wave"
+                                    sx={{ width: '100%', height: '100%', borderRadius: '20px' }}
+                                />
+                            ) : (
+                                <img src={mainImage} alt={product.title} />
+                            )}
                         </Box>
                     </Box>
                 </Grid>
 
                 <Grid size={{xs:12, md: 6}}>
                     <Box className="product-hero__info">
-                        <Typography variant="h1" className="product-hero__title">{product.title}</Typography>
+                        {isLoading ? (
+                            <Skeleton variant="text" animation="wave" sx={{ width: '80%', height: '48px' }} />
+                        ) : (
+                            <Typography variant="h1" className="product-hero__title">{product.title}</Typography>
+                        )}
 
                         <Box className="product-hero__rating-row">
-                            <Rating value={product.rating || 0} precision={0.5} readOnly />
-                            <Typography variant="body2" className="product-hero__rating-text">
-                                {product.rating}/5
-                            </Typography>
-                        </Box>
-
-                        <Box className="product-hero__price-row">
-                            <Typography className="product-hero__price">${product.price}</Typography>
-                            {oldPrice && <Typography className="product-hero__price-old">${oldPrice}</Typography>}
-                            {product.discountPercentage && (
-                                <Box className="product-hero__discount">-{Math.round(product.discountPercentage)}%</Box>
+                            {isLoading ? (
+                                <Skeleton variant="text" animation="wave" sx={{ width: '150px', height: '24px' }} />
+                            ) : (
+                                <>
+                                    <Rating value={product.rating || 0} precision={0.5} readOnly />
+                                    <Typography variant="body2" className="product-hero__rating-text">
+                                        {product.rating}/5
+                                    </Typography>
+                                </>
                             )}
                         </Box>
 
-                        <Typography className="product-hero__description">{product.description}</Typography>
+                        <Box className="product-hero__price-row">
+                            {isLoading ? (
+                                <Skeleton variant="text" animation="wave" sx={{ width: '200px', height: '38px' }} />
+                            ) : (
+                                <>
+                                    <Typography className="product-hero__price">${product.price}</Typography>
+                                    {oldPrice && <Typography className="product-hero__price-old">${oldPrice}</Typography>}
+                                    {product.discountPercentage && (
+                                        <Box className="product-hero__discount">-{Math.round(product.discountPercentage)}%</Box>
+                                    )}
+                                </>
+                            )}
+                        </Box>
+
+                        {isLoading ? (
+                            <Box sx={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                                <Skeleton variant="text" animation="wave" sx={{ width: '100%', height: '20px' }} />
+                                <Skeleton variant="text" animation="wave" sx={{ width: '95%', height: '20px' }} />
+                                <Skeleton variant="text" animation="wave" sx={{ width: '70%', height: '20px' }} />
+                            </Box>
+                        ) : (
+                            <Typography className="product-hero__description">{product.description}</Typography>
+                        )}
 
                         <Divider className="product-hero__divider" />
 
                         <Box className="product-hero__actions">
                             <Box className="product-hero__qty">
-                                <IconButton onClick={() => setQuantity(q => Math.max(1, q - 1))}><RemoveIcon /></IconButton>
+                                <IconButton onClick={() => setQuantity(q => Math.max(1, q - 1))} disabled={isLoading}><RemoveIcon /></IconButton>
                                 <Typography className="product-hero__qty-value">{quantity}</Typography>
-                                <IconButton onClick={() => setQuantity(q => q + 1)}><AddIcon /></IconButton>
+                                <IconButton onClick={() => setQuantity(q => q + 1)} disabled={isLoading}><AddIcon /></IconButton>
                             </Box>
                             <Button
                                 variant="contained"
                                 className="product-hero__add-btn"
                                 fullWidth
+                                disabled={isLoading}
                                 onClick={() => dispatch(addItem({ ...product, quantity }))}
                             >
                                 Add to Cart

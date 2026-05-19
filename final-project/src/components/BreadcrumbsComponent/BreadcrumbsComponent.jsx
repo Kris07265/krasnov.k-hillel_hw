@@ -1,5 +1,5 @@
 import { Link, useLocation, useParams } from "react-router";
-import { Breadcrumbs, Typography } from "@mui/material";
+import { Breadcrumbs, Typography, Skeleton } from "@mui/material";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import { useGetProductByIdQuery } from "../../store/api/productsApi.js";
 import "./BreadcrumbsComponent.scss";
@@ -11,7 +11,7 @@ const BreadcrumbsComponent = () => {
 
     const isProductPage = !!params.id && pathname.startsWith("/product/");
 
-    const { data: product } = useGetProductByIdQuery(params.id, {
+    const { data: product, isLoading } = useGetProductByIdQuery(params.id, {
         skip: !isProductPage,
     });
 
@@ -62,18 +62,28 @@ const BreadcrumbsComponent = () => {
         return (
             <Breadcrumbs separator={<NavigateNextIcon fontSize="small" />} className="breadcrumbs-container">
                 <Link to="/">Home</Link>
-                {product ? (
+                {isLoading ? (
+                    <Skeleton
+                        variant="text"
+                        animation="wave"
+                        sx={{ width: '80px', height: '21px', display: 'inline-block' }}
+                    />
+                ) : product ? (
                     <Link to={`/category/${product.category}`}>
                         {formatLabel(product.category)}
                     </Link>
                 ) : null}
-                {product ? (
+                {isLoading ? (
+                    <Skeleton
+                        variant="text"
+                        animation="wave"
+                        sx={{ width: '150px', height: '21px', display: 'inline-block' }}
+                    />
+                ) : product ? (
                     <Typography className="breadcrumbs-current">
                         {product.title}
                     </Typography>
-                ) : (
-                    <Typography className="breadcrumbs-current">Loading product...</Typography>
-                )}
+                ) : null}
             </Breadcrumbs>
         );
     }

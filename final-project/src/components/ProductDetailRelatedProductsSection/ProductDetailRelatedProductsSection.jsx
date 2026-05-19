@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router';
-import { Typography, Box, Container, CircularProgress } from '@mui/material';
+import { Typography, Box, Container, Skeleton } from '@mui/material';
 import { useGetProductByIdQuery, useGetProductsByCategoryQuery } from '../../store/api/productsApi';
 import ProductCard from '../ProductCard/ProductCard';
 import './ProductDetailRelatedProductsSection.scss';
@@ -20,13 +20,7 @@ const ProductDetailRelatedProductsSection = () => {
         { skip: !category }
     );
 
-    if (isProductLoading || isRelatedLoading) {
-        return (
-            <Box className="related-products__loader">
-                <CircularProgress color="inherit" />
-            </Box>
-        );
-    }
+    const isLoading = isProductLoading || isRelatedLoading;
 
     return (
         <Box component="section" className="related-products">
@@ -36,11 +30,28 @@ const ProductDetailRelatedProductsSection = () => {
                 </Typography>
 
                 <Box className="related-products__grid">
-                    {relatedData?.products?.map((product) => (
-                        <Box key={product.id} className="related-products__item">
-                            <ProductCard product={product} />
-                        </Box>
-                    ))}
+                    {isLoading ? (
+                        [1, 2, 3, 4].map((_, idx) => (
+                            <Box key={idx} className="related-products__item">
+                                <Box sx={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                                    <Skeleton
+                                        variant="rectangular"
+                                        animation="wave"
+                                        sx={{ width: '100%', pt: '100%', borderRadius: '20px' }}
+                                    />
+                                    <Skeleton variant="text" animation="wave" sx={{ width: '80%', height: '24px' }} />
+                                    <Skeleton variant="text" animation="wave" sx={{ width: '40%', height: '20px' }} />
+                                    <Skeleton variant="text" animation="wave" sx={{ width: '60%', height: '24px' }} />
+                                </Box>
+                            </Box>
+                        ))
+                    ) : (
+                        relatedData?.products?.map((product) => (
+                            <Box key={product.id} className="related-products__item">
+                                <ProductCard product={product} />
+                            </Box>
+                        ))
+                    )}
                 </Box>
             </Container>
         </Box>

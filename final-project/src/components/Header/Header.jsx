@@ -3,7 +3,7 @@ import { useState } from "react";
 import {
     AppBar, Toolbar, Box, Badge, IconButton, Drawer,
     List, ListItem, Container, Menu, MenuItem,
-    Accordion, AccordionSummary, AccordionDetails, Typography
+    Accordion, AccordionSummary, AccordionDetails, Typography, Skeleton
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
@@ -25,7 +25,7 @@ const Header = () => {
 
     const navigate = useNavigate();
     const totalQuantity = useSelector((state) => state.cart.totalQuantity);
-    const { data: categories } = useGetCategoriesQuery();
+    const { data: categories, isLoading } = useGetCategoriesQuery();
 
     const handleOpenMenu = (event) => {
         setAnchorEl(event.currentTarget);
@@ -102,15 +102,27 @@ const Header = () => {
                                     All Products
                                 </MenuItem>
 
-                                {categories?.map((category) => (
-                                    <MenuItem
-                                        key={category}
-                                        onClick={() => handleCategoryClick(category)}
-                                        className="header__dropdown-item"
-                                    >
-                                        {category.replace('-', ' ')}
-                                    </MenuItem>
-                                ))}
+                                {isLoading ? (
+                                    [...Array(4)].map((_, index) => (
+                                        <MenuItem key={index} className="header__dropdown-item">
+                                            <Skeleton
+                                                variant="text"
+                                                animation="wave"
+                                                sx={{ width: '100px', height: '21px', display: 'inline-block' }}
+                                            />
+                                        </MenuItem>
+                                    ))
+                                ) : (
+                                    categories?.map((category) => (
+                                        <MenuItem
+                                            key={category}
+                                            onClick={() => handleCategoryClick(category)}
+                                            className="header__dropdown-item"
+                                        >
+                                            {category.replace('-', ' ')}
+                                        </MenuItem>
+                                    ))
+                                )}
                             </Menu>
 
                             <Link to="/on-sale" className="header__nav-link">On Sale</Link>
@@ -166,15 +178,27 @@ const Header = () => {
                                         All Products
                                     </Box>
 
-                                    {categories?.map((category) => (
-                                        <Box
-                                            key={category}
-                                            className="header__mobile-sublink"
-                                            onClick={() => handleCategoryClick(category)}
-                                        >
-                                            {category.replace('-', ' ')}
-                                        </Box>
-                                    ))}
+                                    {isLoading ? (
+                                        [...Array(4)].map((_, index) => (
+                                            <Box key={index} className="header__mobile-sublink" sx={{ py: 0.5 }}>
+                                                <Skeleton
+                                                    variant="text"
+                                                    animation="wave"
+                                                    sx={{ width: '90px', height: '21px', display: 'inline-block' }}
+                                                />
+                                            </Box>
+                                        ))
+                                    ) : (
+                                        categories?.map((category) => (
+                                            <Box
+                                                key={category}
+                                                className="header__mobile-sublink"
+                                                onClick={() => handleCategoryClick(category)}
+                                            >
+                                                {category.replace('-', ' ')}
+                                            </Box>
+                                        ))
+                                    )}
                                 </AccordionDetails>
                             </Accordion>
                         </ListItem>
