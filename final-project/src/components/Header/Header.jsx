@@ -14,6 +14,7 @@ import { Link, useNavigate } from 'react-router';
 
 import { useGetCategoriesQuery } from "../../store/api/productsApi.js";
 import AuthMenu from "../AuthMenu/AuthMenu.jsx";
+import logo from '../../assets/img/logo.png';
 import './Header.scss';
 
 const Header = () => {
@@ -76,7 +77,11 @@ const Header = () => {
                             <MenuIcon />
                         </IconButton>
 
-                        <Link to="/" className="header__logo">SHOP.CO</Link>
+                        <Link to="/" className="header__logo">
+                            <img
+                                src={logo}
+                                alt="Logo"/>
+                        </Link>
 
                         <nav className="header__nav-desktop">
                             <Box

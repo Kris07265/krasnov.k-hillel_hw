@@ -5,6 +5,12 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import MailOutlineOutlinedIcon from '@mui/icons-material/MailOutlineOutlined';
+import logo from '../../assets/img/logo.png';
+import footerApplePay from '../../assets/img/footerApplePay.png'
+import footerGooglePay from '../../assets/img/footerGooglePay.png'
+import footerMasterCard from '../../assets/img/footerMasterCard.png'
+import footerPayPal from '../../assets/img/footerPayPal.png'
+import footerVisa from '../../assets/img/footerVisa.png'
 
 import './Footer.scss';
 
@@ -29,10 +35,14 @@ const Footer = () => {
             </Container>
 
             <Box className="footer__main">
-                <Container maxWidth="xl">
+                <Container>
                     <Grid container spacing={4}>
-                        <Grid xs={12} md={3}>
-                            <Typography variant="h4" className="footer__logo">SHOP.CO</Typography>
+                        <Grid size={{xs:12, md: 3}}>
+                            <Box className="footer__logo">
+                            <img
+                            src={logo}
+                            alt="Logo"/>
+                            </Box>
                             <Typography className="footer__description">
                                 We have clothes that suits your style and which you’re proud to wear. From women to men.
                             </Typography>
@@ -50,7 +60,7 @@ const Footer = () => {
                             { title: 'FAQ', links: ['Account', 'Manage Deliveries', 'Orders', 'Payments'] },
                             { title: 'RESOURCES', links: ['Free eBook', 'Development Tutorial', 'How to - Blog', 'Youtube Playlist'] }
                         ].map((col) => (
-                            <Grid xs={6} md={2.25} key={col.title}>
+                            <Grid size={{xs:6, md: 2.25}} key={col.title}>
                                 <Typography className="footer__column-title">{col.title}</Typography>
                                 <ul className="footer__links-list">
                                     {col.links.map(link => (
@@ -68,9 +78,31 @@ const Footer = () => {
                             Shop.co © 2000-2023, All Rights Reserved
                         </Typography>
                         <Box className="footer__payments">
-                            <Box className="footer__payment-placeholder">Visa</Box>
-                            <Box className="footer__payment-placeholder">Mastercard</Box>
-                            <Box className="footer__payment-placeholder">PayPal</Box>
+                            <Box className="footer__payment-img">
+                                <img
+                                src={footerVisa}
+                                alt="Visa"/>
+                            </Box>
+                            <Box className="footer__payment-img">
+                                <img
+                                    src={footerMasterCard}
+                                    alt="MasterCard"/>
+                            </Box>
+                            <Box className="footer__payment-img">
+                                <img
+                                    src={footerPayPal}
+                                    alt="PayPal"/>
+                            </Box>
+                            <Box className="footer__payment-img">
+                                <img
+                                    src={footerApplePay}
+                                    alt="ApplePay"/>
+                            </Box>
+                            <Box className="footer__payment-img">
+                                <img
+                                    src={footerGooglePay}
+                                    alt="GooglePay"/>
+                            </Box>
                         </Box>
                     </Box>
                 </Container>

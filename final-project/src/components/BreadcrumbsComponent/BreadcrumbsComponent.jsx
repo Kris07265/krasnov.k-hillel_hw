@@ -23,26 +23,26 @@ const BreadcrumbsComponent = () => {
 
     if (pathname === "/") {
         return (
-            <Breadcrumbs separator={<NavigateNextIcon fontSize="small" />} className="breadcrumbs-container">
-                <Typography className="breadcrumbs-current">Home</Typography>
+            <Breadcrumbs separator={<NavigateNextIcon fontSize="small" />} className="breadcrumbs__container">
+                <Typography className="breadcrumbs__current">Home</Typography>
             </Breadcrumbs>
         );
     }
 
     if (pathname === "/cart") {
         return (
-            <Breadcrumbs separator={<NavigateNextIcon fontSize="small" />} className="breadcrumbs-container">
+            <Breadcrumbs separator={<NavigateNextIcon fontSize="small" />} className="breadcrumbs__container">
                 <Link to="/">Home</Link>
-                <Typography className="breadcrumbs-current">Cart</Typography>
+                <Typography className="breadcrumbs__current">Cart</Typography>
             </Breadcrumbs>
         );
     }
 
     if (pathname.startsWith("/category/") && params.categoryName) {
         return (
-            <Breadcrumbs separator={<NavigateNextIcon fontSize="small" />} className="breadcrumbs-container">
+            <Breadcrumbs separator={<NavigateNextIcon fontSize="small" />} className="breadcrumbs__container">
                 <Link to="/">Home</Link>
-                <Typography className="breadcrumbs-current">
+                <Typography className="breadcrumbs__current">
                     {formatLabel(params.categoryName)}
                 </Typography>
             </Breadcrumbs>
@@ -51,16 +51,16 @@ const BreadcrumbsComponent = () => {
 
     if (pathname === "/all-products") {
         return (
-            <Breadcrumbs separator={<NavigateNextIcon fontSize="small" />} className="breadcrumbs-container">
+            <Breadcrumbs separator={<NavigateNextIcon fontSize="small" />} className="breadcrumbs__container">
                 <Link to="/">Home</Link>
-                <Typography className="breadcrumbs-current">All Products</Typography>
+                <Typography className="breadcrumbs__current">All Products</Typography>
             </Breadcrumbs>
         );
     }
 
     if (isProductPage) {
         return (
-            <Breadcrumbs separator={<NavigateNextIcon fontSize="small" />} className="breadcrumbs-container">
+            <Breadcrumbs separator={<NavigateNextIcon fontSize="small" />} className="breadcrumbs__container">
                 <Link to="/">Home</Link>
                 {isLoading ? (
                     <Skeleton
@@ -80,7 +80,7 @@ const BreadcrumbsComponent = () => {
                         sx={{ width: '150px', height: '21px', display: 'inline-block' }}
                     />
                 ) : product ? (
-                    <Typography className="breadcrumbs-current">
+                    <Typography className="breadcrumbs__current">
                         {product.title}
                     </Typography>
                 ) : null}

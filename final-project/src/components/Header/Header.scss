@@ -45,14 +45,16 @@ $font-satoshi: 'Satoshi', sans-serif;
   }
 
   &__logo {
-    font-family: $font-integral;
-    font-size: 25px;
-    font-weight: 700;
     text-decoration: none;
-    color: #000;
-    line-height: 1;
+    width: 165px;
+    height: 20px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
     @media (min-width: 900px) {
-      font-size: 32px;
+      width: 170px;
+      height: 25px;
     }
   }
 

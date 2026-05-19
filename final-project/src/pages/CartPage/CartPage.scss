@@ -1,42 +1,24 @@
 @use "../../assets/fonts/fonts.scss";
+$font-integral: 'Integral CF', sans-serif;
+$font-satoshi: 'Satoshi', sans-serif;
 
 .cart-view-page {
   padding-top: 24px;
-  padding-bottom: 80px;
+  padding-bottom: 40px;
 
-  &__breadcrumbs {
-    margin-bottom: 24px;
-
-    a {
-      text-decoration: none;
-      color: rgba(0, 0, 0, 0.6);
-      font-family: 'Satoshi', sans-serif;
-      font-size: 14px;
-
-      &:hover {
-        text-decoration: underline;
-        color: #000;
-      }
-    }
-
-    .MuiTypography-root {
-      font-family: 'Satoshi', sans-serif;
-      font-size: 14px;
+  &__main-title {
+    &.MuiTypography-root {
+      font-family: $font-integral;
+      font-size: 32px;
+      font-weight: 900;
+      text-transform: uppercase;
       color: #000;
+      margin-bottom: 8px;
     }
   }
 
   &__grid {
     align-items: flex-start;
-  }
-
-  &__items-col {
-    width: 100%;
-  }
-
-  &__summary-col {
-    width: 100%;
-    margin-top: 70px;
   }
 
   &--empty {
@@ -50,7 +32,7 @@
 
   &__empty-title {
     &.MuiTypography-root {
-      font-family: 'Satoshi', sans-serif;
+      font-family: $font-satoshi;
       font-size: 28px;
       font-weight: 700;
       color: rgba(0, 0, 0, 0.4);
@@ -64,7 +46,7 @@
       border-radius: 62px;
       padding: 12px 36px;
       text-transform: none;
-      font-family: 'Satoshi', sans-serif;
+      font-family: $font-satoshi;
       font-size: 16px;
       font-weight: 500;
       box-shadow: none;
@@ -77,12 +59,8 @@
   }
 }
 
-@media (max-width: 960px) {
+@media (min-width: 900px) {
   .cart-view-page {
-    padding-bottom: 40px;
-
-    &__summary-col {
-      margin-top: 0;
-    }
+    padding-bottom: 80px;
   }
 }

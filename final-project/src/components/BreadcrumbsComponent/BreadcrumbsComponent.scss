@@ -1,35 +1,37 @@
+@use "../../assets/fonts/fonts.scss";
+$font-satoshi: 'Satoshi', sans-serif;
 
-.breadcrumbs-container {
-  margin-bottom: 24px;
-  padding: 8px 0;
+.breadcrumbs {
+  &__container {
+    margin-bottom: 24px;
+    padding: 8px 0;
 
-  a {
-    text-decoration: none;
-    color: rgba(0, 0, 0, 0.6);
-    font-family: 'Satoshi', sans-serif;
-    font-size: 14px;
-    text-transform: capitalize;
-    transition: color 0.2s ease, text-decoration 0.2s ease;
+    a {
+      text-decoration: none;
+      color: rgba(0, 0, 0, 0.6);
+      font-family: $font-satoshi;
+      font-size: 14px;
+      text-transform: capitalize;
+      transition: color 0.2s ease, text-decoration 0.2s ease;
 
-    &:hover {
-      text-decoration: underline;
-      color: #000000;
+      &:hover {
+        text-decoration: underline;
+        color: #000000;
+      }
     }
-  }
 
-  .breadcrumbs-current,
-  p,
-  .MuiTypography-root {
-    font-family: 'Satoshi', sans-serif;
-    font-size: 14px;
-    color: #000000;
-    font-weight: 500;
-    text-transform: capitalize;
-  }
+    .breadcrumbs__current {
+      font-family: $font-satoshi;
+      font-size: 14px;
+      color: #000000;
+      font-weight: 500;
+      text-transform: capitalize;
+    }
 
-  .MuiBreadcrumbs-separator {
-    color: rgba(0, 0, 0, 0.4);
-    margin-left: 8px;
-    margin-right: 8px;
+    .MuiBreadcrumbs-separator {
+      color: rgba(0, 0, 0, 0.4);
+      margin-left: 8px;
+      margin-right: 8px;
+    }
   }
 }

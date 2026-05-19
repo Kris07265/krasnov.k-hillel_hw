@@ -6,6 +6,7 @@ import CartItemList from '../../components/CartItemList/CartItemList';
 import CartOrderSummary from '../../components/CartOrderSummary/CartOrderSummary';
 import './CartPage.scss';
 import BreadcrumbsComponent from "../../components/BreadcrumbsComponent/BreadcrumbsComponent.jsx";
+import React from "react";
 
 const CartPage = () => {
     const { items, totalAmount } = useSelector((state) => state.cart);
@@ -27,12 +28,16 @@ const CartPage = () => {
         <Container className="cart-view-page">
             <BreadcrumbsComponent />
 
+            <Typography variant="h1" className="cart-view-page__main-title">
+                Your Cart
+            </Typography>
+
             <Grid container spacing={3} className="cart-view-page__grid">
-                <Grid size={{xs:12, md: 7}} className="cart-view-page__items-col">
+                <Grid size={{xs:12, md: 7}}>
                     <CartItemList items={items} />
                 </Grid>
 
-                <Grid size={{xs:12, md: 5}} className="cart-view-page__summary-col">
+                <Grid size={{xs:12, md: 5}}>
                     <CartOrderSummary subtotal={totalAmount} />
                 </Grid>
             </Grid>
