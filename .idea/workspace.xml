@@ -6,14 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="bcb53deb-8a75-4733-855f-4b8cd9fc4055" name="Changes" comment="corrected errors">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/BreadcrumbsComponent/BreadcrumbsComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/BreadcrumbsComponent/BreadcrumbsComponent.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/Filters/Filters.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/Filters/Filters.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/Filters/Filters.scss" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/Filters/Filters.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/CartItem/CartItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/CartItem/CartItem.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/final-project/src/components/ProductDetailHeroSection/ProductDetailHeroSection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/ProductDetailHeroSection/ProductDetailHeroSection.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/ProductDetailHeroSection/ProductDetailHeroSection.scss" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/ProductDetailHeroSection/ProductDetailHeroSection.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/ProductDetailRelatedProductsSection/ProductDetailRelatedProductsSection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/ProductDetailRelatedProductsSection/ProductDetailRelatedProductsSection.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/ProductDetailTabsSection/ProductDetailTabsSection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/ProductDetailTabsSection/ProductDetailTabsSection.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/ProductsList/ProductsList.scss" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/ProductsList/ProductsList.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/store/slices/cartSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/store/slices/cartSlice.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,15 +157,7 @@
       <workItem from="1779168551509" duration="4399000" />
       <workItem from="1779190571618" duration="5055000" />
       <workItem from="1779205766360" duration="6685000" />
-      <workItem from="1779268371906" duration="1788000" />
-    </task>
-    <task id="LOCAL-00023" summary="finished hw 43">
-      <option name="closed" value="true" />
-      <created>1773596564572</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1773596564572</updated>
+      <workItem from="1779268371906" duration="4116000" />
     </task>
     <task id="LOCAL-00024" summary="fixed README.md and index.html">
       <option name="closed" value="true" />
@@ -556,7 +543,15 @@
       <option name="project" value="LOCAL" />
       <updated>1779212496556</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="corrected errors">
+      <option name="closed" value="true" />
+      <created>1779270257396</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1779270257396</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

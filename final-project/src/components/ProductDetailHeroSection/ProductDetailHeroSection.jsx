@@ -1,10 +1,7 @@
 import { useParams } from 'react-router';
 import { useDispatch } from 'react-redux';
 import { useState } from "react";
-import {
-    Container, Grid, Box, Typography, Rating,
-    Button, Divider, Skeleton, IconButton
-} from '@mui/material';
+import { Grid, Box, Typography, Rating, Button, Divider, Skeleton, IconButton } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 
@@ -27,6 +24,8 @@ const ProductDetailHeroSection = () => {
     const oldPrice = product?.discountPercentage
         ? Math.round(product.price / (1 - product.discountPercentage / 100))
         : null;
+
+    const isMaxReached = product?.stock && quantity >= product.stock;
 
     return (
         <Box className="product-hero">
@@ -122,10 +121,25 @@ const ProductDetailHeroSection = () => {
                         <Divider className="product-hero__divider" />
 
                         <Box className="product-hero__actions">
-                            <Box className="product-hero__qty">
-                                <IconButton onClick={() => setQuantity(q => Math.max(1, q - 1))} disabled={isLoading}><RemoveIcon /></IconButton>
+                            <Box className="product-hero__qty" sx={{ position: 'relative' }}>
+                                <IconButton
+                                    onClick={() => setQuantity(q => Math.max(1, q - 1))}
+                                    disabled={isLoading}
+                                >
+                                    <RemoveIcon />
+                                </IconButton>
                                 <Typography className="product-hero__qty-value">{quantity}</Typography>
-                                <IconButton onClick={() => setQuantity(q => q + 1)} disabled={isLoading}><AddIcon /></IconButton>
+                                <IconButton
+                                    onClick={() => setQuantity(q => product?.stock ? Math.min(product.stock, q + 1) : q + 1)}
+                                    disabled={isLoading || isMaxReached}
+                                >
+                                    <AddIcon />
+                                </IconButton>
+                                {isMaxReached && (
+                                    <Typography sx={{ fontSize: '9px', color: 'red', position: 'absolute', bottom: '-15px', width: '100%', textAlign: 'center' }}>
+                                        Out of stock
+                                    </Typography>
+                                )}
                             </Box>
                             <Button
                                 variant="contained"
