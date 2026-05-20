@@ -14,7 +14,7 @@ $font-satoshi: 'Satoshi', sans-serif;
 
   &__title {
     &.MuiTypography-root {
-      font-family: 'Satoshi', sans-serif;
+      font-family: $font-satoshi;
       font-weight: 700;
       font-size: 24px;
       color: #000000;
@@ -35,7 +35,7 @@ $font-satoshi: 'Satoshi', sans-serif;
   &__count {
     &.MuiTypography-root {
       display: block;
-      font-family: 'Satoshi', sans-serif;
+      font-family: $font-satoshi;
       color: rgba(0, 0, 0, 0.6);
       font-size: 16px;
     }
@@ -47,33 +47,23 @@ $font-satoshi: 'Satoshi', sans-serif;
     @media (min-width: 900px) {
       display: flex;
       align-items: center;
+      gap: 8px;
     }
-  }
 
-  &__sort-label {
-    &.MuiTypography-root {
-      font-family: 'Satoshi', sans-serif;
-      color: rgba(0, 0, 0, 0.6);
-      margin-right: 4px;
-    }
-  }
-
-  &__sort-select {
-    &.MuiInputBase-root {
-      font-family: 'Satoshi', sans-serif;
+    .MuiSelect-select {
+      font-family: $font-satoshi;
       font-weight: 500;
-      color: #000000;
-      font-size: 16px;
-      cursor: pointer;
+      color: #000;
+      padding-top: 0;
+      padding-bottom: 0;
     }
   }
 
   &__filter-btn {
-    &.MuiButtonBase-root {
-      display: flex;
+    &.MuiIconButton-root {
       background-color: #F0F0F0;
-      color: #000000;
       border-radius: 50%;
+      color: #000;
 
       @media (min-width: 900px) {
         display: none;
@@ -82,11 +72,12 @@ $font-satoshi: 'Satoshi', sans-serif;
   }
 
   &__grid {
-    margin-bottom: 24px;
+    margin-top: 16px;
+  }
 
-    @media (min-width: 900px) {
-      margin-bottom: 32px;
-    }
+  &__item {
+    display: flex;
+    justify-content: center;
   }
 
   &__pagination-container {
@@ -110,7 +101,7 @@ $font-satoshi: 'Satoshi', sans-serif;
         padding: 0;
 
         .MuiPaginationItem-root {
-          font-family: 'Satoshi', sans-serif;
+          font-family: $font-satoshi;
           font-weight: 500;
           color: rgba(0, 0, 0, 0.6);
           border-radius: 8px;
@@ -130,11 +121,9 @@ $font-satoshi: 'Satoshi', sans-serif;
           margin-right: auto;
           .MuiPaginationItem-root {
             border: 1px solid rgba(0, 0, 0, 0.1);
-            padding: 8px 16px;
-            height: auto;
-            background-color: #ffffff;
-            color: #000000;
-            text-transform: none;
+            padding: 8px 14px;
+            border-radius: 8px;
+            color: #000;
           }
         }
 
@@ -142,11 +131,9 @@ $font-satoshi: 'Satoshi', sans-serif;
           margin-left: auto;
           .MuiPaginationItem-root {
             border: 1px solid rgba(0, 0, 0, 0.1);
-            padding: 8px 16px;
-            height: auto;
-            background-color: #ffffff;
-            color: #000000;
-            text-transform: none;
+            padding: 8px 14px;
+            border-radius: 8px;
+            color: #000;
           }
         }
       }

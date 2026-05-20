@@ -1,5 +1,5 @@
 import { Link, useLocation, useParams } from "react-router";
-import { Breadcrumbs, Typography, Skeleton } from "@mui/material";
+import {Breadcrumbs, Typography, Skeleton} from "@mui/material";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import { useGetProductByIdQuery } from "../../store/api/productsApi.js";
 import "./BreadcrumbsComponent.scss";

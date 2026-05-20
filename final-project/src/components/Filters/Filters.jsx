@@ -47,11 +47,11 @@ const Filters = ({ onClose, filters, onFilterChange, onApply }) => {
                             valueLabelDisplay="auto"
                             min={0}
                             max={20000}
-                            className="filters__price-slider"
+                            className="filters__slider"
                         />
-                        <Box className="filters__price-labels">
-                            <Typography>${filters.price[0]}</Typography>
-                            <Typography>${filters.price[1]}</Typography>
+                        <Box className="filters__slider-labels">
+                            <Typography className="filters__slider-label">${filters.price[0]}</Typography>
+                            <Typography className="filters__slider-label">${filters.price[1]}</Typography>
                         </Box>
                     </AccordionDetails>
                 </Accordion>
@@ -63,14 +63,14 @@ const Filters = ({ onClose, filters, onFilterChange, onApply }) => {
                         <Typography className="filters__accordion-title">Rating</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
-                        <Box className="filters__sizes-wrap">
+                        <Box className="filters__rating-wrap">
                             {ratingOptions.map((rate) => (
                                 <ToggleButton
                                     key={rate}
                                     value={rate}
                                     selected={filters.rating === rate}
                                     onChange={() => onFilterChange({ ...filters, rating: rate })}
-                                    className="filters__size-btn"
+                                    className="filters__rating-btn"
                                 >
                                     {rate} Stars & Up
                                 </ToggleButton>
@@ -92,11 +92,11 @@ const Filters = ({ onClose, filters, onFilterChange, onApply }) => {
                             valueLabelDisplay="auto"
                             min={0}
                             max={50}
-                            className="filters__price-slider"
+                            className="filters__slider"
                         />
-                        <Box className="filters__price-labels">
-                            <Typography>{filters.weight[0]}kg</Typography>
-                            <Typography>{filters.weight[1]}kg</Typography>
+                        <Box className="filters__slider-labels">
+                            <Typography className="filters__slider-label">{filters.weight[0]}kg</Typography>
+                            <Typography className="filters__slider-label">{filters.weight[1]}kg</Typography>
                         </Box>
                     </AccordionDetails>
                 </Accordion>
@@ -112,21 +112,21 @@ const Filters = ({ onClose, filters, onFilterChange, onApply }) => {
                         <Slider
                             value={filters.width}
                             onChange={handleChange('width')}
-                            min={0} max={100} size="small" className="filters__price-slider"
+                            min={0} max={100} size="small" className="filters__slider"
                         />
 
                         <Typography variant="body2" sx={{ mt: 2, mb: 1 }}>Height</Typography>
                         <Slider
                             value={filters.height}
                             onChange={handleChange('height')}
-                            min={0} max={100} size="small" className="filters__price-slider"
+                            min={0} max={100} size="small" className="filters__slider"
                         />
 
                         <Typography variant="body2" sx={{ mt: 2, mb: 1 }}>Depth</Typography>
                         <Slider
                             value={filters.depth}
                             onChange={handleChange('depth')}
-                            min={0} max={100} size="small" className="filters__price-slider"
+                            min={0} max={100} size="small" className="filters__slider"
                         />
                     </AccordionDetails>
                 </Accordion>

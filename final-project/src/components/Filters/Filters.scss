@@ -90,7 +90,7 @@ $font-satoshi: 'Satoshi', sans-serif;
     color: #000;
   }
 
-  &__price-slider {
+  &__slider {
     &.MuiSlider-root {
       color: #000;
     }
@@ -112,24 +112,25 @@ $font-satoshi: 'Satoshi', sans-serif;
     }
   }
 
-  &__price-labels {
+  &__slider-labels {
     display: flex;
     justify-content: space-between;
     margin-top: 8px;
-    p {
-      font-family: $font-satoshi;
-      font-weight: 500;
-      font-size: 14px;
-    }
   }
 
-  &__sizes-wrap {
+  &__slider-label {
+    font-family: $font-satoshi;
+    font-weight: 500;
+    font-size: 14px;
+  }
+
+  &__rating-wrap {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
   }
 
-  &__size-btn.MuiToggleButton-root {
+  &__rating-btn.MuiToggleButton-root {
     background-color: #F0F0F0;
     border: none;
     border-radius: 62px;
@@ -163,11 +164,4 @@ $font-satoshi: 'Satoshi', sans-serif;
       background-color: #333;
     }
   }
-}
-
-.filters-drawer-paper.MuiPaper-root {
-  height: auto;
-  max-height: 90vh;
-  border-radius: 20px 20px 0 0;
-  overflow-y: auto;
 }

@@ -1,9 +1,9 @@
-import { useParams} from 'react-router';
+import { useParams } from 'react-router';
 import { useDispatch } from 'react-redux';
-import {useState} from "react";
+import { useState } from "react";
 import {
     Container, Grid, Box, Typography, Rating,
-    Button, Divider, Skeleton, IconButton, Breadcrumbs
+    Button, Divider, Skeleton, IconButton
 } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
@@ -29,9 +29,9 @@ const ProductDetailHeroSection = () => {
         : null;
 
     return (
-        <Container className="product-hero">
+        <Box className="product-hero">
             <Grid container spacing={4} className="product-hero__grid">
-                <Grid size={{xs:12, md: 6}}>
+                <Grid size={{ xs: 12, md: 6 }}>
                     <Box className="product-hero__gallery">
                         <Box className="product-hero__thumbnails">
                             {isLoading ? (
@@ -40,7 +40,12 @@ const ProductDetailHeroSection = () => {
                                         key={idx}
                                         variant="rectangular"
                                         animation="wave"
-                                        sx={{ width: '152px', height: '167px', borderRadius: '20px' }}
+                                        sx={{
+                                            width: { xs: '100px', md: '152px' },
+                                            height: { xs: '110px', md: '167px' },
+                                            borderRadius: '20px',
+                                            flexShrink: 0
+                                        }}
                                     />
                                 ))
                             ) : (
@@ -60,7 +65,7 @@ const ProductDetailHeroSection = () => {
                                 <Skeleton
                                     variant="rectangular"
                                     animation="wave"
-                                    sx={{ width: '100%', height: '100%', borderRadius: '20px' }}
+                                    sx={{ width: '100%', height: { xs: '350px', md: '530px' }, borderRadius: '20px' }}
                                 />
                             ) : (
                                 <img src={mainImage} alt={product.title} />
@@ -69,7 +74,7 @@ const ProductDetailHeroSection = () => {
                     </Box>
                 </Grid>
 
-                <Grid size={{xs:12, md: 6}}>
+                <Grid size={{ xs: 12, md: 6 }}>
                     <Box className="product-hero__info">
                         {isLoading ? (
                             <Skeleton variant="text" animation="wave" sx={{ width: '80%', height: '48px' }} />
@@ -135,7 +140,7 @@ const ProductDetailHeroSection = () => {
                     </Box>
                 </Grid>
             </Grid>
-        </Container>
+        </Box>
     );
 };
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router';
-import { Typography, Box, Container, Skeleton } from '@mui/material';
+import { Typography, Box, Skeleton } from '@mui/material';
 import { useGetProductByIdQuery, useGetProductsByCategoryQuery } from '../../store/api/productsApi';
 import ProductCard from '../ProductCard/ProductCard';
 import './ProductDetailRelatedProductsSection.scss';
@@ -24,7 +24,6 @@ const ProductDetailRelatedProductsSection = () => {
 
     return (
         <Box component="section" className="related-products">
-            <Container>
                 <Typography variant="h2" className="related-products__title">
                     You might also like
                 </Typography>
@@ -53,7 +52,6 @@ const ProductDetailRelatedProductsSection = () => {
                         ))
                     )}
                 </Box>
-            </Container>
         </Box>
     );
 };

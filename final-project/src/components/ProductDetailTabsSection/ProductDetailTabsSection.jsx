@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useParams } from 'react-router';
 import {
-    Box, Typography, Container, Skeleton,
+    Box, Typography, Skeleton,
     Tabs, Tab, Accordion, AccordionSummary, AccordionDetails
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -25,7 +25,6 @@ const ProductDetailTabsSection = () => {
     if (isProductError) return null;
 
     return (
-        <Container>
             <Box component="section" className="product-reviews">
 
                 <Box className="product-reviews__tabs-container">
@@ -161,7 +160,6 @@ const ProductDetailTabsSection = () => {
                 )}
 
             </Box>
-        </Container>
     );
 };
 
