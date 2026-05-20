@@ -4,6 +4,7 @@ import CategoryPage from "./pages/CategoryPage/CategoryPage.jsx";
 import ProductDetailPage from "./pages/ProductDetailPage/ProductDetailPage.jsx";
 import HomePage from "./pages/HomePage/HomePage.jsx";
 import Layout from "./components/Layout/Layout.jsx";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage.jsx";
 
 const AppRouter = createBrowserRouter([
     {
@@ -31,6 +32,10 @@ const AppRouter = createBrowserRouter([
             {
                 path: "product/:id",
                 element: <ProductDetailPage />
+            },
+            {
+                path: "*",
+                element: <NotFoundPage />
             }
         ]
     }

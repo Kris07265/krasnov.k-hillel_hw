@@ -1,0 +1,94 @@
+@use "../../assets/fonts/fonts.scss";
+$font-integral: 'Integral CF', sans-serif;
+$font-satoshi: 'Satoshi', sans-serif;
+
+.not-found {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+
+  &__container {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__content {
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    &.MuiTypography-root {
+      font-family: $font-integral;
+      font-size: 80px;
+      font-weight: bold;
+      line-height: 1;
+      color: #000;
+      margin-bottom: 16px;
+
+      @media (min-width: 900px) {
+        font-size: 120px;
+      }
+    }
+  }
+
+  &__subtitle {
+    &.MuiTypography-root {
+      font-family: $font-integral;
+      font-size: 20px;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #000;
+      margin-bottom: 12px;
+
+      @media (min-width: 900px) {
+        font-size: 24px;
+      }
+    }
+  }
+
+  &__text {
+    &.MuiTypography-root {
+      font-family: $font-satoshi;
+      font-size: 14px;
+      line-height: 1.5;
+      color: rgba(0, 0, 0, 0.6);
+      margin-bottom: 32px;
+
+      @media (min-width: 900px) {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__btn {
+    &.MuiButton-root {
+      font-family: $font-satoshi;
+      font-size: 16px;
+      font-weight: 500;
+      text-transform: none;
+      color: #fff;
+      background-color: #000;
+      border-radius: 62px;
+      padding: 12px 32px;
+      width: 100%;
+      white-space: nowrap;
+      transition: opacity 0.2s ease;
+
+      &:hover {
+        background-color: #000;
+        opacity: 0.8;
+      }
+
+      @media (min-width: 900px) {
+        width: auto;
+      }
+    }
+  }
+}

@@ -1,12 +1,13 @@
-import {useState} from 'react';
-import { Container, Grid, Drawer} from '@mui/material';
+import { useState, useEffect } from 'react';
+import { Container, Grid, Drawer } from '@mui/material';
 import Filters from "../../components/Filters/Filters.jsx";
 import ProductsList from "../../components/ProductsList/ProductsList.jsx";
-import {useParams} from "react-router";
+import { useParams, useLocation } from "react-router";
 import BreadcrumbsComponent from "../../components/BreadcrumbsComponent/BreadcrumbsComponent.jsx";
 
 const CategoryPage = () => {
     const { categoryName } = useParams();
+    const location = useLocation();
     const [isMobileFiltersOpen, setIsMobileFiltersOpen] = useState(false);
 
     const initialFilters = {
@@ -15,11 +16,18 @@ const CategoryPage = () => {
         weight: [0, 50],
         width: [0, 100],
         height: [0, 100],
-        depth: [0, 100]
+        depth: [0, 100],
+        onSale: location.state?.filter === 'on-sale' ? true : false
     };
 
     const [tempFilters, setTempFilters] = useState(initialFilters);
     const [appliedFilters, setAppliedFilters] = useState(initialFilters);
+
+    useEffect(() => {
+        const isOnSaleRoute = location.state?.filter === 'on-sale';
+        setTempFilters(prev => ({ ...prev, onSale: isOnSaleRoute }));
+        setAppliedFilters(prev => ({ ...prev, onSale: isOnSaleRoute }));
+    }, [location.state]);
 
     const toggleMobileFilters = () => {
         setIsMobileFiltersOpen(!isMobileFiltersOpen);

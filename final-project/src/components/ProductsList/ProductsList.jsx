@@ -65,14 +65,29 @@ const ProductsList = ({ categoryName, onFilterClick, activeFilters }) => {
         if (!data?.products) return [];
 
         return data.products.filter(product => {
-            const matchesPrice = product.price >= activeFilters.price[0] && product.price <= activeFilters.price[1];
-            const matchesRating = product.rating >= activeFilters.rating;
-            const matchesWeight = product.weight >= activeFilters.weight[0] && product.weight <= activeFilters.weight[1];
-            const matchesWidth = product.dimensions.width >= activeFilters.width[0] && product.dimensions.width <= activeFilters.width[1];
-            const matchesHeight = product.dimensions.height >= activeFilters.height[0] && product.dimensions.height <= activeFilters.height[1];
-            const matchesDepth = product.dimensions.depth >= activeFilters.depth[0] && product.dimensions.depth <= activeFilters.depth[1];
+            const price = product.price || 0;
+            const rating = product.rating || 0;
+            const weight = product.weight || 0;
+            const width = product.dimensions?.width || 0;
+            const height = product.dimensions?.height || 0;
+            const depth = product.dimensions?.depth || 0;
+            const discountPercentage = product.discountPercentage || 0;
 
-            return matchesPrice && matchesRating && matchesWeight && matchesWidth && matchesHeight && matchesDepth;
+            const maxPrice = activeFilters.price[1] === 20000 ? Infinity : activeFilters.price[1];
+            const maxWeight = activeFilters.weight[1] === 50 ? Infinity : activeFilters.weight[1];
+            const maxWidth = activeFilters.width[1] === 100 ? Infinity : activeFilters.width[1];
+            const maxHeight = activeFilters.height[1] === 100 ? Infinity : activeFilters.height[1];
+            const maxDepth = activeFilters.depth[1] === 100 ? Infinity : activeFilters.depth[1];
+
+            const matchesPrice = price >= activeFilters.price[0] && price <= maxPrice;
+            const matchesRating = rating >= activeFilters.rating;
+            const matchesWeight = weight >= activeFilters.weight[0] && weight <= maxWeight;
+            const matchesWidth = width >= activeFilters.width[0] && width <= maxWidth;
+            const matchesHeight = height >= activeFilters.height[0] && height <= maxHeight;
+            const matchesDepth = depth >= activeFilters.depth[0] && depth <= maxDepth;
+            const matchesOnSale = activeFilters.onSale ? discountPercentage > 0 : true;
+
+            return matchesPrice && matchesRating && matchesWeight && matchesWidth && matchesHeight && matchesDepth && matchesOnSale;
         });
     }, [data, activeFilters]);
 
@@ -110,7 +125,7 @@ const ProductsList = ({ categoryName, onFilterClick, activeFilters }) => {
                         {isLoading ? (
                             <Skeleton variant="text" animation="wave" sx={{ width: '140px', height: '22px', display: 'inline-block' }} />
                         ) : (
-                            `Showing ${totalItems > 0 ? skipValue + 1 : 0}-${Math.min(skipValue + pageSize, totalItems)} of {totalItems} Products`
+                            `Showing ${totalItems > 0 ? skipValue + 1 : 0}-${Math.min(skipValue + pageSize, totalItems)} of ${totalItems} Products`
                         )}
                     </Typography>
 

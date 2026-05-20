@@ -60,6 +60,12 @@ const Header = () => {
         setMobileMenuOpen(false);
     };
 
+    const handleOnSaleClick = (e) => {
+        e.preventDefault();
+        navigate('/all-products', { state: { filter: 'on-sale' } });
+        setMobileMenuOpen(false);
+    };
+
     const toggleDrawer = (open) => () => {
         setMobileMenuOpen(open);
     };
@@ -130,7 +136,13 @@ const Header = () => {
                                 )}
                             </Menu>
 
-                            <Link to="/on-sale" className="header__nav-link">On Sale</Link>
+                            <Link
+                                to="/all-products"
+                                className="header__nav-link"
+                                onClick={handleOnSaleClick}
+                            >
+                                On Sale
+                            </Link>
                             <Link
                                 to="/all-products"
                                 className="header__nav-link"
@@ -209,7 +221,13 @@ const Header = () => {
                         </ListItem>
 
                         <ListItem disablePadding className="header__mobile-item">
-                            <Link to="/on-sale" className="header__nav-link" onClick={toggleDrawer(false)}>On Sale</Link>
+                            <Link
+                                to="/all-products"
+                                className="header__nav-link"
+                                onClick={handleOnSaleClick}
+                            >
+                                On Sale
+                            </Link>
                         </ListItem>
                         <ListItem disablePadding className="header__mobile-item">
                             <Link

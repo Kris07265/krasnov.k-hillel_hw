@@ -9,6 +9,8 @@ import {
     Button,
     IconButton,
     ToggleButton,
+    Checkbox,
+    FormControlLabel
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import CloseIcon from '@mui/icons-material/Close';
@@ -130,6 +132,26 @@ const Filters = ({ onClose, filters, onFilterChange, onApply }) => {
                         />
                     </AccordionDetails>
                 </Accordion>
+
+                <Divider className="filters__divider" />
+
+                <Box sx={{ pb: 2 }}>
+                    <FormControlLabel
+                        control={
+                            <Checkbox
+                                checked={filters.onSale}
+                                onChange={(e) => onFilterChange({ ...filters, onSale: e.target.checked })}
+                                sx={{
+                                    color: '#000',
+                                    '&.Mui-checked': {
+                                        color: '#000',
+                                    },
+                                }}
+                            />
+                        }
+                        label={<Typography className="filters__accordion-title">On Sale</Typography>}
+                    />
+                </Box>
 
                 <Button
                     variant="contained"
