@@ -1,0 +1,9 @@
+@use "../../assets/fonts/fonts.scss";
+
+$font-satoshi: 'Satoshi', sans-serif;
+
+.error-message {
+  margin-bottom: 12px;
+  font-size: 13px;
+  font-family: $font-satoshi;
+}

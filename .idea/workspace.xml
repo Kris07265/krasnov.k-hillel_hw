@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bcb53deb-8a75-4733-855f-4b8cd9fc4055" name="Changes" comment="corrected errors">
-      <change afterPath="$PROJECT_DIR$/final-project/src/pages/NotFoundPage/NotFoundPage.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/final-project/src/pages/NotFoundPage/NotFoundPage.scss" afterDir="false" />
+    <list default="true" id="bcb53deb-8a75-4733-855f-4b8cd9fc4055" name="Changes" comment="created NotFoundPage, OnSale Page">
+      <change afterPath="$PROJECT_DIR$/final-project/src/components/ErrorMessage/ErrorMessage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/final-project/src/components/ErrorMessage/ErrorMessage.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/Filters/Filters.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/Filters/Filters.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/Header/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/ProductsList/ProductsList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/ProductsList/ProductsList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/pages/CategoryPage/CategoryPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/pages/CategoryPage/CategoryPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/AuthMenu/AuthMenu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/AuthMenu/AuthMenu.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/AuthMenu/AuthMenu.scss" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/AuthMenu/AuthMenu.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,15 +159,8 @@
       <workItem from="1779190571618" duration="5055000" />
       <workItem from="1779205766360" duration="6685000" />
       <workItem from="1779268371906" duration="4722000" />
-      <workItem from="1779280860467" duration="2986000" />
-    </task>
-    <task id="LOCAL-00025" summary="started hw 44">
-      <option name="closed" value="true" />
-      <created>1773687123334</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1773687123334</updated>
+      <workItem from="1779280860467" duration="4172000" />
+      <workItem from="1779353347169" duration="1918000" />
     </task>
     <task id="LOCAL-00026" summary="finished hw 44">
       <option name="closed" value="true" />
@@ -555,7 +546,15 @@
       <option name="project" value="LOCAL" />
       <updated>1779272537329</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="created NotFoundPage, OnSale Page">
+      <option name="closed" value="true" />
+      <created>1779284124404</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1779284124404</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -573,7 +572,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="started hw 46" />
     <MESSAGE value="created files, routes" />
     <MESSAGE value="created api, usersList" />
     <MESSAGE value="created UserDetails, UserForm" />
@@ -598,6 +596,7 @@
     <MESSAGE value="created AuthMenu" />
     <MESSAGE value="created BreadcrumbsComponent" />
     <MESSAGE value="corrected errors" />
-    <option name="LAST_COMMIT_MESSAGE" value="corrected errors" />
+    <MESSAGE value="created NotFoundPage, OnSale Page" />
+    <option name="LAST_COMMIT_MESSAGE" value="created NotFoundPage, OnSale Page" />
   </component>
 </project>
