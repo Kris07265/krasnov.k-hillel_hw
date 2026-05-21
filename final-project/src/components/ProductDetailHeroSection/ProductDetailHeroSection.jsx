@@ -7,15 +7,24 @@ import RemoveIcon from '@mui/icons-material/Remove';
 
 import { useGetProductByIdQuery } from "../../store/api/productsApi.js";
 import { addItem } from "../../store/slices/cartSlice.js";
+import ErrorMessage from "../ErrorMessage/ErrorMessage.jsx";
 import './ProductDetailHeroSection.scss';
 
 const ProductDetailHeroSection = () => {
     const { id } = useParams();
     const dispatch = useDispatch();
-    const { data: product, isLoading } = useGetProductByIdQuery(id);
+    const { data: product, isLoading, isError, error } = useGetProductByIdQuery(id);
 
     const [quantity, setQuantity] = useState(1);
     const [activeImageIndex, setActiveImageIndex] = useState(0);
+
+    if (isError) {
+        return (
+            <Box className="product-hero">
+                <ErrorMessage error={error?.message || error?.data?.message || "Error product loading"} />
+            </Box>
+        );
+    }
 
     if (!isLoading && (!product || !product.images)) return null;
 

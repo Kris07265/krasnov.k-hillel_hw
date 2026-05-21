@@ -5,12 +5,14 @@ const ErrorMessage = ({ error }) => {
     if (!error) return null;
 
     return (
-        <Alert
-            severity="error"
-            className="error-message"
-        >
-            {error}
-        </Alert>
+        <div className="error-message-wrapper">
+            <Alert
+                severity="error"
+                className="error-message"
+            >
+                {error}
+            </Alert>
+        </div>
     );
 };
 

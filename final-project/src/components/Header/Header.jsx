@@ -12,8 +12,9 @@ import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { Link, useNavigate } from 'react-router';
 
-import { useGetCategoriesQuery } from "../../store/api/productsApi.js";
+import {useGetCategoriesQuery} from "../../store/api/productsApi.js";
 import AuthMenu from "../AuthMenu/AuthMenu.jsx";
+import ErrorMessage from "../ErrorMessage/ErrorMessage.jsx";
 import logo from '../../assets/img/logo.png';
 import './Header.scss';
 
@@ -26,7 +27,7 @@ const Header = () => {
 
     const navigate = useNavigate();
     const totalQuantity = useSelector((state) => state.cart.totalQuantity);
-    const { data: categories, isLoading } = useGetCategoriesQuery();
+    const { data: categories, isLoading, isError, error } = useGetCategoriesQuery();
 
     const handleOpenMenu = (event) => {
         setAnchorEl(event.currentTarget);
@@ -113,7 +114,7 @@ const Header = () => {
                                     All Products
                                 </MenuItem>
 
-                                {isLoading ? (
+                                {isLoading && (
                                     [...Array(4)].map((_, index) => (
                                         <MenuItem key={index} className="header__dropdown-item">
                                             <Skeleton
@@ -123,17 +124,23 @@ const Header = () => {
                                             />
                                         </MenuItem>
                                     ))
-                                ) : (
-                                    categories?.map((category) => (
-                                        <MenuItem
-                                            key={category}
-                                            onClick={() => handleCategoryClick(category)}
-                                            className="header__dropdown-item"
-                                        >
-                                            {category.replace('-', ' ')}
-                                        </MenuItem>
-                                    ))
                                 )}
+
+                                {isError && (
+                                    <Box sx={{ px: 2, py: 1 }}>
+                                        <ErrorMessage error={error?.message || error?.data?.message || "Error category loading"} />
+                                    </Box>
+                                )}
+
+                                {!isLoading && !isError && categories?.map((category) => (
+                                    <MenuItem
+                                        key={category}
+                                        onClick={() => handleCategoryClick(category)}
+                                        className="header__dropdown-item"
+                                    >
+                                        {category.replace('-', ' ')}
+                                    </MenuItem>
+                                ))}
                             </Menu>
 
                             <Link
@@ -195,7 +202,7 @@ const Header = () => {
                                         All Products
                                     </Box>
 
-                                    {isLoading ? (
+                                    {isLoading && (
                                         [...Array(4)].map((_, index) => (
                                             <Box key={index} className="header__mobile-sublink" sx={{ py: 0.5 }}>
                                                 <Skeleton
@@ -205,17 +212,23 @@ const Header = () => {
                                                 />
                                             </Box>
                                         ))
-                                    ) : (
-                                        categories?.map((category) => (
-                                            <Box
-                                                key={category}
-                                                className="header__mobile-sublink"
-                                                onClick={() => handleCategoryClick(category)}
-                                            >
-                                                {category.replace('-', ' ')}
-                                            </Box>
-                                        ))
                                     )}
+
+                                    {isError && (
+                                        <Box sx={{ px: 2, py: 1 }}>
+                                            <ErrorMessage error={error?.message || error?.data?.message || "Error category loading"} />
+                                        </Box>
+                                    )}
+
+                                    {!isLoading && !isError && categories?.map((category) => (
+                                        <Box
+                                            key={category}
+                                            className="header__mobile-sublink"
+                                            onClick={() => handleCategoryClick(category)}
+                                        >
+                                            {category.replace('-', ' ')}
+                                        </Box>
+                                    ))}
                                 </AccordionDetails>
                             </Accordion>
                         </ListItem>

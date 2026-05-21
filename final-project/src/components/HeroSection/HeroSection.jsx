@@ -1,11 +1,13 @@
 import {Box, Container, Typography, Button, Skeleton} from '@mui/material';
 import "./HeroSection.scss"
 import {useGetProductByIdQuery} from "../../store/api/productsApi.js";
+import ErrorMessage from "../ErrorMessage/ErrorMessage.jsx";
 import heroStar from '../../assets/img/heroStar.png';
+import { Link } from 'react-router'
 
 const HeroSection = () => {
 
-    const { data: product, isLoading, isError } = useGetProductByIdQuery(86);
+    const { data: product, isLoading, isError, error } = useGetProductByIdQuery(86);
 
     return (
         <Box component="section" className="hero">
@@ -21,7 +23,7 @@ const HeroSection = () => {
                             to bring out your individuality and cater to your sense of style.
                         </Typography>
                         <Button variant="contained" className="hero__btn">
-                            Shop Now
+                            <Link to="/all-products" className="hero__btn-link">Shop Now</Link>
                         </Button>
 
                         <Box className="hero__stats">
@@ -55,7 +57,9 @@ const HeroSection = () => {
                                         backgroundColor: 'rgba(0, 0, 0, 0.06)'
                                     }}
                                 />
-                            ) : isError ? null : (
+                            ) : isError ? (
+                                <ErrorMessage error={error?.message || error?.data?.message || "Error product loading"} />
+                            ) : (
                                 <img
                                     src={product?.images[0]}
                                     alt={product?.title}

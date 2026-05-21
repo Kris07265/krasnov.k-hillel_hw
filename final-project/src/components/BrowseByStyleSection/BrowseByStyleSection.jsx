@@ -1,14 +1,19 @@
 import { Box, Typography, Container, CircularProgress } from '@mui/material';
 import { useGetCategoriesQuery } from "../../store/api/productsApi.js";
+import ErrorMessage from "../ErrorMessage/ErrorMessage.jsx";
 import './BrowseByStyleSection.scss';
 import BrowseByStyleItem from "../BrowseByStyleItem/BrowseByStyleItem.jsx";
 
 const BrowseByStyleSection = () => {
-    const { data: categories, isLoading, isError } = useGetCategoriesQuery();
+    const { data: categories, isLoading, isError, error } = useGetCategoriesQuery();
 
     const styleCategories = categories ? categories.slice(0, 4) : [];
 
-    if (isError) return null;
+    if (isError) {
+        return (
+            <ErrorMessage error={error?.message || error?.data?.message || "Error category loading"} />
+        );
+    }
 
     return (
         <Container className="browse-style">

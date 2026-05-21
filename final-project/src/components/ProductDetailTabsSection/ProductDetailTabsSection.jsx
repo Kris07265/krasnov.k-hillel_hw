@@ -8,13 +8,14 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ReviewCard from '../ReviewCard/ReviewCard.jsx';
 import { useGetProductByIdQuery } from "../../store/api/productsApi.js";
 import './ProductDetailTabsSection.scss';
+import ErrorMessage from "../ErrorMessage/ErrorMessage.jsx";
 
 const ProductDetailTabsSection = () => {
     const { id } = useParams();
 
     const [activeTab, setActiveTab] = useState(1);
 
-    const { data: productData, isLoading: isProductLoading, isError: isProductError } = useGetProductByIdQuery(id);
+    const { data: productData, isLoading: isProductLoading, isError: isProductError, error } = useGetProductByIdQuery(id);
 
     const reviews = productData?.reviews || [];
 
@@ -22,7 +23,13 @@ const ProductDetailTabsSection = () => {
         setActiveTab(newValue);
     };
 
-    if (isProductError) return null;
+    if (isProductError) {
+        return (
+            <Box component="section" className="product-reviews">
+                <ErrorMessage error={error?.message || error?.data?.message || "Error reviews and details loading"} />
+            </Box>
+        );
+    }
 
     return (
             <Box component="section" className="product-reviews">

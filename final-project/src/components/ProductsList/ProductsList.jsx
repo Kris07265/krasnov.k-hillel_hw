@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import {useState, useMemo, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import {
     Box,
@@ -19,6 +19,7 @@ import { useGetProductsByCategoryQuery, useGetProductsQuery } from "../../store/
 import ProductCard from '../ProductCard/ProductCard.jsx';
 import { useLocation } from 'react-router';
 import './ProductsList.scss';
+import ErrorMessage from "../ErrorMessage/ErrorMessage.jsx";
 
 const ProductsList = ({ categoryName, onFilterClick, activeFilters }) => {
     const location = useLocation();
@@ -33,7 +34,7 @@ const ProductsList = ({ categoryName, onFilterClick, activeFilters }) => {
 
     const getQueryParams = () => {
         const baseParams = {
-            limit: 100,
+            limit: 0,
             skip: 0,
         };
 
@@ -59,7 +60,7 @@ const ProductsList = ({ categoryName, onFilterClick, activeFilters }) => {
     });
 
     const currentRequest = categoryName ? categoryData : allProductsData;
-    const { data, isLoading, isError } = currentRequest;
+    const { data, isLoading, isError, error } = currentRequest;
 
     const filteredProducts = useMemo(() => {
         if (!data?.products) return [];
@@ -110,7 +111,7 @@ const ProductsList = ({ categoryName, onFilterClick, activeFilters }) => {
     };
 
     if (isError) {
-        return <Typography className="products-list__error">Error loading products</Typography>;
+        return <ErrorMessage error={error?.message || error?.data?.message || "Error products loading"} />;
     }
 
     return (

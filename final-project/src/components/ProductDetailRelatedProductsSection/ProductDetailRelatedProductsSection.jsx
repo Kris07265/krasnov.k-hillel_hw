@@ -4,15 +4,16 @@ import { Typography, Box, Skeleton } from '@mui/material';
 import { useGetProductByIdQuery, useGetProductsByCategoryQuery } from '../../store/api/productsApi';
 import ProductCard from '../ProductCard/ProductCard';
 import './ProductDetailRelatedProductsSection.scss';
+import ErrorMessage from "../ErrorMessage/ErrorMessage.jsx";
 
 const ProductDetailRelatedProductsSection = () => {
     const { id } = useParams();
 
-    const { data: product, isLoading: isProductLoading } = useGetProductByIdQuery(id);
+    const { data: product, isLoading: isProductLoading, isError: isProductError, error: productError } = useGetProductByIdQuery(id);
 
     const category = product?.category;
 
-    const { data: relatedData, isLoading: isRelatedLoading } = useGetProductsByCategoryQuery(
+    const { data: relatedData, isLoading: isRelatedLoading, isError: isRelatedError, error: relatedError } = useGetProductsByCategoryQuery(
         {
             category: category,
             params: { limit: 4 }
@@ -21,6 +22,16 @@ const ProductDetailRelatedProductsSection = () => {
     );
 
     const isLoading = isProductLoading || isRelatedLoading;
+    const isError = isProductError || isRelatedError;
+    const error = productError || relatedError;
+
+    if (isError) {
+        return (
+            <Box component="section" className="related-products">
+                <ErrorMessage error={error?.message || error?.data?.message || "Error loading related products"} />
+            </Box>
+        );
+    }
 
     return (
         <Box component="section" className="related-products">

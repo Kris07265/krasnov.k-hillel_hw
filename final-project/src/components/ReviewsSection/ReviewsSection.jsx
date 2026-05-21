@@ -5,9 +5,10 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { useGetProductsQuery } from "../../store/api/productsApi.js";
 import ReviewCard from '../ReviewCard/ReviewCard.jsx';
 import './ReviewsSection.scss';
+import ErrorMessage from "../ErrorMessage/ErrorMessage.jsx";
 
 const ReviewsSection = () => {
-    const { data, isLoading, isError } = useGetProductsQuery({
+    const { data, isLoading, isError, error } = useGetProductsQuery({
         limit: 10,
         sortBy: 'rating',
         order: 'desc'
@@ -30,7 +31,7 @@ const ReviewsSection = () => {
         }
     };
 
-    if (isError) return null;
+    if (isError) return <ErrorMessage error={error?.message || error?.data?.message || "Error reviews loading"} />;
 
     return (
         <Box component="section" className="customers">
