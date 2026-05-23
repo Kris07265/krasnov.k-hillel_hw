@@ -1,5 +1,5 @@
 @use "../../assets/fonts/fonts.scss";
-$font-integral: 'Integral CF', sans-serif;
+$font-montserrat: 'Montserrat', sans-serif;
 $font-satoshi: 'Satoshi', sans-serif;
 
 .cart-view-page {
@@ -8,7 +8,7 @@ $font-satoshi: 'Satoshi', sans-serif;
 
   &__main-title {
     &.MuiTypography-root {
-      font-family: $font-integral;
+      font-family: $font-montserrat;
       font-size: 32px;
       font-weight: 900;
       text-transform: uppercase;

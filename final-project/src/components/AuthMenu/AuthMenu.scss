@@ -1,7 +1,7 @@
 @use "../../assets/fonts/fonts.scss";
 
-$font-integral: 'Integral CF', sans-serif;
 $font-satoshi: 'Satoshi', sans-serif;
+$font-montserrat: 'Montserrat', sans-serif;
 
 .auth-menu {
   .auth-menu__paper {
@@ -18,7 +18,7 @@ $font-satoshi: 'Satoshi', sans-serif;
     font-size: 20px;
     font-weight: 700;
     color: #000;
-    font-family: $font-integral;
+    font-family: $font-montserrat;
     text-align: center;
   }
 

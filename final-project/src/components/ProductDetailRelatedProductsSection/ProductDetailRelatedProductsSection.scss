@@ -1,5 +1,5 @@
 @use "../../assets/fonts/fonts.scss";
-$font-integral: 'Integral CF', sans-serif;
+$font-montserrat: 'Montserrat', sans-serif;
 
 .related-products {
   padding: 40px 0;
@@ -10,7 +10,7 @@ $font-integral: 'Integral CF', sans-serif;
 
   &__title {
     &.MuiTypography-root {
-      font-family: $font-integral;
+      font-family: $font-montserrat;
       font-weight: 700;
       font-size: 32px;
       line-height: 1.1;

@@ -1,5 +1,5 @@
 @use "../../assets/fonts/fonts.scss";
-$font-integral: 'Integral CF', sans-serif;
+$font-montserrat: 'Montserrat', sans-serif;
 $font-satoshi: 'Satoshi', sans-serif;
 
 .footer {
@@ -40,7 +40,7 @@ $font-satoshi: 'Satoshi', sans-serif;
 
   &__newsletter-text {
     color: #fff;
-    font-family: $font-integral;
+    font-family: $font-montserrat;
     font-weight: 600;
     font-size: 22px;
     max-width: 550px;

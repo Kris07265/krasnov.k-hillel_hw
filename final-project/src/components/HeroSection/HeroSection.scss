@@ -1,6 +1,6 @@
 @use "../../assets/fonts/fonts.scss";
-$font-integral: 'Integral CF', sans-serif;
 $font-satoshi: 'Satoshi', sans-serif;
+$font-montserrat: 'Montserrat', sans-serif;
 
 .hero {
   background-color: #F2F0F1;
@@ -37,7 +37,7 @@ $font-satoshi: 'Satoshi', sans-serif;
 
   &__title {
     &.MuiTypography-root {
-      font-family: $font-integral;
+      font-family: $font-montserrat;
       font-weight: 700;
       font-size: 36px;
       line-height: 34px;

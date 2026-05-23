@@ -1,5 +1,5 @@
 @use "../../assets/fonts/fonts.scss";
-$font-integral: 'Integral CF', sans-serif;
+$font-montserrat: 'Montserrat', sans-serif;
 $font-satoshi: 'Satoshi', sans-serif;
 
 .product-hero {
@@ -19,7 +19,7 @@ $font-satoshi: 'Satoshi', sans-serif;
 
   &__title {
     &.MuiTypography-root {
-      font-family: $font-integral;
+      font-family: $font-montserrat;
       font-size: 40px;
       font-weight: 700;
       text-transform: uppercase;
