@@ -23,18 +23,18 @@ const ProductSection = ({ title, products, isLoading, error, onViewAllClick }) =
                 <Grid container spacing={{xs: 2, md: 4}} className="product-section__grid">
                     {isLoading
                         ? [1, 2, 3, 4].map((_, idx) => (
-                            <Box key={idx} className="related-products__item">
-                                <Box sx={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                                    <Skeleton
-                                        variant="rectangular"
-                                        animation="wave"
-                                        sx={{ width: '100%', pt: '100%', borderRadius: '20px' }}
-                                    />
-                                    <Skeleton variant="text" animation="wave" sx={{ width: '80%', height: '24px' }} />
-                                    <Skeleton variant="text" animation="wave" sx={{ width: '40%', height: '20px' }} />
-                                    <Skeleton variant="text" animation="wave" sx={{ width: '60%', height: '24px' }} />
-                                </Box>
-                            </Box>
+                            <Grid size={3} key={idx} className="product-section__item">
+                                <Skeleton
+                                    variant="rectangular"
+                                    animation="wave"
+                                    width="100%"
+                                    height={300}
+                                    sx={{
+                                        borderRadius: '20px',
+                                        minWidth: { md: '280px' }
+                                    }}
+                                />
+                            </Grid>
                         ))
                         : products?.map((product) => (
                             <Grid size={3} key={product.id} className="product-section__item">

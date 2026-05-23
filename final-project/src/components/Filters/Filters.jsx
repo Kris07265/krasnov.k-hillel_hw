@@ -23,7 +23,7 @@ const Filters = ({ onClose, filters, onFilterChange, onApply }) => {
         onFilterChange({ ...filters, [field]: newValue });
     };
 
-    const ratingOptions = [5, 4, 3, 2, 1];
+    const ratingOptions = [5, 4, 3, 2, 1, 0];
 
     return (
         <Box className="filters">

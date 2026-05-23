@@ -1,10 +1,32 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = {
-    items: [],
-    totalAmount: 0,
-    totalQuantity: 0,
+const loadCartFromStorage = () => {
+    try {
+        const serializedCart = localStorage.getItem('cart');
+        if (serializedCart === null) {
+            return { items: [], totalAmount: 0, totalQuantity: 0 };
+        }
+        return JSON.parse(serializedCart);
+    } catch (error) {
+        console.error("Could not load cart from localStorage", error);
+        return { items: [], totalAmount: 0, totalQuantity: 0 };
+    }
 };
+
+const saveCartToStorage = (state) => {
+    try {
+        const serializedCart = JSON.stringify({
+            items: state.items,
+            totalAmount: state.totalAmount,
+            totalQuantity: state.totalQuantity,
+        });
+        localStorage.setItem('cart', serializedCart);
+    } catch (error) {
+        console.error("Could not save cart to localStorage", error);
+    }
+};
+
+const initialState = loadCartFromStorage();
 
 const cartSlice = createSlice({
     name: 'cart',
@@ -43,6 +65,8 @@ const cartSlice = createSlice({
             }
 
             state.totalAmount = state.items.reduce((total, item) => total + item.totalPrice, 0);
+
+            saveCartToStorage(state);
         },
 
         removeItem(state, action) {
@@ -61,6 +85,8 @@ const cartSlice = createSlice({
             }
 
             state.totalAmount = state.items.reduce((total, item) => total + item.totalPrice, 0);
+
+            saveCartToStorage(state);
         },
 
         deleteItem(state, action) {
@@ -71,6 +97,8 @@ const cartSlice = createSlice({
                 state.totalQuantity -= existingItem.quantity;
                 state.items = state.items.filter((item) => item.id !== id);
                 state.totalAmount = state.items.reduce((total, item) => total + item.totalPrice, 0);
+
+                saveCartToStorage(state);
             }
         },
 
@@ -78,6 +106,8 @@ const cartSlice = createSlice({
             state.items = [];
             state.totalQuantity = 0;
             state.totalAmount = 0;
+
+            saveCartToStorage(state);
         },
     },
 });

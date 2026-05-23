@@ -26,35 +26,31 @@ $font-montserrat: 'Montserrat', sans-serif;
     }
   }
 
-  &__grid {
-    display: flex;
+  &__grid.MuiGrid-root {
+
+    flex-wrap: nowrap;
     overflow-x: auto;
-    gap: 16px;
     margin-bottom: 24px;
-    padding: 0 16px;
 
     &::-webkit-scrollbar {
       display: none;
     }
 
     @media (min-width: 900px) {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      padding: 0;
       overflow-x: visible;
     }
   }
 
-  &__item {
-    min-width: 200px;
-    max-width: 280px;
-    flex: 0 0 auto;
+  &__item.MuiGrid-root {
+
+    flex-shrink: 0;
+    flex-basis: 75%;
+
 
     @media (min-width: 900px) {
-      min-width: 0;
-      max-width: none;
-      flex: 1 1 auto;
+      flex-shrink: 1;
+      flex-basis: auto;
+      width: auto;
     }
   }
 }

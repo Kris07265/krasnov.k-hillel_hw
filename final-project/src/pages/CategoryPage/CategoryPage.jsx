@@ -10,23 +10,48 @@ const CategoryPage = () => {
     const location = useLocation();
     const [isMobileFiltersOpen, setIsMobileFiltersOpen] = useState(false);
 
-    const initialFilters = {
-        price: [0, 20000],
-        rating: 0,
-        weight: [0, 50],
-        width: [0, 100],
-        height: [0, 100],
-        depth: [0, 100],
-        onSale: location.state?.filter === 'on-sale' ? true : false
+    const getInitialFilters = () => {
+        const defaultFilters = {
+            price: [0, 20000],
+            rating: 0,
+            weight: [0, 50],
+            width: [0, 100],
+            height: [0, 100],
+            depth: [0, 100],
+            onSale: location.state?.filter === 'on-sale' ? true : false
+        };
+
+        const savedFilters = localStorage.getItem('shop-filters');
+
+        if (savedFilters) {
+            try {
+                const parsedFilters = JSON.parse(savedFilters);
+                if (location.state?.filter === 'on-sale') {
+                    parsedFilters.onSale = true;
+                } else if (location.state?.filter !== undefined) {
+                    parsedFilters.onSale = false;
+                }
+                return parsedFilters;
+            } catch (error) {
+                console.error("Error parsing filters from localStorage", error);
+                return defaultFilters;
+            }
+        }
+
+        return defaultFilters;
     };
 
-    const [tempFilters, setTempFilters] = useState(initialFilters);
-    const [appliedFilters, setAppliedFilters] = useState(initialFilters);
+    const [tempFilters, setTempFilters] = useState(getInitialFilters);
+    const [appliedFilters, setAppliedFilters] = useState(getInitialFilters);
 
     useEffect(() => {
         const isOnSaleRoute = location.state?.filter === 'on-sale';
         setTempFilters(prev => ({ ...prev, onSale: isOnSaleRoute }));
-        setAppliedFilters(prev => ({ ...prev, onSale: isOnSaleRoute }));
+        setAppliedFilters(prev => {
+            const updatedFilters = { ...prev, onSale: isOnSaleRoute };
+            localStorage.setItem('shop-filters', JSON.stringify(updatedFilters));
+            return updatedFilters;
+        });
     }, [location.state]);
 
     const toggleMobileFilters = () => {
@@ -35,6 +60,7 @@ const CategoryPage = () => {
 
     const handleApplyFilters = () => {
         setAppliedFilters(tempFilters);
+        localStorage.setItem('shop-filters', JSON.stringify(tempFilters));
         if (isMobileFiltersOpen) toggleMobileFilters();
     };
 
