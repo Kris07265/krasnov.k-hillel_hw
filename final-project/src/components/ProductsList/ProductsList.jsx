@@ -1,4 +1,4 @@
-import {useState, useMemo, useEffect} from 'react';
+import {useState, useMemo} from 'react';
 import PropTypes from 'prop-types';
 import {
     Box,
@@ -15,7 +15,7 @@ import {
 import TuneIcon from '@mui/icons-material/Tune';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import { useGetProductsByCategoryQuery, useGetProductsQuery } from "../../store/api/productsApi.js";
+import { useGetProductsByCategoryQuery, useGetProductsQuery, useSearchProductsQuery } from "../../store/api/productsApi.js";
 import ProductCard from '../ProductCard/ProductCard.jsx';
 import { useLocation } from 'react-router';
 import './ProductsList.scss';
@@ -23,6 +23,10 @@ import ErrorMessage from "../ErrorMessage/ErrorMessage.jsx";
 
 const ProductsList = ({ categoryName, onFilterClick, activeFilters }) => {
     const location = useLocation();
+
+    const searchParams = new URLSearchParams(location.search);
+    const searchQuery = searchParams.get('q') || '';
+
     const pageSize = 9;
 
     const initialSort = location.state?.sort || 'default';
@@ -53,13 +57,26 @@ const ProductsList = ({ categoryName, onFilterClick, activeFilters }) => {
     const categoryData = useGetProductsByCategoryQuery({
         category: categoryName,
         params: queryParams
-    }, { skip: !categoryName });
+    }, { skip: !categoryName || !!searchQuery });
 
     const allProductsData = useGetProductsQuery(queryParams, {
-        skip: !!categoryName
+        skip: !!categoryName || !!searchQuery
     });
 
-    const currentRequest = categoryName ? categoryData : allProductsData;
+    const searchData = useSearchProductsQuery({
+        q: searchQuery,
+        params: queryParams
+    }, { skip: !searchQuery });
+
+    let currentRequest;
+    if (searchQuery) {
+        currentRequest = searchData;
+    } else if (categoryName) {
+        currentRequest = categoryData;
+    } else {
+        currentRequest = allProductsData;
+    }
+
     const { data, isLoading, isError, error } = currentRequest;
 
     const filteredProducts = useMemo(() => {
@@ -118,7 +135,7 @@ const ProductsList = ({ categoryName, onFilterClick, activeFilters }) => {
         <Box className="products-list">
             <Box className="products-list__header">
                 <Typography variant="h2" className="products-list__title">
-                    {categoryName || "All Products"}
+                    {searchQuery ? `Search Results: "${searchQuery}"` : (categoryName || "All Products")}
                 </Typography>
 
                 <Box className="products-list__controls">

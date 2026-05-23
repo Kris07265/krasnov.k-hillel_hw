@@ -4,26 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bcb53deb-8a75-4733-855f-4b8cd9fc4055" name="Changes" comment="created ErrorMessage">
-      <change afterPath="$PROJECT_DIR$/final-project/src/components/OrderSuccessModal/OrderSuccessModal.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/final-project/src/components/OrderSuccessModal/OrderSuccessModal.scss" afterDir="false" />
+    <list default="true" id="bcb53deb-8a75-4733-855f-4b8cd9fc4055" name="Changes" comment="corrected errors">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/BrandsBar/BrandsBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/BrandsBar/BrandsBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/BrowseByStyleItem/BrowseByStyleItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/BrowseByStyleItem/BrowseByStyleItem.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/BrowseByStyleSection/BrowseByStyleSection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/BrowseByStyleSection/BrowseByStyleSection.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/CartOrderSummary/CartOrderSummary.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/CartOrderSummary/CartOrderSummary.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/ErrorMessage/ErrorMessage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/ErrorMessage/ErrorMessage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/ErrorMessage/ErrorMessage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/ErrorMessage/ErrorMessage.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/Footer/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/Footer/Footer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/final-project/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/Header/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/HeroSection/HeroSection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/HeroSection/HeroSection.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/HeroSection/HeroSection.scss" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/HeroSection/HeroSection.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/ProductDetailHeroSection/ProductDetailHeroSection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/ProductDetailHeroSection/ProductDetailHeroSection.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/ProductDetailRelatedProductsSection/ProductDetailRelatedProductsSection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/ProductDetailRelatedProductsSection/ProductDetailRelatedProductsSection.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/ProductDetailTabsSection/ProductDetailTabsSection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/ProductDetailTabsSection/ProductDetailTabsSection.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/ProductSection/ProductSection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/ProductSection/ProductSection.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/Header/Header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/Header/Header.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/final-project/src/components/ProductsList/ProductsList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/ProductsList/ProductsList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/ReviewsSection/ReviewsSection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/ReviewsSection/ReviewsSection.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/store/api/productsApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/store/api/productsApi.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,15 +160,8 @@
       <workItem from="1779205766360" duration="6685000" />
       <workItem from="1779268371906" duration="4722000" />
       <workItem from="1779280860467" duration="4172000" />
-      <workItem from="1779353347169" duration="12065000" />
-    </task>
-    <task id="LOCAL-00027" summary="started hw 45">
-      <option name="closed" value="true" />
-      <created>1774252119665</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1774252119665</updated>
+      <workItem from="1779353347169" duration="12359000" />
+      <workItem from="1779524237491" duration="3827000" />
     </task>
     <task id="LOCAL-00028" summary="started hw 45">
       <option name="closed" value="true" />
@@ -568,7 +547,15 @@
       <option name="project" value="LOCAL" />
       <updated>1779355452226</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="corrected errors">
+      <option name="closed" value="true" />
+      <created>1779368713549</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1779368713549</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -608,9 +595,9 @@
     <MESSAGE value="created CartPage" />
     <MESSAGE value="created AuthMenu" />
     <MESSAGE value="created BreadcrumbsComponent" />
-    <MESSAGE value="corrected errors" />
     <MESSAGE value="created NotFoundPage, OnSale Page" />
     <MESSAGE value="created ErrorMessage" />
-    <option name="LAST_COMMIT_MESSAGE" value="created ErrorMessage" />
+    <MESSAGE value="corrected errors" />
+    <option name="LAST_COMMIT_MESSAGE" value="corrected errors" />
   </component>
 </project>

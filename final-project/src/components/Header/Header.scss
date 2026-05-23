@@ -213,4 +213,22 @@ $font-satoshi: 'Satoshi', sans-serif;
       }
     }
   }
+
+  &__mobile-search-input-wrapper {
+    display: flex;
+    align-items: center;
+    background-color: #F0F0F0;
+    border-radius: 62px;
+    padding: 8px 12px;
+
+    @media (min-width: 900px) {
+      display: none;
+    }
+
+    .header__search-input {
+      margin-left: 0;
+      width: 120px;
+      font-size: 14px;
+    }
+  }
 }

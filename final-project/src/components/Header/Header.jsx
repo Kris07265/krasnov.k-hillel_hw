@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { useState } from "react";
+import { useState, useRef } from "react";
 import {
     AppBar, Toolbar, Box, Badge, IconButton, Drawer,
     List, ListItem, Container, Menu, MenuItem,
@@ -10,9 +10,9 @@ import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import { Link, useNavigate } from 'react-router';
+import { Link, useNavigate, useLocation } from 'react-router';
 
-import {useGetCategoriesQuery} from "../../store/api/productsApi.js";
+import { useGetCategoriesQuery } from "../../store/api/productsApi.js";
 import AuthMenu from "../AuthMenu/AuthMenu.jsx";
 import ErrorMessage from "../ErrorMessage/ErrorMessage.jsx";
 import logo from '../../assets/img/logo.png';
@@ -23,11 +23,31 @@ const Header = () => {
     const [anchorEl, setAnchorEl] = useState(null);
     const [authAnchorEl, setAuthAnchorEl] = useState(null);
 
+    const [showMobileSearch, setShowMobileSearch] = useState(false);
+
     const open = Boolean(anchorEl);
 
     const navigate = useNavigate();
+    const location = useLocation();
+
+    const searchParams = new URLSearchParams(location.search);
+    const queryFromUrl = searchParams.get('q') || '';
+
+    const [prevQuery, setPrevQuery] = useState(queryFromUrl);
+    const [searchTerm, setSearchTerm] = useState(queryFromUrl);
+
+    if (queryFromUrl !== prevQuery) {
+        setPrevQuery(queryFromUrl);
+        setSearchTerm(queryFromUrl);
+    }
+
+    const searchInputRef = useRef(null);
+
+    const mobileSearchInputRef = useRef(null);
+
     const totalQuantity = useSelector((state) => state.cart.totalQuantity);
     const { data: categories, isLoading, isError, error } = useGetCategoriesQuery();
+
 
     const handleOpenMenu = (event) => {
         setAnchorEl(event.currentTarget);
@@ -69,6 +89,25 @@ const Header = () => {
 
     const toggleDrawer = (open) => () => {
         setMobileMenuOpen(open);
+    };
+
+    const handleSearchChange = (e) => {
+        const value = e.target.value;
+        setSearchTerm(value);
+        if (value.trim()) {
+            navigate(`/all-products?q=${value}`);
+        } else if (location.pathname === '/all-products' && searchParams.get('q')) {
+            navigate('/all-products');
+        }
+    };
+
+    const handleMobileSearchClick = () => {
+        setShowMobileSearch(true);
+        setTimeout(() => {
+            if (mobileSearchInputRef.current) {
+                mobileSearchInputRef.current.focus();
+            }
+        }, 10);
     };
 
     return (
@@ -157,19 +196,44 @@ const Header = () => {
                             >
                                 New Arrivals
                             </Link>
-                            <Link to="/brands" className="header__nav-link">Brands</Link>
+                            <Link to="*" className="header__nav-link">Brands</Link>
                         </nav>
                     </Box>
 
                     <Box className="header__search-wrapper">
                         <SearchIcon className="header__search-icon" />
-                        <input type="text" placeholder="Search for products..." className="header__search-input" />
+                        <input
+                            ref={searchInputRef}
+                            type="text"
+                            placeholder="Search for products..."
+                            className="header__search-input"
+                            value={searchTerm}
+                            onChange={handleSearchChange}
+                        />
                     </Box>
 
                     <Box className="header__icons">
-                        <IconButton className="header__icon-btn header__icon-btn--mobile-search">
-                            <SearchIcon />
-                        </IconButton>
+                        {showMobileSearch ? (
+                            <Box className="header__mobile-search-input-wrapper">
+                                <input
+                                    ref={mobileSearchInputRef}
+                                    type="text"
+                                    placeholder="Search..."
+                                    className="header__search-input"
+                                    value={searchTerm}
+                                    onChange={handleSearchChange}
+                                    onBlur={() => setShowMobileSearch(false)}
+                                />
+                            </Box>
+                        ) : (
+                            <IconButton
+                                className="header__icon-btn header__icon-btn--mobile-search"
+                                onClick={handleMobileSearchClick}
+                            >
+                                <SearchIcon />
+                            </IconButton>
+                        )}
+
                         <IconButton component={Link} to="/cart" className="header__icon-btn">
                             <Badge badgeContent={totalQuantity} color="primary">
                                 <ShoppingCartOutlinedIcon />

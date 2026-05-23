@@ -25,8 +25,22 @@ export const productsApi = baseApi.injectEndpoints({
         getCategories: builder.query({
             query: () => 'products/category-list',
         }),
+
+        searchProducts: builder.query({
+            query: ({ q, params }) => ({
+                url: 'products/search',
+                params: { q, ...params },
+            }),
+            providesTags: ['Product'],
+        }),
     }),
     overrideExisting: false,
 });
 
-export const { useGetProductsQuery, useGetProductByIdQuery, useGetCategoriesQuery, useGetProductsByCategoryQuery} = productsApi;
+export const {
+    useGetProductsQuery,
+    useGetProductByIdQuery,
+    useGetCategoriesQuery,
+    useGetProductsByCategoryQuery,
+    useSearchProductsQuery
+} = productsApi;
