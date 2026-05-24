@@ -23,6 +23,11 @@ const HomePage = () => {
             order: 'desc'
         });
 
+    const handleViewAll = (sortType) => {
+        window.scrollTo(0, 0);
+        navigate('/all-products', { state: { sort: sortType } });
+    };
+
     return (
         <>
             <HeroSection />
@@ -33,7 +38,7 @@ const HomePage = () => {
                 products={newArrivalsData?.products || []}
                 isLoading={isNewLoading}
                 error={newError}
-                onViewAllClick={() => navigate('/all-products', { state: { sort: 'new-arrivals' } })}
+                onViewAllClick={() => handleViewAll('new-arrivals')}
             />
 
             <ProductSection
@@ -41,7 +46,7 @@ const HomePage = () => {
                 products={topRatingData?.products || []}
                 isLoading={isTopLoading}
                 error={topError}
-                onViewAllClick={() => navigate('/all-products', { state: { sort: 'top-rating' } })}
+                onViewAllClick={() => handleViewAll('top-rating')}
             />
 
             <BrowseByStyleSection/>

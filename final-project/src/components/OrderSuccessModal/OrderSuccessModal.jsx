@@ -1,6 +1,7 @@
 import { Dialog, DialogContent, Typography } from '@mui/material';
 import {CheckCircleOutlined} from "@mui/icons-material";
 import './OrderSuccessModal.scss';
+import PropTypes from "prop-types";
 
 const OrderSuccessModal = ({ open, onClose }) => {
     return (
@@ -24,6 +25,11 @@ const OrderSuccessModal = ({ open, onClose }) => {
             </DialogContent>
         </Dialog>
     );
+};
+
+OrderSuccessModal.propTypes = {
+    open: PropTypes.bool.isRequired,
+    onClose: PropTypes.func.isRequired
 };
 
 export default OrderSuccessModal;

@@ -266,7 +266,7 @@ const Header = () => {
                                         All Products
                                     </Box>
 
-                                    {isLoading && (
+                                    {isLoading ? (
                                         [...Array(4)].map((_, index) => (
                                             <Box key={index} className="header__mobile-sublink" sx={{ py: 0.5 }}>
                                                 <Skeleton
@@ -276,7 +276,7 @@ const Header = () => {
                                                 />
                                             </Box>
                                         ))
-                                    )}
+                                    ) : null}
 
                                     {isError && (
                                         <Box sx={{ px: 2, py: 1 }}>

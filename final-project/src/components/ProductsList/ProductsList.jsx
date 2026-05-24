@@ -153,6 +153,7 @@ const ProductsList = ({ categoryName, onFilterClick, activeFilters }) => {
                         </Typography>
                         <FormControl variant="standard" className="products-list__form-control">
                             <Select
+                                variant="standard"
                                 value={sortBy}
                                 onChange={handleSortChange}
                                 disableUnderline
@@ -230,7 +231,15 @@ const ProductsList = ({ categoryName, onFilterClick, activeFilters }) => {
 ProductsList.propTypes = {
     categoryName: PropTypes.string,
     onFilterClick: PropTypes.func,
-    activeFilters: PropTypes.object
+    activeFilters: PropTypes.shape({
+        price: PropTypes.arrayOf(PropTypes.number),
+        rating: PropTypes.number,
+        weight: PropTypes.arrayOf(PropTypes.number),
+        width: PropTypes.arrayOf(PropTypes.number),
+        height: PropTypes.arrayOf(PropTypes.number),
+        depth: PropTypes.arrayOf(PropTypes.number),
+        onSale: PropTypes.bool
+    })
 };
 
 export default ProductsList;

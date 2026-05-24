@@ -65,7 +65,13 @@ const Footer = () => {
                                 <ul className="footer__links-list">
                                     {col.links.map(link => (
                                         <li key={link} className="footer__links-item">
-                                            <Link to="*" className="footer__link">{link}</Link>
+                                            <Link
+                                                to="*"
+                                                onClick={() => {window.scrollTo(0, 0)}}
+                                                className="footer__link"
+                                            >
+                                                {link}
+                                            </Link>
                                         </li>
                                     ))}
                                 </ul>

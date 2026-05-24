@@ -1,6 +1,7 @@
 import { Box, Typography, Rating } from '@mui/material';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import './ReviewCard.scss';
+import PropTypes from "prop-types";
 
 const ReviewCard = ({ review }) => {
     const reviewerName = review.reviewerName || "Anonymous";
@@ -42,6 +43,15 @@ const ReviewCard = ({ review }) => {
             </Typography>
         </Box>
     );
+};
+
+ReviewCard.propTypes = {
+    review: PropTypes.shape({
+        reviewerName: PropTypes.string,
+        comment: PropTypes.string,
+        rating: PropTypes.number,
+        date: PropTypes.string
+    }).isRequired
 };
 
 export default ReviewCard;

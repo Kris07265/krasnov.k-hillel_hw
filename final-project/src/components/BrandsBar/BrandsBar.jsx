@@ -11,7 +11,7 @@ const BrandsBar = () => {
         return (
             <Box component="section" className="brands">
                 <Container className="brands__container">
-                    {Array.from(new Array(4)).map((_, index) => (
+                    {[...Array(4)].map((_, index) => (
                         <Skeleton
                             key={index}
                             variant="text"
@@ -46,6 +46,7 @@ const BrandsBar = () => {
                     <Link
                         key={category}
                         to={`/category/${category}`}
+                        onClick={() => {window.scrollTo(0, 0)}}
                         className="brands__logo"
                     >
                         {category.replace('-', ' ').toUpperCase()}

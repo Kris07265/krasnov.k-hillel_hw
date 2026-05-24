@@ -23,6 +23,7 @@ const BrowseByStyleItem = ({ categoryName, index }) => {
         <Box
             component={Link}
             to={`/category/${categoryName}`}
+            onClick={() => {window.scrollTo(0, 0)}}
             className={`browse-style-item browse-style-item--type-${index}`}
             style={{
                 backgroundImage: !isLoading && productImage ? `url(${productImage})` : 'none'
@@ -46,7 +47,7 @@ const BrowseByStyleItem = ({ categoryName, index }) => {
 
 BrowseByStyleItem.propTypes = {
     categoryName: PropTypes.string.isRequired,
-    index: PropTypes.number.isRequired,
+    index: PropTypes.number.isRequired
 };
 
 export default BrowseByStyleItem;

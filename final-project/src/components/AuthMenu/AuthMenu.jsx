@@ -9,6 +9,7 @@ import { useLoginMutation, useGetMeQuery } from '../../store/api/authApi.js';
 import { setCredentials, logout } from '../../store/slices/authSlice.js';
 import ErrorMessage from "../ErrorMessage/ErrorMessage.jsx";
 import './AuthMenu.scss';
+import PropTypes from "prop-types";
 
 const AuthMenu = ({ anchorEl, handleClose }) => {
     const dispatch = useDispatch();
@@ -125,6 +126,14 @@ const AuthMenu = ({ anchorEl, handleClose }) => {
             )}
         </Menu>
     );
+};
+
+AuthMenu.propTypes = {
+    anchorEl: PropTypes.oneOfType([
+        PropTypes.object,
+        PropTypes.func
+    ]),
+    handleClose: PropTypes.func.isRequired
 };
 
 export default AuthMenu;

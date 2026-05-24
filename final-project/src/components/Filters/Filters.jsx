@@ -16,6 +16,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import CloseIcon from '@mui/icons-material/Close';
 import TuneIcon from '@mui/icons-material/Tune';
 import './Filters.scss';
+import PropTypes from "prop-types";
 
 const Filters = ({ onClose, filters, onFilterChange, onApply }) => {
 
@@ -164,6 +165,21 @@ const Filters = ({ onClose, filters, onFilterChange, onApply }) => {
             </Box>
         </Box>
     );
+};
+
+Filters.propTypes = {
+    onClose: PropTypes.func,
+    filters: PropTypes.shape({
+        price: PropTypes.arrayOf(PropTypes.number),
+        rating: PropTypes.number,
+        weight: PropTypes.arrayOf(PropTypes.number),
+        width: PropTypes.arrayOf(PropTypes.number),
+        height: PropTypes.arrayOf(PropTypes.number),
+        depth: PropTypes.arrayOf(PropTypes.number),
+        onSale: PropTypes.bool
+    }).isRequired,
+    onFilterChange: PropTypes.func.isRequired,
+    onApply: PropTypes.func.isRequired
 };
 
 export default Filters;

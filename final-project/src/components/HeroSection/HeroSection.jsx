@@ -22,8 +22,14 @@ const HeroSection = () => {
                             Browse through our diverse range of meticulously crafted garments, designed
                             to bring out your individuality and cater to your sense of style.
                         </Typography>
-                        <Button variant="contained" className="hero__btn">
-                            <Link to="/all-products" className="hero__btn-link">Shop Now</Link>
+                        <Button
+                            variant="contained"
+                            className="hero__btn"
+                            component={Link}
+                            to="/all-products"
+                            onClick={() => {window.scrollTo(0, 0)}}
+                        >
+                            Shop Now
                         </Button>
 
                         <Box className="hero__stats">

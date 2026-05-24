@@ -5,6 +5,7 @@ import AddIcon from '@mui/icons-material/Add';
 import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
 import { addItem, removeItem, deleteItem } from '../../store/slices/cartSlice.js';
 import './CartItem.scss';
+import PropTypes from "prop-types";
 
 const CartItem = ({ item }) => {
     const dispatch = useDispatch();
@@ -69,6 +70,17 @@ const CartItem = ({ item }) => {
             </Box>
         </Box>
     );
+};
+
+CartItem.propTypes = {
+    item: PropTypes.shape({
+        id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+        title: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired,
+        thumbnail: PropTypes.string,
+        quantity: PropTypes.number.isRequired,
+        stock: PropTypes.number
+    }).isRequired
 };
 
 export default CartItem;

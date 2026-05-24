@@ -1,5 +1,6 @@
 import { Alert } from '@mui/material';
 import './ErrorMessage.scss';
+import PropTypes from "prop-types";
 
 const ErrorMessage = ({ error }) => {
     if (!error) return null;
@@ -14,6 +15,10 @@ const ErrorMessage = ({ error }) => {
             </Alert>
         </div>
     );
+};
+
+ErrorMessage.propTypes = {
+    error: PropTypes.string
 };
 
 export default ErrorMessage;

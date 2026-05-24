@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Container, Grid, Drawer } from '@mui/material';
 import Filters from "../../components/Filters/Filters.jsx";
 import ProductsList from "../../components/ProductsList/ProductsList.jsx";
@@ -10,7 +10,7 @@ const CategoryPage = () => {
     const location = useLocation();
     const [isMobileFiltersOpen, setIsMobileFiltersOpen] = useState(false);
 
-    const getInitialFilters = () => {
+    const getInitialFilters = (routerFilter) => {
         const defaultFilters = {
             price: [0, 20000],
             rating: 0,
@@ -18,7 +18,7 @@ const CategoryPage = () => {
             width: [0, 100],
             height: [0, 100],
             depth: [0, 100],
-            onSale: location.state?.filter === 'on-sale' ? true : false
+            onSale: routerFilter === 'on-sale'
         };
 
         const savedFilters = localStorage.getItem('shop-filters');
@@ -26,9 +26,9 @@ const CategoryPage = () => {
         if (savedFilters) {
             try {
                 const parsedFilters = JSON.parse(savedFilters);
-                if (location.state?.filter === 'on-sale') {
+                if (routerFilter === 'on-sale') {
                     parsedFilters.onSale = true;
-                } else if (location.state?.filter !== undefined) {
+                } else if (routerFilter !== undefined) {
                     parsedFilters.onSale = false;
                 }
                 return parsedFilters;
@@ -41,18 +41,21 @@ const CategoryPage = () => {
         return defaultFilters;
     };
 
-    const [tempFilters, setTempFilters] = useState(getInitialFilters);
-    const [appliedFilters, setAppliedFilters] = useState(getInitialFilters);
+    const currentRouteFilter = location.state?.filter;
 
-    useEffect(() => {
-        const isOnSaleRoute = location.state?.filter === 'on-sale';
-        setTempFilters(prev => ({ ...prev, onSale: isOnSaleRoute }));
-        setAppliedFilters(prev => {
-            const updatedFilters = { ...prev, onSale: isOnSaleRoute };
-            localStorage.setItem('shop-filters', JSON.stringify(updatedFilters));
-            return updatedFilters;
-        });
-    }, [location.state]);
+    const [tempFilters, setTempFilters] = useState(() => getInitialFilters(currentRouteFilter));
+    const [appliedFilters, setAppliedFilters] = useState(() => getInitialFilters(currentRouteFilter));
+
+    const [prevRouteFilter, setPrevRouteFilter] = useState(currentRouteFilter);
+
+    if (currentRouteFilter !== prevRouteFilter) {
+        setPrevRouteFilter(currentRouteFilter);
+
+        const updated = getInitialFilters(currentRouteFilter);
+        setTempFilters(updated);
+        setAppliedFilters(updated);
+        localStorage.setItem('shop-filters', JSON.stringify(updated));
+    }
 
     const toggleMobileFilters = () => {
         setIsMobileFiltersOpen(!isMobileFiltersOpen);

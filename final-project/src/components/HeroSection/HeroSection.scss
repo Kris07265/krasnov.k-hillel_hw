@@ -73,6 +73,9 @@ $font-montserrat: 'Montserrat', sans-serif;
   &__btn {
     &.MuiButton-root {
       background-color: #000;
+      font-weight: 500;
+      font-size: 16px;
+      color: #fff;
       border-radius: 62px;
       padding: 16px 54px;
       text-transform: none;
@@ -88,13 +91,6 @@ $font-montserrat: 'Montserrat', sans-serif;
         margin-bottom: 48px;
       }
     }
-  }
-
-  &__btn-link {
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 16px;
-    color: #fff;
   }
 
   &__stats {

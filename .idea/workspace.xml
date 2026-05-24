@@ -6,12 +6,27 @@
   <component name="ChangeListManager">
     <list default="true" id="bcb53deb-8a75-4733-855f-4b8cd9fc4055" name="Changes" comment="corrected errors">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/AuthMenu/AuthMenu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/AuthMenu/AuthMenu.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/BrandsBar/BrandsBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/BrandsBar/BrandsBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/BrowseByStyleItem/BrowseByStyleItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/BrowseByStyleItem/BrowseByStyleItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/CartItem/CartItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/CartItem/CartItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/CartItemList/CartItemList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/CartItemList/CartItemList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/CartOrderSummary/CartOrderSummary.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/CartOrderSummary/CartOrderSummary.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/ErrorMessage/ErrorMessage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/ErrorMessage/ErrorMessage.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/final-project/src/components/Filters/Filters.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/Filters/Filters.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/ProductDetailRelatedProductsSection/ProductDetailRelatedProductsSection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/ProductDetailRelatedProductsSection/ProductDetailRelatedProductsSection.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/ProductDetailRelatedProductsSection/ProductDetailRelatedProductsSection.scss" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/ProductDetailRelatedProductsSection/ProductDetailRelatedProductsSection.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/Footer/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/Footer/Footer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/Footer/Footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/Footer/Footer.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/Header/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/HeroSection/HeroSection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/HeroSection/HeroSection.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/HeroSection/HeroSection.scss" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/HeroSection/HeroSection.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/Layout/Layout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/Layout/Layout.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/OrderSuccessModal/OrderSuccessModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/OrderSuccessModal/OrderSuccessModal.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/ProductCard/ProductCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/ProductCard/ProductCard.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/final-project/src/components/ProductSection/ProductSection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/ProductSection/ProductSection.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/ProductsList/ProductsList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/ProductsList/ProductsList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/components/ReviewCard/ReviewCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/ReviewCard/ReviewCard.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/final-project/src/pages/CategoryPage/CategoryPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/pages/CategoryPage/CategoryPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/store/slices/cartSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/store/slices/cartSlice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/pages/HomePage/HomePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/pages/HomePage/HomePage.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,15 +178,8 @@
       <workItem from="1779268371906" duration="4722000" />
       <workItem from="1779280860467" duration="4172000" />
       <workItem from="1779353347169" duration="12359000" />
-      <workItem from="1779524237491" duration="8499000" />
-    </task>
-    <task id="LOCAL-00030" summary="created Form">
-      <option name="closed" value="true" />
-      <created>1774373629116</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1774373629116</updated>
+      <workItem from="1779524237491" duration="9374000" />
+      <workItem from="1779610735535" duration="6047000" />
     </task>
     <task id="LOCAL-00031" summary="created Card and List">
       <option name="closed" value="true" />
@@ -557,7 +565,15 @@
       <option name="project" value="LOCAL" />
       <updated>1779530362863</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="corrected errors">
+      <option name="closed" value="true" />
+      <created>1779534201048</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1779534201048</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

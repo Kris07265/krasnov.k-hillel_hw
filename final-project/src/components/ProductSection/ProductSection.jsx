@@ -62,7 +62,16 @@ const ProductSection = ({ title, products, isLoading, error, onViewAllClick }) =
 
 ProductSection.propTypes = {
     title: PropTypes.string.isRequired,
-    products: PropTypes.array,
+    products: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+            title: PropTypes.string.isRequired,
+            price: PropTypes.number.isRequired,
+            rating: PropTypes.number,
+            images: PropTypes.arrayOf(PropTypes.string),
+            discountPercentage: PropTypes.number,
+        })
+    ),
     isLoading: PropTypes.bool,
     error: PropTypes.any,
     onViewAllClick: PropTypes.func

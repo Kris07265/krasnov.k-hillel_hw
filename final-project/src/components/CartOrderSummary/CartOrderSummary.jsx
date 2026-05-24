@@ -7,6 +7,7 @@ import LocalOfferOutlinedIcon from '@mui/icons-material/LocalOfferOutlined';
 import OrderSuccessModal from '../OrderSuccessModal/OrderSuccessModal';
 import { clearCart } from '../../store/slices/cartSlice.js';
 import './CartOrderSummary.scss';
+import PropTypes from "prop-types";
 
 const CartOrderSummary = ({ subtotal }) => {
     const navigate = useNavigate();
@@ -92,6 +93,10 @@ const CartOrderSummary = ({ subtotal }) => {
             <OrderSuccessModal open={isModalOpen} onClose={() => setIsModalOpen(false)} />
         </Box>
     );
+};
+
+CartOrderSummary.propTypes = {
+    subtotal: PropTypes.number.isRequired
 };
 
 export default CartOrderSummary;
