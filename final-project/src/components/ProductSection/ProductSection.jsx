@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import {Box, Typography, Button, Container, Grid, Skeleton} from '@mui/material';
 import ProductCard from '../ProductCard/ProductCard';
 import './ProductSection.scss';
-import React from "react";
 import ErrorMessage from "../ErrorMessage/ErrorMessage.jsx";
 
 const ProductSection = ({ title, products, isLoading, error, onViewAllClick }) => {

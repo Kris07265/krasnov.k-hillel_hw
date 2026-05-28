@@ -22,7 +22,7 @@ const ReviewsSection = () => {
     const scroll = (direction) => {
         const { current } = scrollRef;
         if (current) {
-            const scrollAmount = current.offsetWidth / 3;
+            const scrollAmount = current.offsetWidth / 2;
             if (direction === 'left') {
                 current.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
             } else {

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useParams } from 'react-router';
 import {Typography, Box, Skeleton, Grid} from '@mui/material';
 import { useGetProductByIdQuery, useGetProductsByCategoryQuery } from '../../store/api/productsApi';

@@ -6,7 +6,6 @@ import CartItemList from '../../components/CartItemList/CartItemList';
 import CartOrderSummary from '../../components/CartOrderSummary/CartOrderSummary';
 import './CartPage.scss';
 import BreadcrumbsComponent from "../../components/BreadcrumbsComponent/BreadcrumbsComponent.jsx";
-import React from "react";
 
 const CartPage = () => {
     const { items, totalAmount } = useSelector((state) => state.cart);
