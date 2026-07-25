@@ -1,4 +1,4 @@
-import {createBrowserRouter} from "react-router";
+import { createHashRouter } from "react-router";
 import CartPage from "./pages/CartPage/CartPage.jsx";
 import CategoryPage from "./pages/CategoryPage/CategoryPage.jsx";
 import ProductDetailPage from "./pages/ProductDetailPage/ProductDetailPage.jsx";
@@ -6,7 +6,7 @@ import HomePage from "./pages/HomePage/HomePage.jsx";
 import Layout from "./components/Layout/Layout.jsx";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage.jsx";
 
-const AppRouter = createBrowserRouter([
+const AppRouter = createHashRouter([
     {
         path: "/",
         element: (

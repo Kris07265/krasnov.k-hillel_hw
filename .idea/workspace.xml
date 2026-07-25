@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bcb53deb-8a75-4733-855f-4b8cd9fc4055" name="Changes" comment="corrected errors">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/CartItemList/CartItemList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/CartItemList/CartItemList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/CartOrderSummary/CartOrderSummary.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/CartOrderSummary/CartOrderSummary.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/ProductDetailRelatedProductsSection/ProductDetailRelatedProductsSection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/ProductDetailRelatedProductsSection/ProductDetailRelatedProductsSection.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/ProductSection/ProductSection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/ProductSection/ProductSection.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/components/ReviewsSection/ReviewsSection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/components/ReviewsSection/ReviewsSection.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project/src/pages/CartPage/CartPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/pages/CartPage/CartPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/src/AppRouter.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/src/AppRouter.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final-project/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/final-project/vite.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
